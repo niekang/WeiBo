@@ -24,21 +24,25 @@ extension UIButton {
         return UIButton.nk_Button(title: nil, fontSize: nil, normalTextColor: nil, highLightedTextColor: nil, normalImage: normalImage, highLightedImage: nil, normalBackgroudImage: nil, highLightedBackgroudImage: nil)
     }
     
-    class func nk_imageButton(normalImage:UIImage?, normalBackgroudImage:UIImage?) -> UIButton{
-        return UIButton.nk_Button(title: nil, fontSize: nil, normalTextColor: nil, highLightedTextColor: nil, normalImage: nil, highLightedImage: nil, normalBackgroudImage: normalBackgroudImage, highLightedBackgroudImage: nil)
-    }
-    
-    class func nk_imageButton(normalImage:UIImage?, normalBackgroudImage:UIImage?, highLightedBackgroudImage:UIImage?) -> UIButton{
-        return UIButton.nk_Button(title: nil, fontSize: nil, normalTextColor: nil, highLightedTextColor: nil, normalImage: nil, highLightedImage: nil, normalBackgroudImage: normalBackgroudImage, highLightedBackgroudImage: highLightedBackgroudImage)
-    }
-    
     class func nk_imageButton(normalImage:UIImage?, highLightedImage:UIImage?) -> UIButton{
         return UIButton.nk_Button(title: nil, fontSize: nil, normalTextColor: nil, highLightedTextColor: nil, normalImage: normalImage, highLightedImage: highLightedImage, normalBackgroudImage: nil, highLightedBackgroudImage: nil)
     }
     
+    class func nk_imageButton(normalImage:UIImage?, normalBackgroudImage:UIImage?) -> UIButton{
+        return UIButton.nk_Button(title: nil, fontSize: nil, normalTextColor: nil, highLightedTextColor: nil, normalImage: normalImage, highLightedImage: nil, normalBackgroudImage: normalBackgroudImage, highLightedBackgroudImage: nil)
+    }
+    
+    class func nk_imageButton(normalImage:UIImage?, normalBackgroudImage:UIImage?, highLightedBackgroudImage:UIImage?) -> UIButton{
+        return UIButton.nk_Button(title: nil, fontSize: nil, normalTextColor: nil, highLightedTextColor: nil, normalImage: normalImage, highLightedImage: nil, normalBackgroudImage: normalBackgroudImage, highLightedBackgroudImage: highLightedBackgroudImage)
+    }
+    
+    class func nk_imageButton(normalImage:UIImage?, highLightedImage:UIImage?, normalBackgroudImage:UIImage?, highLightedBackgroudImage:UIImage?) -> UIButton{
+        return UIButton.nk_Button(title: nil, fontSize: nil, normalTextColor: nil, highLightedTextColor: nil, normalImage: normalImage, highLightedImage: highLightedImage, normalBackgroudImage: normalBackgroudImage, highLightedBackgroudImage: highLightedBackgroudImage)
+    }
+    
     class func nk_Button(title:String?, fontSize:CGFloat?, normalTextColor:UIColor?, highLightedTextColor:UIColor?, normalImage:UIImage?, highLightedImage:UIImage?, normalBackgroudImage:UIImage?, highLightedBackgroudImage:UIImage?) -> UIButton{
         
-        let btn = UIButton()
+        let btn = UIButton(type:.custom)
         
         if let title = title {
             btn.setTitle(title, for: .normal)

@@ -13,7 +13,15 @@ class WBHomeViewController: WBBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        leftBarButtonItem()
+    }
+    
+    func leftBarButtonItem() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", fontSize: 16, target: self, action:#selector(leftButtonClick))
+    }
+    
+    func leftButtonClick() {
+        
     }
 
 }

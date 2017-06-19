@@ -21,6 +21,7 @@
 		82629EDA1EF7C2E400DA2D89 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ED91EF7C2E400DA2D89 /* Bundle+Extension.swift */; };
 		82629EDC1EF7CC4200DA2D89 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EDB1EF7CC4200DA2D89 /* UIButton+Extension.swift */; };
 		82629EDE1EF7D70F00DA2D89 /* UIViewFrame+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EDD1EF7D70F00DA2D89 /* UIViewFrame+Extension.swift */; };
+		82E96F521EF81ADF00360072 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E96F511EF81ADF00360072 /* UIBarButtonItem+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		82629ED91EF7C2E400DA2D89 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		82629EDB1EF7CC4200DA2D89 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		82629EDD1EF7D70F00DA2D89 /* UIViewFrame+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewFrame+Extension.swift"; sourceTree = "<group>"; };
+		82E96F511EF81ADF00360072 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				82629EDD1EF7D70F00DA2D89 /* UIViewFrame+Extension.swift */,
 				82629ED91EF7C2E400DA2D89 /* Bundle+Extension.swift */,
 				82629EDB1EF7CC4200DA2D89 /* UIButton+Extension.swift */,
+				82E96F511EF81ADF00360072 /* UIBarButtonItem+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				82629EDA1EF7C2E400DA2D89 /* Bundle+Extension.swift in Sources */,
 				82629ED61EF7BB8A00DA2D89 /* WBDiscoverViewController.swift in Sources */,
 				82629EDC1EF7CC4200DA2D89 /* UIButton+Extension.swift in Sources */,
+				82E96F521EF81ADF00360072 /* UIBarButtonItem+Extension.swift in Sources */,
 				82629ED01EF7BAC600DA2D89 /* WbTabBarController.swift in Sources */,
 				82629ECA1EF7BA2C00DA2D89 /* WBNavigationController.swift in Sources */,
 				82629ECC1EF7BA3F00DA2D89 /* WBBaseViewController.swift in Sources */,

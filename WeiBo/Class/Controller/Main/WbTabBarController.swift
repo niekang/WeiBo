@@ -10,7 +10,7 @@ import UIKit
 
 class WbTabBarController: UITabBarController {
     
-    lazy var composeBtn = UIButton.nk_imageButton(normalImage: UIImage(named:"tabbar_compose_icon_add"), normalBackgroudImage: UIImage(named:"tabbar_compose_button"))
+    lazy var composeBtn = UIButton.nk_imageButton(normalImage: UIImage(named:"tabbar_compose_icon_add"), highLightedImage:UIImage(named:"tabbar_compose_icon_add_highlighted") ,normalBackgroudImage: UIImage(named:"tabbar_compose_button"), highLightedBackgroudImage:UIImage(named:"tabbar_compose_button_highlighted"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,9 @@ class WbTabBarController: UITabBarController {
             let title = dict["title"],
             let imageName = dict["imageName"],
             let cls = NSClassFromString(Bundle.main.nameSpace + "." + className) as? UIViewController.Type else {
-                return UIViewController()
+                let vc = UIViewController()
+                vc.tabBarItem.isEnabled = false
+                return vc
         }
         
         let vc = cls.init()
@@ -58,10 +60,8 @@ class WbTabBarController: UITabBarController {
     
     func addComposeBtn(){
         let w = tabBar.width/5
-        let x = 2 * w
-        let y = 0 as CGFloat
-        let h = tabBar.height as CGFloat
-        composeBtn.frame = CGRect(x: x, y: y, width: w, height: h)
+        composeBtn.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
         tabBar.addSubview(composeBtn)
     }
 }
+
