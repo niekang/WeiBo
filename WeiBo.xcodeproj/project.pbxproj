@@ -13,6 +13,14 @@
 		82629E9B1EF7B6AB00DA2D89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82629E991EF7B6AB00DA2D89 /* LaunchScreen.storyboard */; };
 		82629EA61EF7B6AB00DA2D89 /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EA51EF7B6AB00DA2D89 /* WeiBoTests.swift */; };
 		82629EB11EF7B6AB00DA2D89 /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */; };
+		82629ECA1EF7BA2C00DA2D89 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EC91EF7BA2C00DA2D89 /* WBNavigationController.swift */; };
+		82629ECC1EF7BA3F00DA2D89 /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ECB1EF7BA3F00DA2D89 /* WBBaseViewController.swift */; };
+		82629ED01EF7BAC600DA2D89 /* WbTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ECF1EF7BAC600DA2D89 /* WbTabBarController.swift */; };
+		82629ED21EF7BB4200DA2D89 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ED11EF7BB4200DA2D89 /* WBHomeViewController.swift */; };
+		82629ED41EF7BB6100DA2D89 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ED31EF7BB6100DA2D89 /* WBMessageViewController.swift */; };
+		82629ED61EF7BB8A00DA2D89 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ED51EF7BB8A00DA2D89 /* WBDiscoverViewController.swift */; };
+		82629ED81EF7BB9500DA2D89 /* WBMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ED71EF7BB9500DA2D89 /* WBMineViewController.swift */; };
+		82629EDA1EF7C2E400DA2D89 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629ED91EF7C2E400DA2D89 /* Bundle+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		82629EAC1EF7B6AB00DA2D89 /* WeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		82629EB21EF7B6AB00DA2D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82629EC91EF7BA2C00DA2D89 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
+		82629ECB1EF7BA3F00DA2D89 /* WBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
+		82629ECF1EF7BAC600DA2D89 /* WbTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WbTabBarController.swift; sourceTree = "<group>"; };
+		82629ED11EF7BB4200DA2D89 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
+		82629ED31EF7BB6100DA2D89 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
+		82629ED51EF7BB8A00DA2D89 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
+		82629ED71EF7BB9500DA2D89 /* WBMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMineViewController.swift; sourceTree = "<group>"; };
+		82629ED91EF7C2E400DA2D89 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +166,7 @@
 		82629EC01EF7B8D800DA2D89 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				82629ED51EF7BB8A00DA2D89 /* WBDiscoverViewController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -157,6 +174,7 @@
 		82629EC11EF7B8D800DA2D89 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				82629ED11EF7BB4200DA2D89 /* WBHomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -164,6 +182,9 @@
 		82629EC21EF7B8D800DA2D89 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				82629EC91EF7BA2C00DA2D89 /* WBNavigationController.swift */,
+				82629ECB1EF7BA3F00DA2D89 /* WBBaseViewController.swift */,
+				82629ECF1EF7BAC600DA2D89 /* WbTabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -171,6 +192,7 @@
 		82629EC31EF7B8D800DA2D89 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				82629ED31EF7BB6100DA2D89 /* WBMessageViewController.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -178,6 +200,7 @@
 		82629EC41EF7B8D800DA2D89 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				82629ED71EF7BB9500DA2D89 /* WBMineViewController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -192,6 +215,7 @@
 		82629EC61EF7B8D800DA2D89 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				82629ED91EF7C2E400DA2D89 /* Bundle+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -344,7 +368,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82629ED21EF7BB4200DA2D89 /* WBHomeViewController.swift in Sources */,
+				82629EDA1EF7C2E400DA2D89 /* Bundle+Extension.swift in Sources */,
+				82629ED61EF7BB8A00DA2D89 /* WBDiscoverViewController.swift in Sources */,
+				82629ED01EF7BAC600DA2D89 /* WbTabBarController.swift in Sources */,
+				82629ECA1EF7BA2C00DA2D89 /* WBNavigationController.swift in Sources */,
+				82629ECC1EF7BA3F00DA2D89 /* WBBaseViewController.swift in Sources */,
 				82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */,
+				82629ED81EF7BB9500DA2D89 /* WBMineViewController.swift in Sources */,
+				82629ED41EF7BB6100DA2D89 /* WBMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
