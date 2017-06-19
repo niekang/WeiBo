@@ -9,10 +9,13 @@
 import UIKit
 
 class WbTabBarController: UITabBarController {
+    
+    lazy var composeBtn = UIButton.nk_imageButton(normalImage: UIImage(named:"tabbar_compose_icon_add"), normalBackgroudImage: UIImage(named:"tabbar_compose_button"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setControllers()
+        addComposeBtn()
     }
     
     /// 添加子控制器
@@ -20,6 +23,7 @@ class WbTabBarController: UITabBarController {
         let dictArray = [
             ["className":"WBHomeViewController","title":"首页","imageName":"tabbar_home"],
             ["className":"WBMessageViewController","title":"消息","imageName":"tabbar_message_center"],
+            ["className":"","title":"","imageName":""],
             ["className":"WBDiscoverViewController","title":"发现","imageName":"tabbar_discover"],
             ["className":"WBMineViewController","title":"我的","imageName":"tabbar_profile"]
         ];
@@ -32,7 +36,6 @@ class WbTabBarController: UITabBarController {
         
         viewControllers = vcsArray
     }
-    
     
     /// 根据提供的信息创建相应的控制器
     func controller(dict:[String:String]) -> UIViewController{
@@ -49,7 +52,16 @@ class WbTabBarController: UITabBarController {
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.orange], for: .selected)
         
-        let nav = UINavigationController(rootViewController: vc)
+        let nav = WBNavigationController(rootViewController: vc)
         return nav
+    }
+    
+    func addComposeBtn(){
+        let w = tabBar.width/5
+        let x = 2 * w
+        let y = -20 as CGFloat
+        let h = 64 as CGFloat
+        composeBtn.frame = CGRect(x: x, y: y, width: w, height: h)
+        tabBar.addSubview(composeBtn)
     }
 }
