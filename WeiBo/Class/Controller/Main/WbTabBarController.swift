@@ -59,8 +59,8 @@ class WbTabBarController: UITabBarController {
     func addComposeBtn(){
         let w = tabBar.width/5
         let x = 2 * w
-        let y = -20 as CGFloat
-        let h = 64 as CGFloat
+        let y = 0 as CGFloat
+        let h = tabBar.height as CGFloat
         composeBtn.frame = CGRect(x: x, y: y, width: w, height: h)
         tabBar.addSubview(composeBtn)
     }
