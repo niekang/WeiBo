@@ -10,16 +10,26 @@
 import UIKit
 
 class WBNavigationController: UINavigationController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBarAppearance()
+    }
+    
+    func setupNavigationBarAppearance() {
+        navigationBar.barTintColor =  UIColor.nk_hexColor(hex: 0xF6F6F6)
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if childViewControllers.count > 0 {
+            
             viewController.hidesBottomBarWhenPushed = true
             
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: .plain, target: self, action: #selector(backAction))
+            let fixItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: #selector(backAction))
+            fixItem.width = -10
+            let leftItem =  UIBarButtonItem(title: "返回", target: self, action: #selector(backAction))
+            viewController.navigationItem.leftBarButtonItems = [fixItem, leftItem]
         }
         super.pushViewController(viewController, animated: animated)
     }

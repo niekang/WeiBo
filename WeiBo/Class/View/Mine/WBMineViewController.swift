@@ -1,5 +1,5 @@
 //
-//  WBBaseViewController.swift
+//  WBMineViewController.swift
 //  WeiBo
 //
 //  Created by 聂康  on 2017/6/19.
@@ -8,10 +8,15 @@
 
 import UIKit
 
-class WBBaseViewController: UIViewController {
+class WBMineViewController: WBBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
         
     }
 }

@@ -1,14 +1,14 @@
 //
-//  WBMineViewController.swift
+//  WBQRCodeViewController.swift
 //  WeiBo
 //
-//  Created by 聂康  on 2017/6/19.
+//  Created by 聂康  on 2017/6/20.
 //  Copyright © 2017年 com.nk. All rights reserved.
 //
 
 import UIKit
 
-class WBMineViewController: WBBaseViewController {
+class WBQRCodeViewController: WBBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
