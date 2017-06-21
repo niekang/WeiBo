@@ -19,6 +19,7 @@ class WbTabBarController: UITabBarController {
         setControllers()
         addComposeBtn()
     }
+
 }
 
 
@@ -71,7 +72,7 @@ extension WbTabBarController {
         vc.tabBarItem.image = UIImage(named:imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.orange], for: .selected)
-        vc.visitorInfoDictionary = visitorDic
+        vc.visitorView.visitorInfoDictionary = visitorDic
         let nav = WBNavigationController(rootViewController: vc)
         return nav
     }

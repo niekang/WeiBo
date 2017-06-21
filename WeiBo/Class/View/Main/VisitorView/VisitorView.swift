@@ -86,14 +86,6 @@ extension VisitorView {
         imageView.layer.add(anima, forKey: "rotation")
     }
     
-    func resisterBtnClick(sender:UIButton) {
-        
-    }
-    
-    func logBtnClick(sender:UIButton) {
-    
-    }
-    
     func addConstrains() {
         //中间图片
         addConstraint(NSLayoutConstraint(item: imageView,

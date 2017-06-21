@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBQRCodeViewController: WBBaseViewController {
+class WBQRCodeViewController: WBSuperViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

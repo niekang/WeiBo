@@ -8,6 +8,12 @@
 
 import UIKit
 
+let WBAPPkey = "1205476206"
+
+let WBAppSecret = "491d493c293d8946fbb6459d4c3f8deb"
+
+let WBRedirectURL = "http://baidu.com"
+
 let kWidth = UIScreen.main.bounds.width
 
 let kHeight = UIScreen.main.bounds.height
@@ -16,7 +22,11 @@ let kNavHeight = 64 as CGFloat
 
 let kTabBarHeight = 49 as CGFloat
 
-func WBLog<T>(item:T){
+let WBLoginSuccessNotification = "WBLoginNotification"
+let WBLogOutNotification = "WBNotLoginNotification"
+
+
+func WBLog<T>(_ item:T){
     #if DEBUG
         print(item)
     #endif

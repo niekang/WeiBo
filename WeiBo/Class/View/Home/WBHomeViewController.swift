@@ -11,9 +11,18 @@ import UIKit
 
 class WBHomeViewController: WBBaseViewController {
 
+    lazy var statusListViewModel = WBStatusListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+}
+
+extension WBHomeViewController {
+    override func loginSuccess() {
+        super.loginSuccess()
+        statusListViewModel.loadWBStatusListData()
     }
 }
 
