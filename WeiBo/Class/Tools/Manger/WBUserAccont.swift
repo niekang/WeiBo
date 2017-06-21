@@ -67,8 +67,7 @@ extension WBUserAccont {
                       "code": code,
                       "redirect_uri": WBRedirectURL]
         
-        WBNetworkManager.shared.request(URLString: urlString, parameters: params, completion:{ (isSuccess, json) in
-            completion(isSuccess)
+        WBNetworkManager.shared.request(method: .POST, URLString: urlString, parameters: params, completion:{ (isSuccess, json) in
             guard let dict = json as? [String:AnyObject] else {
                 return
             }
@@ -76,6 +75,8 @@ extension WBUserAccont {
             self.yy_modelSet(with: dict)
             //将用户信息保存在本地
             self.saveAccout(json: dict)
+            
+            completion(isSuccess)
         })
         
     }

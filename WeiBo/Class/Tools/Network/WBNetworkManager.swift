@@ -32,7 +32,9 @@ class WBNetworkManager: AFHTTPSessionManager {
             parameters = [String:AnyObject]()
         }
         
-        parameters!["access_token"] = WBUserAccont.shared.access_token as AnyObject
+        if let access_token = WBUserAccont.shared.access_token{
+            parameters!["access_token"] = access_token as AnyObject
+        }
         
         var dataTask:URLSessionDataTask?
         
