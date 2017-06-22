@@ -13,10 +13,13 @@ class WBStatusListViewModel {
     
     var statusList = [WBStatusViewModel]()
     
-    func loadWBStatusListData(since_id:Int64 = 0, max_id:Int64 = 0, count:Int = 0, completion:@escaping (Bool)->Void) {
+    func loadWBStatusListData(since_id:Int64 = 0, max_id:Int64 = 0, count:Int = 20, completion:@escaping (Bool)->Void) {
+        
+        let parameters = ["since_id":"\(since_id)","max_id":"\(max_id)","count":"\(count)"]
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        WBNetworkManager.shared.request(URLString: urlString, parameters: nil) { (isSuccess, json) in
+        
+        WBNetworkManager.shared.request(URLString: urlString, parameters: parameters) { (isSuccess, json) in
             
             if isSuccess == true {
                 guard let statuses = ((json as? [String:AnyObject])?["statuses"]) as? [[String:AnyObject]] else{

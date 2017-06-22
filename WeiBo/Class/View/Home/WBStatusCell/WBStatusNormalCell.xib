@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WBStatusNormalCell" rowHeight="219" id="kPj-I0-ieX" customClass="WBStatusCell" customModule="WeiBo" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WBStatusNormalCell" rowHeight="219" id="kPj-I0-ieX" customClass="WBStatusCell" customModule="WeiBo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kPj-I0-ieX" id="LOH-Ly-nMp">
@@ -55,10 +55,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_vip" translatesAutoresizingMaskIntoConstraints="NO" id="rmL-f7-190" userLabel="认证图标">
-                        <rect key="frame" x="38" y="47" width="14" height="14"/>
+                        <rect key="frame" x="34" y="43" width="14" height="14"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk9-av-p3l" userLabel="微博正文">
-                        <rect key="frame" x="11" y="65" width="364" height="16"/>
+                        <rect key="frame" x="11" y="65" width="353" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -71,15 +71,15 @@
                     <constraint firstItem="Ush-TG-B5t" firstAttribute="leading" secondItem="LOH-Ly-nMp" secondAttribute="leading" id="DF2-M4-N66"/>
                     <constraint firstItem="sk9-av-p3l" firstAttribute="leading" secondItem="N8k-ex-1zm" secondAttribute="leading" id="FwS-gl-aEo"/>
                     <constraint firstItem="xOG-pP-1Kb" firstAttribute="centerY" secondItem="BZM-a4-Kyk" secondAttribute="centerY" id="GgC-qU-wWA"/>
-                    <constraint firstAttribute="trailing" secondItem="sk9-av-p3l" secondAttribute="trailing" id="H4o-Rn-Iqt"/>
+                    <constraint firstAttribute="trailing" secondItem="sk9-av-p3l" secondAttribute="trailing" constant="11" id="H4o-Rn-Iqt"/>
                     <constraint firstItem="Ush-TG-B5t" firstAttribute="top" secondItem="LOH-Ly-nMp" secondAttribute="top" id="OFP-H0-pHC"/>
                     <constraint firstItem="N8k-ex-1zm" firstAttribute="top" secondItem="Ush-TG-B5t" secondAttribute="bottom" constant="12" id="Qhi-en-VmN"/>
                     <constraint firstAttribute="trailing" secondItem="Ush-TG-B5t" secondAttribute="trailing" id="Rhd-y7-SKL"/>
-                    <constraint firstItem="rmL-f7-190" firstAttribute="centerX" secondItem="N8k-ex-1zm" secondAttribute="trailing" id="RtU-KJ-AKa"/>
+                    <constraint firstItem="rmL-f7-190" firstAttribute="centerX" secondItem="N8k-ex-1zm" secondAttribute="trailing" constant="-4" id="RtU-KJ-AKa"/>
                     <constraint firstItem="N8k-ex-1zm" firstAttribute="leading" secondItem="LOH-Ly-nMp" secondAttribute="leading" constant="11" id="SbE-CA-kkP"/>
                     <constraint firstItem="fOs-Vc-Uyn" firstAttribute="bottom" secondItem="N8k-ex-1zm" secondAttribute="bottom" id="W1L-bE-CQv"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sk9-av-p3l" secondAttribute="bottom" constant="12" id="WbF-zf-f3h"/>
-                    <constraint firstItem="rmL-f7-190" firstAttribute="centerY" secondItem="N8k-ex-1zm" secondAttribute="bottom" id="Xbn-Lv-uUI"/>
+                    <constraint firstItem="rmL-f7-190" firstAttribute="centerY" secondItem="N8k-ex-1zm" secondAttribute="bottom" constant="-4" id="Xbn-Lv-uUI"/>
                     <constraint firstItem="BZM-a4-Kyk" firstAttribute="top" secondItem="N8k-ex-1zm" secondAttribute="top" constant="4" id="aF8-zF-PXD"/>
                     <constraint firstItem="fOs-Vc-Uyn" firstAttribute="leading" secondItem="BZM-a4-Kyk" secondAttribute="leading" id="hE2-6b-VWp"/>
                     <constraint firstItem="8Wd-LF-ZwQ" firstAttribute="centerY" secondItem="fOs-Vc-Uyn" secondAttribute="centerY" id="k0m-y1-Ish"/>

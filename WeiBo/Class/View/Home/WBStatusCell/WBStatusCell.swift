@@ -31,6 +31,21 @@ class WBStatusCell: UITableViewCell {
     /// 正文
     @IBOutlet weak var contentLab: UILabel!
     
+    var statusViewModel:WBStatusViewModel? {
+        didSet{
+            //姓名
+            nameLab.text = statusViewModel?.status.user?.screen_name
+            //会员图标
+            memberImageView.image = statusViewModel?.memberIcon
+            //认证图标
+            vipImageView.image = statusViewModel?.vipIcon
+            //正文
+            contentLab.text = statusViewModel?.status.text
+            //设置头像
+            iconView.nk_setImage(URLString: statusViewModel?.status.user?.profile_image_url, placeholderImageName: "avatar_default_big", isAvatar: true)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -22,7 +22,7 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loginSuccess() {
         super.loginSuccess()
-        statusListViewModel.loadWBStatusListData(since_id: 0, max_id: 0, count: 0) { (isSuccess) in
+        statusListViewModel.loadWBStatusListData() { (isSuccess) in
             self.tableView.reloadData()
         }
     }
@@ -33,13 +33,9 @@ extension WBHomeViewController {
         return statusListViewModel.statusList.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: normalCellId, for: indexPath) as! WBStatusCell
-        cell.contentLab?.text = statusListViewModel.statusList[indexPath.row].status.text
+        cell.statusViewModel = statusListViewModel.statusList[indexPath.row]
         return cell
     }
 }
@@ -49,6 +45,8 @@ extension WBHomeViewController {
     func setupUI() {
         
         tableView.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: normalCellId)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 300
         
         setupBarButtonItems()
     }
