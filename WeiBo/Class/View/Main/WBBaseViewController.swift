@@ -19,11 +19,6 @@ class WBBaseViewController: WBTableViewController {
 }
 
 
-// MARK: - UITableView 数据处理
-extension WBBaseViewController {
-    
-}
-
 // MARK: - 添加登录通知,处理访客视图
 extension WBBaseViewController {
     
