@@ -9,7 +9,9 @@
 
 import UIKit
 
-let normalCellId = "WBStatusNormalCell"
+private let normalCellId = "WBStatusNormalCell"
+
+private let retweetedCellId = "WBStatusRetweetedCell"
 
 class WBHomeViewController: WBBaseViewController {
 
@@ -34,7 +36,7 @@ extension WBHomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: normalCellId, for: indexPath) as! WBStatusCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! WBStatusCell
         cell.statusViewModel = statusListViewModel.statusList[indexPath.row]
         return cell
     }
@@ -44,7 +46,8 @@ extension WBHomeViewController {
     
     func setupUI() {
         
-        tableView.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: normalCellId)
+        tableView.register(UINib(nibName: normalCellId, bundle: nil), forCellReuseIdentifier: normalCellId)
+        tableView.register(UINib(nibName: retweetedCellId, bundle: nil), forCellReuseIdentifier: retweetedCellId)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
         

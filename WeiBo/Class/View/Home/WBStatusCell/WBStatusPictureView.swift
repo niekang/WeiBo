@@ -54,6 +54,7 @@ class WBStatusPictureView: UIView {
     }
     
     func setupUI() {
+        backgroundColor = superview?.backgroundColor
         clipsToBounds = true
         for i in 0..<9 {
             let row = i/3 + 1
