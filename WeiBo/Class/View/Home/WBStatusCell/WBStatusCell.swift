@@ -31,6 +31,11 @@ class WBStatusCell: UITableViewCell {
     /// 正文
     @IBOutlet weak var contentLab: UILabel!
     
+    //底部工具条
+    @IBOutlet weak var statusToolBar: WBStatusTooBar!
+    
+    @IBOutlet weak var statusPicView: WBStatusPictureView!
+    
     var statusViewModel:WBStatusViewModel? {
         didSet{
             //姓名
@@ -43,18 +48,10 @@ class WBStatusCell: UITableViewCell {
             contentLab.text = statusViewModel?.status.text
             //设置头像
             iconView.nk_setImage(URLString: statusViewModel?.status.user?.profile_image_url, placeholderImageName: "avatar_default_big", isAvatar: true)
+            //设置底部工具条数据
+            statusToolBar.statusViewModel = statusViewModel
+            //设置配图
+            statusPicView.statusViewModel = statusViewModel
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

@@ -34,7 +34,7 @@ class WBUserAccont: NSObject {
     }
     
     //跳转登录界面
-    func login(modelVC:UIViewController? = UIApplication.shared.keyWindow?.rootViewController) {
+    func login(modelVC:UIViewController? = (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController) {
         guard let modelVC = modelVC else{
             return
         }
