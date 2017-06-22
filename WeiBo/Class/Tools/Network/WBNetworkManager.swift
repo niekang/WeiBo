@@ -8,6 +8,7 @@
 
 import Foundation
 import AFNetworking
+import SVProgressHUD
 
 enum HTTPMethod {
     case GET
@@ -43,6 +44,8 @@ class WBNetworkManager: AFHTTPSessionManager {
         }
             
         let failure = { (dataTask:URLSessionDataTask?, error:Error) -> () in
+            SVProgressHUD.setMinimumDismissTimeInterval(2)
+            SVProgressHUD.showError(withStatus: error.localizedDescription)
             completion(false, error)
         }
         

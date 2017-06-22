@@ -13,7 +13,7 @@ class WBStatusListViewModel {
     
     var statusList = [WBStatusViewModel]()
     
-    func loadWBStatusListData(since_id:Int64 = 0, max_id:Int64 = 0, count:Int = 20, completion:@escaping (Bool)->Void) {
+    func loadWBStatusListData(since_id:Int64 = 0, max_id:Int64 = 0, count:Int = 100, completion:@escaping (Bool)->Void) {
         
         let parameters = ["since_id":"\(since_id)","max_id":"\(max_id)","count":"\(count)"]
         

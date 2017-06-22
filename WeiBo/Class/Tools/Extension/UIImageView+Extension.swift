@@ -10,13 +10,19 @@ import SDWebImage
 
 extension UIImageView {
     
-    func nk_setImage(URLString:String?, placeholderImageName:String, isAvatar:Bool = false) {
+    func nk_setImage(URLString:String?, placeholderImageName:String?, isAvatar:Bool = false) {
 
         guard let URLString = URLString, let url = URL(string: URLString) else {
             return
         }
         
-        sd_setImage(with: url, placeholderImage: UIImage(named: placeholderImageName), options: [], progress: nil) { (image, _, _, _) in
+        var placeholderImage:UIImage?
+        
+        if let placeholderImageName = placeholderImageName {
+            placeholderImage = UIImage(named: placeholderImageName)
+        }
+        
+        sd_setImage(with: url, placeholderImage: placeholderImage, options: [], progress: nil) { (image, _, _, _) in
             
             if isAvatar == true {
                 self.image = image?.avatarImage()

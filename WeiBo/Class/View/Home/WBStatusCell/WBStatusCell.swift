@@ -51,7 +51,7 @@ class WBStatusCell: UITableViewCell {
             //设置底部工具条数据
             statusToolBar.statusViewModel = statusViewModel
             //设置配图
-            statusPicView.statusViewModel = statusViewModel
+            statusPicView.pic_urls = statusViewModel?.picURLs
         }
     }
 }
