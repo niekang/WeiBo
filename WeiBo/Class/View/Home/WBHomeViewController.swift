@@ -34,12 +34,12 @@ extension WBHomeViewController {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 200
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: normalCellId, for: indexPath) as! WBStatusCell
-        cell.textLabel?.text = statusListViewModel.statusList[indexPath.row].status.text
+        cell.contentLab?.text = statusListViewModel.statusList[indexPath.row].status.text
         return cell
     }
 }

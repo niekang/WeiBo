@@ -10,6 +10,27 @@ import UIKit
 
 class WBStatusCell: UITableViewCell {
 
+    /// 头像
+    @IBOutlet weak var iconView: UIImageView!
+    
+    /// 姓名
+    @IBOutlet weak var nameLab: UILabel!
+    
+    /// 会员图标
+    @IBOutlet weak var memberImageView: UIImageView!
+    
+    /// 时间
+    @IBOutlet weak var timeLab: UILabel!
+    
+    /// 来源
+    @IBOutlet weak var sourceLab: UILabel!
+    
+    /// vip图标
+    @IBOutlet weak var vipImageView: UIImageView!
+    
+    /// 正文
+    @IBOutlet weak var contentLab: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
