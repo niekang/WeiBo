@@ -46,6 +46,7 @@
 		82629E981EF7B6AB00DA2D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82629E971EF7B6AB00DA2D89 /* Assets.xcassets */; };
 		82629EA61EF7B6AB00DA2D89 /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EA51EF7B6AB00DA2D89 /* WeiBoTests.swift */; };
 		82629EB11EF7B6AB00DA2D89 /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */; };
+		82C7921F1EFCE9E4004929EF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		82629EAC1EF7B6AB00DA2D89 /* WeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
 		82629EB21EF7B6AB00DA2D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		EDA5D93F9E700ABEB0259962 /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 				820436731EFA02C100A482FF /* UIViewFrame+Extension.swift */,
 				8222C2501EFB921F008D0114 /* UIImageView+Extension.swift */,
 				8222C2521EFB9714008D0114 /* UIImage+Extension.swift */,
+				82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				TargetAttributes = {
 					82629E8C1EF7B6AB00DA2D89 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Q9QGXP49FA;
 						ProvisioningStyle = Automatic;
 					};
 					82629EA01EF7B6AB00DA2D89 = {
@@ -575,6 +579,7 @@
 				820436791EFA02C100A482FF /* UILabel+Extension.swift in Sources */,
 				8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */,
 				8215BDE11EFA234000E0A642 /* VisitorView.swift in Sources */,
+				82C7921F1EFCE9E4004929EF /* NSDate+Extension.swift in Sources */,
 				8215BDE51EFA61CF00E0A642 /* WBSuperViewController.swift in Sources */,
 				823AE14F1EF8FA1E00CB1D86 /* WBQRCodeViewController.swift in Sources */,
 				82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */,
@@ -732,7 +737,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q9QGXP49FA;
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -749,7 +754,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q9QGXP49FA;
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

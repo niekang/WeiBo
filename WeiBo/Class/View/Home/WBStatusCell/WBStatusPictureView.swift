@@ -13,41 +13,60 @@ let outMargin = 12 as CGFloat
 //配图之间的间距
 let innerMargin = 5 as CGFloat
 //配图视图的宽度
-let width = UIScreen.main.bounds.width - 2 * outMargin
+let picViewWidth = UIScreen.main.bounds.width - 2 * outMargin
 //每张配图的宽度
-let imageWidth = (width - 2 * innerMargin)/3
+let imageWidth = (picViewWidth - 2 * innerMargin)/3
 
 
 class WBStatusPictureView: UIView {
     
-    var pic_urls:[WBStatusPicture]? {
+    var statusViewModel:WBStatusViewModel? {
         didSet{
-            guard let urls = pic_urls else{
+            
+            guard let statusViewModel = statusViewModel,
+                let urls = statusViewModel.picURLs else{
+                    heightConstraint.constant = 0
                 return
             }
-            
-            let count = urls.count
-            heightConstraint.constant = caculatePictureViewHeight(count: count)
-            
+                        
             for v in subviews {
                 v.isHidden = true
             }
             
+            if urls.count == 1 {
+                let imageView = subviews[0] as! UIImageView
+                imageView.frame = CGRect(x: 0,
+                                         y: outMargin,
+                                         width: statusViewModel.pictureViewSize.width,
+                                         height: statusViewModel.pictureViewSize.height - outMargin)
+            }else {
+                let imageView = subviews[0] as! UIImageView
+                imageView.frame = CGRect(x: 0,
+                                         y: outMargin,
+                                         width: imageWidth,
+                                         height: imageWidth)
+            }
+            
+            var index = 0
             for (i, url) in urls.enumerated() {
-                var index = i
+                index = i
+                let imageView = subviews[index] as! UIImageView
+                imageView.nk_setImage(URLString: url.thumbnail_pic, placeholderImageName: nil)
+                imageView.isHidden = false
+                
                 //4张配图的时候特殊处理
                 if (i == 2 || i == 3) && urls.count == 4 {
                     index = i + 1
                 }
-                let imageView = subviews[index] as! UIImageView
-                imageView.nk_setImage(URLString: url.thumbnail_pic, placeholderImageName: nil)
-                imageView.isHidden = false
             }
+
+            
+            heightConstraint.constant = statusViewModel.pictureViewSize.height
+          
         }
     }
 
     @IBOutlet weak var heightConstraint:NSLayoutConstraint!
-    
     
     override func awakeFromNib() {
         setupUI()
@@ -62,25 +81,8 @@ class WBStatusPictureView: UIView {
             let rect = CGRect(x: CGFloat(colume) * (imageWidth + innerMargin), y: CGFloat(row - 1) * (imageWidth + innerMargin) + outMargin , width: imageWidth, height: imageWidth)
             let imageView = UIImageView(frame: rect)
             addSubview(imageView)
-            
-            imageView.backgroundColor = UIColor.green
         }
     }
     
     
-    /// 计算配图视图高度
-    ///
-    /// - Parameter count: 配图数量
-    /// - Returns: 高度
-    func caculatePictureViewHeight(count:Int) -> CGFloat{
-        if count == 0 {
-            return 0
-        }
-        //计算行数
-        let row = (count - 1)/3 + 1
-        //计算高度
-        let viewHeight = outMargin + CGFloat(row) * imageWidth + innerMargin * (CGFloat(row) - 1)
-        
-        return viewHeight
-    }
 }

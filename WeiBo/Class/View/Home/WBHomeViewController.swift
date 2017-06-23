@@ -34,10 +34,16 @@ extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusListViewModel.statusList.count
     }
-    
+//    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return statusListViewModel.statusList[indexPath.row].rowHeight
+//    }
+//    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: retweetedCellId, for: indexPath) as! WBStatusCell
-        cell.statusViewModel = statusListViewModel.statusList[indexPath.row]
+        let statusViewModel = statusListViewModel.statusList[indexPath.row]
+        let cellId = (statusViewModel.status.retweeted_status != nil) ? retweetedCellId : normalCellId
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
+        cell.statusViewModel = statusViewModel
         return cell
     }
 }

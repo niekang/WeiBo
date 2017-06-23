@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WBStatusRetweetedCell" rowHeight="661" id="kPj-I0-ieX" customClass="WBStatusCell" customModule="WeiBo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="661"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WBStatusRetweetedCell" rowHeight="388" id="kPj-I0-ieX" customClass="WBStatusCell" customModule="WeiBo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="388"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kPj-I0-ieX" id="LOH-Ly-nMp">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="660.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="387.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ush-TG-B5t" userLabel="顶部分隔视图">
@@ -64,17 +64,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAf-VR-Oue" userLabel="被转发微博按钮">
-                        <rect key="frame" x="0.0" y="100" width="375" height="525.5"/>
-                        <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="0.0" y="100" width="375" height="252.5"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFu-Jo-wL0" userLabel="被转发微博正文">
-                        <rect key="frame" x="12" y="112" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="12" y="112" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGX-GZ-mcp" userLabel="底部视图" customClass="WBStatusTooBar" customModule="WeiBo" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="625.5" width="375" height="35"/>
+                        <rect key="frame" x="0.0" y="352.5" width="375" height="35"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zm-Nd-tyY">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
@@ -142,7 +142,7 @@
                         </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzr-iZ-N2o" userLabel="配图视图" customClass="WBStatusPictureView" customModule="WeiBo" customModuleProvider="target">
-                        <rect key="frame" x="12" y="145" width="351" height="200"/>
+                        <rect key="frame" x="12" y="130" width="351" height="200"/>
                         <color key="backgroundColor" red="1" green="0.51078826708662128" blue="0.010252206648358242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="T1U-Cn-HiH"/>
@@ -168,7 +168,7 @@
                     <constraint firstAttribute="trailing" secondItem="sk9-av-p3l" secondAttribute="trailing" constant="12" id="H4o-Rn-Iqt"/>
                     <constraint firstItem="uzr-iZ-N2o" firstAttribute="leading" secondItem="sk9-av-p3l" secondAttribute="leading" id="KBO-Rb-OeJ"/>
                     <constraint firstItem="Ush-TG-B5t" firstAttribute="top" secondItem="LOH-Ly-nMp" secondAttribute="top" id="OFP-H0-pHC"/>
-                    <constraint firstItem="uzr-iZ-N2o" firstAttribute="top" secondItem="LFu-Jo-wL0" secondAttribute="bottom" constant="12" id="PIX-YD-DNI"/>
+                    <constraint firstItem="uzr-iZ-N2o" firstAttribute="top" secondItem="LFu-Jo-wL0" secondAttribute="bottom" id="PIX-YD-DNI"/>
                     <constraint firstItem="EGX-GZ-mcp" firstAttribute="leading" secondItem="LOH-Ly-nMp" secondAttribute="leading" id="PgE-Vl-UDW"/>
                     <constraint firstItem="N8k-ex-1zm" firstAttribute="top" secondItem="Ush-TG-B5t" secondAttribute="bottom" constant="12" id="Qhi-en-VmN"/>
                     <constraint firstItem="LFu-Jo-wL0" firstAttribute="leading" secondItem="sk9-av-p3l" secondAttribute="leading" id="Qux-on-WW9"/>
@@ -192,13 +192,14 @@
                 <outlet property="iconView" destination="N8k-ex-1zm" id="nev-Bz-ghx"/>
                 <outlet property="memberImageView" destination="xOG-pP-1Kb" id="uXb-P0-Prv"/>
                 <outlet property="nameLab" destination="BZM-a4-Kyk" id="65J-H5-Mbg"/>
+                <outlet property="retweedtedLab" destination="LFu-Jo-wL0" id="i0l-lC-bAq"/>
                 <outlet property="sourceLab" destination="8Wd-LF-ZwQ" id="FxK-DS-QoX"/>
                 <outlet property="statusPicView" destination="uzr-iZ-N2o" id="zIy-aT-bXh"/>
                 <outlet property="statusToolBar" destination="EGX-GZ-mcp" id="giP-DI-s30"/>
                 <outlet property="timeLab" destination="fOs-Vc-Uyn" id="0lk-fY-Fst"/>
                 <outlet property="vipImageView" destination="rmL-f7-190" id="EsK-eQ-PBE"/>
             </connections>
-            <point key="canvasLocation" x="-195.5" y="-337.5"/>
+            <point key="canvasLocation" x="-195.5" y="-474"/>
         </tableViewCell>
     </objects>
     <resources>

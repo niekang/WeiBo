@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import SDWebImage
 
 class WBStatusListViewModel {
     
@@ -32,11 +33,46 @@ class WBStatusListViewModel {
                     }
                     self.statusList.append(WBStatusViewModel(status: status))
                 }
-
+                
+                self.cachSingleImage(statusLsistViewModel: self.statusList, completion: completion)
+                
+            }else {
+                completion(false)
             }
-            WBLog(self.statusList)
-            completion(isSuccess)
         }
     }
+    
+    
+    func cachSingleImage(statusLsistViewModel:[WBStatusViewModel], completion:@escaping (Bool) -> Void) {
+        
+        if statusList.count > 0 {
+            let group = DispatchGroup()
+            group.enter()
+            for statusViewModel in statusLsistViewModel {
+                guard let pic_urls = statusViewModel.picURLs else {
+                    continue
+                }
+                if pic_urls.count == 1 {
+                    SDWebImageDownloader.shared().downloadImage(with: URL(string: pic_urls[0].thumbnail_pic!), options: [], progress: nil, completed: { (image, _, _, _) in
+                        
+                        if let image = image {
+                            
+                            statusViewModel.updateSingleImageSizeAfterDownload(image: image)
+                        }
+                        
+                    })
+
+                }
+            }
+            group.leave()
+            group.notify(queue: DispatchQueue.main, execute: { 
+                completion(true)
+            })
+        }else{
+            completion(true)
+        }
+    }
+    
+    
     
 }

@@ -36,6 +36,8 @@ class WBStatusCell: UITableViewCell {
     
     @IBOutlet weak var statusPicView: WBStatusPictureView!
     
+    @IBOutlet weak var retweedtedLab: UILabel?
+    
     var statusViewModel:WBStatusViewModel? {
         didSet{
             //姓名
@@ -44,14 +46,31 @@ class WBStatusCell: UITableViewCell {
             memberImageView.image = statusViewModel?.memberIcon
             //认证图标
             vipImageView.image = statusViewModel?.vipIcon
-            //正文
-            contentLab.text = statusViewModel?.status.text
             //设置头像
             iconView.nk_setImage(URLString: statusViewModel?.status.user?.profile_image_url, placeholderImageName: "avatar_default_big", isAvatar: true)
             //设置底部工具条数据
             statusToolBar.statusViewModel = statusViewModel
             //设置配图
-            statusPicView.pic_urls = statusViewModel?.picURLs
+            statusPicView.statusViewModel = statusViewModel
+            //正文
+            contentLab.attributedText = statusViewModel?.statusAttrText
+            //设置被转发微博文字
+            retweedtedLab?.attributedText = statusViewModel?.retweetedAttrText
+            // 设置来源
+            sourceLab.text = statusViewModel?.status.source
+            // 设置时间
+            timeLab.text = statusViewModel?.status.createdDate?.nk_dateDescription
         }
+    }
+    
+    
+    override func awakeFromNib() {
+        /// 离屏渲染
+        layer.drawsAsynchronously = true
+        
+        //栅格化
+        layer.shouldRasterize = true
+        
+        layer.rasterizationScale = UIScreen.main.scale
     }
 }

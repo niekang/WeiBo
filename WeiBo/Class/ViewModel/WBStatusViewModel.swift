@@ -38,7 +38,8 @@ class WBStatusViewModel:CustomStringConvertible{
     var statusAttrText: NSAttributedString?
     /// 转发文字的属性文本
     var retweetedAttrText: NSAttributedString?
-
+    /// 缓存行高
+    var rowHeight: CGFloat = 0
     
     init(status:WBStatus) {
         
@@ -68,9 +69,18 @@ class WBStatusViewModel:CustomStringConvertible{
         commentStr = countString(count: status.comments_count, defaultStr: "评论")
         likeStr = countString(count: status.attitudes_count, defaultStr: "赞")
 
-        //配图
-
+        //设置配图
+         pictureViewSize = caculatePictureViewHeight(count: picURLs?.count)
         
+        // 微博正文的属性文本
+        statusAttrText = NSAttributedString(string: status.text ?? "")
+
+        //设置被转发微博的文字
+        let retweeted = "@" + (status.retweeted_status?.user?.screen_name ?? "")
+     
+        retweetedAttrText = NSAttributedString(string: retweeted + ":" + (status.retweeted_status?.text ?? ""))
+        //计算行高
+        rowHeight = caculateRowHeight()
     }
     
     var description: String {
@@ -79,7 +89,7 @@ class WBStatusViewModel:CustomStringConvertible{
 
 }
 
-fileprivate extension WBStatusViewModel {
+extension WBStatusViewModel {
     /**
      如果数量 == 0，显示默认标题
      如果数量超过 10000，显示 x.xx 万
@@ -105,4 +115,112 @@ fileprivate extension WBStatusViewModel {
         return String(format: "%.02f 万", Double(count) / 10000)
     }
 
+    
+    /// 计算配图视图高度
+    ///
+    /// - Parameter count: 配图数量
+    /// - Returns: 高度
+    func caculatePictureViewHeight(count:Int?) -> CGSize{
+        guard let count = count else {
+            return CGSize.zero
+        }
+        if count == 0 {
+            return CGSize.zero
+        }
+        //计算行数
+        let row = (count - 1)/3 + 1
+        //计算高度
+        let viewHeight = outMargin + CGFloat(row) * imageWidth + innerMargin * (CGFloat(row) - 1)
+        
+        return CGSize(width: picViewWidth, height: viewHeight)
+    }
+    
+    
+    /// 单张图片下载完成后更新配图视图高度约束
+    ///
+    /// - Parameter image:单张缓存配图
+    func updateSingleImageSizeAfterDownload (image:UIImage){
+        
+        var size = image.size
+        let maxWidth: CGFloat = 200
+        let minWidth: CGFloat = 40
+        
+        // 过宽图像处理
+        if size.width > maxWidth {
+            // 设置最大宽度
+            size.width = 200
+            // 等比例调整高度
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
+        // 过窄图像处理
+        if size.width < minWidth {
+            size.width = minWidth
+            
+            // 要特殊处理高度，否则高度太大，会印象用户体验
+            size.height = size.width * image.size.height / image.size.width / 4
+        }
+        
+        // 过高图片处理，图片填充模式就是 scaleToFill，高度减小，会自动裁切
+        if size.height > 200 {
+            size.height = 200
+        }
+        
+        // 注意，尺寸需要增加顶部的 12 个点，便于布局
+        size.height += outMargin
+        
+        // 重新设置配图视图大小
+        pictureViewSize = size
+        //更新行高
+        rowHeight = caculateRowHeight()
+    }
+    
+    
+    /// 计算行高
+    ///
+    /// - Returns: 计算结果
+    func caculateRowHeight() -> CGFloat{
+        // 原创微博：顶部分隔视图(12) + 间距(12) + 图像的高度(34) + 间距(12) + 正文高度(需要计算) + 配图视图高度(计算) + 间距(12) ＋ 底部视图高度(35)
+        // 被转发微博：顶部分隔视图(12) + 间距(12) + 图像的高度(34) + 间距(12) + 正文高度(需要计算) + 间距(12)+间距(12)+转发文本高度(需要计算) + 配图视图高度(计算) + 间距(12) ＋ 底部视图高度(35)
+        
+        let margin: CGFloat = 12
+        let iconHeight: CGFloat = 34
+        let toolbarHeight: CGFloat = 35
+        
+        var height: CGFloat = 0
+        
+        let viewSize = CGSize(width: kWidth - 2 * margin, height: CGFloat(MAXFLOAT))
+        
+        // 1. 计算顶部位置
+        height = 2 * margin + iconHeight + margin
+        
+        // 2. 正文属性文本的高度
+        if let text = statusAttrText {
+            
+            height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
+        }
+        
+        // 3. 判断是否转发微博
+        if status.retweeted_status != nil {
+            
+            height += 2 * margin
+            
+            // 转发文本的高度 - 一定用 retweetedText，拼接了 @用户名:微博文字
+            if let text = retweetedAttrText {
+                
+                height += text.boundingRect(with: viewSize, options: [.usesLineFragmentOrigin], context: nil).height
+            }
+        }
+        
+        // 4. 配图视图
+        height += pictureViewSize.height
+        
+        height += margin
+        
+        // 5. 底部工具栏
+        height += toolbarHeight
+        
+        // 6. 返回计算结果
+        return height
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class WBUser: NSObject {
     /// 用户id
-    var id:Int64?
+    var id:Int64 = 0
     /// 用户昵称
     var screen_name: String?
     /// 用户头像地址（中图），50×50像素
