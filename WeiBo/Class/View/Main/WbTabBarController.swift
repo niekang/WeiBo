@@ -18,14 +18,24 @@ class WbTabBarController: UITabBarController {
     func setup() {
         setControllers()
         addComposeBtn()
+        welcomeView()
     }
 
 }
 
 
-// MARK: - 添加未登录视图
+// MARK: - 添加欢迎视图
 extension WbTabBarController {
-    
+    func welcomeView() {
+        
+        if WBUserAccont.shared.access_token == nil {
+            return
+        }
+        
+        let welcomView = ((UserDefaults.standard.object(forKey: "app_version") as? String) == Bundle.main.version) ? WBWelcomView.welcomeView():WBNewFeatureView.newFeatureView()
+        view.addSubview(welcomView)
+        welcomView.frame = UIScreen.main.bounds
+    }
 }
 
 
