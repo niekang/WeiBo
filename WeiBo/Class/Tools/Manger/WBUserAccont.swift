@@ -17,9 +17,9 @@ class WBUserAccont: NSObject {
 
     var access_token:String?
     
-    var expires_in:Int?
+    var expires_in:Int = 0
     
-    var remind_in:Int?
+    var remind_in:Int = 0
     
     /// 过期日期
     var expiresDate: Date?
@@ -29,7 +29,7 @@ class WBUserAccont: NSObject {
     /// 用户头像地址（大图），180×180像素
     var avatar_large: String?
 
-    var uid:Int?
+    var uid:String?
     
     private override init() {
         super.init()
@@ -81,19 +81,36 @@ extension WBUserAccont {
             }
             //给当前模型赋值
             self.yy_modelSet(with: dict)
-            //将用户信息保存在本地
-            self.saveAccout(json: dict)
-            
-            completion(isSuccess)
+            //请求用户信息
+            self.requestUserInfo(completion: { (isSuccess, json) in
+                guard let dict = json as? [String:AnyObject] else {
+                    return
+                }
+                //给当前模型赋值
+                self.yy_modelSet(with: dict)
+                //将用户信息保存在本地
+                self.saveAccout()
+                completion(isSuccess)
+            })
         })
         
     }
     
     
+    /// 请求用户信息
+    ///
+    /// - Parameter completion: 完成回调
+    func requestUserInfo(completion:@escaping ((Bool, Any?) -> Void)) {
+        let infoApi = "https://api.weibo.com/2/users/show.json"
+        let params = ["uid":uid]
+        WBNetworkManager.shared.request(URLString: infoApi, parameters: params, completion:completion)
+    }
+    
     /// 保存用户信息
     ///
     /// - Parameter json: 用户信息的json数据
-    func saveAccout(json:Any) {
+    func saveAccout() {
+        let json = (self.yy_modelToJSONObject() as? [String:AnyObject]) ?? [:]
         guard let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
             return
         }

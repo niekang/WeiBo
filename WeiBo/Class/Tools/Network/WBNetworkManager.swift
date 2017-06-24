@@ -44,7 +44,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         }
             
         let failure = { (dataTask:URLSessionDataTask?, error:Error) -> () in
-            SVProgressHUD.setMinimumDismissTimeInterval(2)
+            SVProgressHUD.setMinimumDismissTimeInterval(1)
             SVProgressHUD.showError(withStatus: error.localizedDescription)
             completion(false, error)
         }

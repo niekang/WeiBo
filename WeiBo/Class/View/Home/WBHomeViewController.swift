@@ -34,11 +34,7 @@ extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return statusListViewModel.statusList.count
     }
-//    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return statusListViewModel.statusList[indexPath.row].rowHeight
-//    }
-//    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let statusViewModel = statusListViewModel.statusList[indexPath.row]
         let cellId = (statusViewModel.status.retweeted_status != nil) ? retweetedCellId : normalCellId
@@ -64,6 +60,11 @@ extension WBHomeViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention", target: self, action: #selector(leftButtonClick))
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(rightButtonClick))
+        
+        let name = WBUserAccont.shared.screen_name
+        let btn = WBTitleButton(title: name)
+        navigationItem.titleView = btn
+        btn.addTarget(self, action: #selector(titleButtonClick(btn:)), for: .touchUpInside)
     }
     
     func leftButtonClick() {
@@ -73,6 +74,10 @@ extension WBHomeViewController {
     func rightButtonClick() {
         let QRCodeVC = WBQRCodeViewController()
         navigationController?.pushViewController(QRCodeVC, animated: true)
+    }
+    
+    func titleButtonClick(btn:UIButton) {
+        btn.isSelected = !btn.isSelected
     }
 
 }

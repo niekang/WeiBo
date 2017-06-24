@@ -37,6 +37,7 @@
 		822CC27C1EFE6A5500FFEA16 /* WBWelcomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822CC27B1EFE6A5500FFEA16 /* WBWelcomView.xib */; };
 		822CC27F1EFE84C400FFEA16 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822CC27E1EFE84C400FFEA16 /* WBNewFeatureView.swift */; };
 		822CC2811EFE84CB00FFEA16 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822CC2801EFE84CB00FFEA16 /* WBNewFeatureView.xib */; };
+		822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822CC2831EFEA91F00FFEA16 /* WBTitleButton.swift */; };
 		823AE14D1EF8FA1E00CB1D86 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1401EF8FA1D00CB1D86 /* WBDiscoverViewController.swift */; };
 		823AE14E1EF8FA1E00CB1D86 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1421EF8FA1D00CB1D86 /* WBHomeViewController.swift */; };
 		823AE14F1EF8FA1E00CB1D86 /* WBQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1431EF8FA1D00CB1D86 /* WBQRCodeViewController.swift */; };
@@ -104,6 +105,7 @@
 		822CC27B1EFE6A5500FFEA16 /* WBWelcomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBWelcomView.xib; sourceTree = "<group>"; };
 		822CC27E1EFE84C400FFEA16 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		822CC2801EFE84CB00FFEA16 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
+		822CC2831EFEA91F00FFEA16 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
 		823AE1401EF8FA1D00CB1D86 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		823AE1421EF8FA1D00CB1D86 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		823AE1431EF8FA1D00CB1D86 /* WBQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBQRCodeViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,14 @@
 			path = NewFeatureView;
 			sourceTree = "<group>";
 		};
+		822CC2821EFEA90100FFEA16 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				822CC2831EFEA91F00FFEA16 /* WBTitleButton.swift */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
 		823AE13E1EF8FA1D00CB1D86 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,7 @@
 			children = (
 				823AE1421EF8FA1D00CB1D86 /* WBHomeViewController.swift */,
 				823AE1431EF8FA1D00CB1D86 /* WBQRCodeViewController.swift */,
+				822CC2821EFEA90100FFEA16 /* TitleView */,
 				8222C2431EFB5A90008D0114 /* WBStatusCell */,
 			);
 			path = Home;
@@ -634,6 +645,7 @@
 				8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */,
 				823AE1521EF8FA1E00CB1D86 /* WBNavigationController.swift in Sources */,
 				820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */,
+				822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */,
 				8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */,
 				8222C2551EFBAA7D008D0114 /* WBStatusTooBar.swift in Sources */,
 				823AE14E1EF8FA1E00CB1D86 /* WBHomeViewController.swift in Sources */,
