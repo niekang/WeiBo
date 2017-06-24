@@ -16,12 +16,17 @@ class WBNewFeatureView: UIView {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    class func newFeatureView() -> WBNewFeatureView{
+    var enterWB: (() -> ())?
+    
+    class func newFeatureView(enterWB:(() -> ())? = nil) -> WBNewFeatureView{
         let nib = UINib(nibName: "WBNewFeatureView", bundle: nil)
         
-        let welcomeView = nib.instantiate(withOwner: nil, options: nil).first
+        let welcomeView = (nib.instantiate(withOwner: nil, options: nil).first) as! WBNewFeatureView
+        if let enterWB = enterWB {
+            welcomeView.enterWB = enterWB
+        }
         
-        return welcomeView as! WBNewFeatureView
+        return welcomeView
     }
     
     override func awakeFromNib() {
@@ -42,7 +47,8 @@ class WBNewFeatureView: UIView {
     }
 
     @IBAction func enterBtnClick(_ sender: Any) {
-        
+        removeFromSuperview()
+        enterWB?()
     }
 }
 
@@ -52,6 +58,7 @@ extension WBNewFeatureView:UIScrollViewDelegate {
         let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         if page == scrollView.subviews.count {
             removeFromSuperview()
+            enterWB?()
         }
         
         enterBtn.isHidden = (page != scrollView.subviews.count - 1)
@@ -62,6 +69,7 @@ extension WBNewFeatureView:UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x > CGFloat(scrollView.subviews.count - 1) * scrollView.bounds.width {
             removeFromSuperview()
+            enterWB?()
         }
     }
     

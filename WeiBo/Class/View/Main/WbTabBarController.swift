@@ -18,7 +18,7 @@ class WbTabBarController: UITabBarController {
     func setup() {
         setControllers()
         addComposeBtn()
-        welcomeView()
+        newFeatureView()
     }
 
 }
@@ -26,15 +26,31 @@ class WbTabBarController: UITabBarController {
 
 // MARK: - 添加欢迎视图
 extension WbTabBarController {
+    //引导图
+    func newFeatureView() {
+        if ((UserDefaults.standard.object(forKey: "app_version") as? String) != Bundle.main.version) {
+            let newFeatureView = WBNewFeatureView.newFeatureView(enterWB: { [weak self] in
+                self?.welcomeView()
+            })
+            view.addSubview(newFeatureView)
+            newFeatureView.frame = UIScreen.main.bounds
+            
+            UserDefaults.standard.set(Bundle.main.version, forKey: "app_version")
+            UserDefaults.standard.synchronize()
+
+        }else {
+            welcomeView()
+        }
+    }
+    
+    //欢迎界面
     func welcomeView() {
-        
         if WBUserAccont.shared.access_token == nil {
             return
         }
-        
-        let welcomView = ((UserDefaults.standard.object(forKey: "app_version") as? String) == Bundle.main.version) ? WBWelcomView.welcomeView():WBNewFeatureView.newFeatureView()
-        view.addSubview(welcomView)
-        welcomView.frame = UIScreen.main.bounds
+        let welcomeView = WBWelcomView.welcomeView()
+        view.addSubview(welcomeView)
+        welcomeView.frame = UIScreen.main.bounds
     }
 }
 
