@@ -26,8 +26,15 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loginSuccess() {
         super.loginSuccess()
+        setupUI()
+        loadData()
+    }
+    
+    func loadData() {
+        refreshControl.beginRefresh()
         statusListViewModel.loadWBStatusListData() { (isSuccess) in
             self.tableView.reloadData()
+            self.refreshControl.endRefresh()
         }
     }
 }
@@ -49,15 +56,19 @@ extension WBHomeViewController {
 extension WBHomeViewController {
     
     func setupUI() {
-        
-        tableView.register(UINib(nibName: normalCellId, bundle: nil), forCellReuseIdentifier: normalCellId)
-        tableView.register(UINib(nibName: retweetedCellId, bundle: nil), forCellReuseIdentifier: retweetedCellId)
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 300
-        
-        tableView.addSubview(refreshControl)
-        
-        setupBarButtonItems()
+        if navigationItem.titleView == nil{
+            tableView.register(UINib(nibName: normalCellId, bundle: nil), forCellReuseIdentifier: normalCellId)
+            tableView.register(UINib(nibName: retweetedCellId, bundle: nil), forCellReuseIdentifier: retweetedCellId)
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 300
+            
+            tableView.addSubview(refreshControl)
+            
+            refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+            
+            setupBarButtonItems()
+
+        }
     }
     
     func setupBarButtonItems() {
