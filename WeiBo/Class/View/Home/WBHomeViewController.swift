@@ -17,6 +17,8 @@ class WBHomeViewController: WBBaseViewController {
 
     lazy var statusListViewModel = WBStatusListViewModel()
     
+    let refreshControl = NKRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -52,6 +54,8 @@ extension WBHomeViewController {
         tableView.register(UINib(nibName: retweetedCellId, bundle: nil), forCellReuseIdentifier: retweetedCellId)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
+        
+        tableView.addSubview(refreshControl)
         
         setupBarButtonItems()
     }

@@ -54,6 +54,11 @@
 		82A448421EFD5BB100CA3A50 /* Emoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82A448411EFD5BB100CA3A50 /* Emoticon.bundle */; };
 		82C7921F1EFCE9E4004929EF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */; };
 		82C792211EFCFD89004929EF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C792201EFCFD89004929EF /* String+Extension.swift */; };
+		82D6FD481EFFD78300E35C26 /* NKMTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6FD441EFFD78300E35C26 /* NKMTRefreshView.swift */; };
+		82D6FD491EFFD78300E35C26 /* NKMTRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D6FD451EFFD78300E35C26 /* NKMTRefreshView.xib */; };
+		82D6FD4A1EFFD78300E35C26 /* NKRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6FD461EFFD78300E35C26 /* NKRefreshControl.swift */; };
+		82D6FD4B1EFFD78300E35C26 /* NKRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D6FD471EFFD78300E35C26 /* NKRefreshView.xib */; };
+		82D6FD4D1EFFD79D00E35C26 /* NKRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6FD4C1EFFD79D00E35C26 /* NKRefreshView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +133,11 @@
 		82A448411EFD5BB100CA3A50 /* Emoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticon.bundle; sourceTree = "<group>"; };
 		82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		82C792201EFCFD89004929EF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		82D6FD441EFFD78300E35C26 /* NKMTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKMTRefreshView.swift; sourceTree = "<group>"; };
+		82D6FD451EFFD78300E35C26 /* NKMTRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NKMTRefreshView.xib; sourceTree = "<group>"; };
+		82D6FD461EFFD78300E35C26 /* NKRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKRefreshControl.swift; sourceTree = "<group>"; };
+		82D6FD471EFFD78300E35C26 /* NKRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NKRefreshView.xib; sourceTree = "<group>"; };
+		82D6FD4C1EFFD79D00E35C26 /* NKRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKRefreshView.swift; sourceTree = "<group>"; };
 		EDA5D93F9E700ABEB0259962 /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -400,6 +410,7 @@
 		82629EC61EF7B8D800DA2D89 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				82D6FD431EFFD78300E35C26 /* NKRefresh */,
 				82A448401EFD5BB100CA3A50 /* Emotion */,
 				8215BDD71EFA0EC900E0A642 /* Manger */,
 				8204366D1EFA02C100A482FF /* Extension */,
@@ -424,6 +435,18 @@
 				82A448411EFD5BB100CA3A50 /* Emoticon.bundle */,
 			);
 			path = Emotion;
+			sourceTree = "<group>";
+		};
+		82D6FD431EFFD78300E35C26 /* NKRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				82D6FD441EFFD78300E35C26 /* NKMTRefreshView.swift */,
+				82D6FD451EFFD78300E35C26 /* NKMTRefreshView.xib */,
+				82D6FD461EFFD78300E35C26 /* NKRefreshControl.swift */,
+				82D6FD4C1EFFD79D00E35C26 /* NKRefreshView.swift */,
+				82D6FD471EFFD78300E35C26 /* NKRefreshView.xib */,
+			);
+			path = NKRefresh;
 			sourceTree = "<group>";
 		};
 		F33EAE9EADAD3687E0F3E48A /* Frameworks */ = {
@@ -546,9 +569,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8222C24F1EFB6877008D0114 /* WBStatusNormalCell.xib in Resources */,
+				82D6FD491EFFD78300E35C26 /* NKMTRefreshView.xib in Resources */,
 				822CC2811EFE84CB00FFEA16 /* WBNewFeatureView.xib in Resources */,
 				82A448421EFD5BB100CA3A50 /* Emoticon.bundle in Resources */,
 				82629E981EF7B6AB00DA2D89 /* Assets.xcassets in Resources */,
+				82D6FD4B1EFFD78300E35C26 /* NKRefreshView.xib in Resources */,
 				820138801EFC0AFB00244A2B /* WBStatusRetweetedCell.xib in Resources */,
 				822CC27C1EFE6A5500FFEA16 /* WBWelcomView.xib in Resources */,
 			);
@@ -642,6 +667,7 @@
 				823AE14F1EF8FA1E00CB1D86 /* WBQRCodeViewController.swift in Sources */,
 				82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */,
 				820436751EFA02C100A482FF /* Bundle+Extension.swift in Sources */,
+				82D6FD481EFFD78300E35C26 /* NKMTRefreshView.swift in Sources */,
 				8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */,
 				823AE1521EF8FA1E00CB1D86 /* WBNavigationController.swift in Sources */,
 				820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */,
@@ -656,6 +682,8 @@
 				8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */,
 				8215BDF41EFA764E00E0A642 /* WBStatusListViewModel.swift in Sources */,
 				820436761EFA02C100A482FF /* UIBarButtonItem+Extension.swift in Sources */,
+				82D6FD4D1EFFD79D00E35C26 /* NKRefreshView.swift in Sources */,
+				82D6FD4A1EFFD78300E35C26 /* NKRefreshControl.swift in Sources */,
 				8215BDF21EFA72E800E0A642 /* WBRefreshControl.swift in Sources */,
 				8215BDE71EFA630500E0A642 /* WBTableViewController.swift in Sources */,
 				8222C24B1EFB6102008D0114 /* WBStatusPicture.swift in Sources */,
