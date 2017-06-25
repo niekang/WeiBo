@@ -22,7 +22,6 @@
 		8215BDE11EFA234000E0A642 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDE01EFA234000E0A642 /* VisitorView.swift */; };
 		8215BDE51EFA61CF00E0A642 /* WBSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDE41EFA61CF00E0A642 /* WBSuperViewController.swift */; };
 		8215BDE71EFA630500E0A642 /* WBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDE61EFA630500E0A642 /* WBTableViewController.swift */; };
-		8215BDF21EFA72E800E0A642 /* WBRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDF11EFA72E800E0A642 /* WBRefreshControl.swift */; };
 		8215BDF41EFA764E00E0A642 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDF31EFA764E00E0A642 /* WBStatusListViewModel.swift */; };
 		8215BDF81EFA76F700E0A642 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDF71EFA76F700E0A642 /* WBStatus.swift */; };
 		8222C2451EFB5A99008D0114 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222C2441EFB5A99008D0114 /* WBStatusCell.swift */; };
@@ -95,7 +94,6 @@
 		8215BDE01EFA234000E0A642 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		8215BDE41EFA61CF00E0A642 /* WBSuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSuperViewController.swift; sourceTree = "<group>"; };
 		8215BDE61EFA630500E0A642 /* WBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTableViewController.swift; sourceTree = "<group>"; };
-		8215BDF11EFA72E800E0A642 /* WBRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBRefreshControl.swift; sourceTree = "<group>"; };
 		8215BDF31EFA764E00E0A642 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		8215BDF71EFA76F700E0A642 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
 		8222C2441EFB5A99008D0114 /* WBStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
@@ -223,14 +221,6 @@
 				8215BDE01EFA234000E0A642 /* VisitorView.swift */,
 			);
 			path = VisitorView;
-			sourceTree = "<group>";
-		};
-		8215BDEE1EFA71D400E0A642 /* Refresh */ = {
-			isa = PBXGroup;
-			children = (
-				8215BDF11EFA72E800E0A642 /* WBRefreshControl.swift */,
-			);
-			path = Refresh;
 			sourceTree = "<group>";
 		};
 		8222C2431EFB5A90008D0114 /* WBStatusCell */ = {
@@ -415,7 +405,6 @@
 				8215BDD71EFA0EC900E0A642 /* Manger */,
 				8204366D1EFA02C100A482FF /* Extension */,
 				820436741EFA02C100A482FF /* Network */,
-				8215BDEE1EFA71D400E0A642 /* Refresh */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -684,7 +673,6 @@
 				820436761EFA02C100A482FF /* UIBarButtonItem+Extension.swift in Sources */,
 				82D6FD4D1EFFD79D00E35C26 /* NKRefreshView.swift in Sources */,
 				82D6FD4A1EFFD78300E35C26 /* NKRefreshControl.swift in Sources */,
-				8215BDF21EFA72E800E0A642 /* WBRefreshControl.swift in Sources */,
 				8215BDE71EFA630500E0A642 /* WBTableViewController.swift in Sources */,
 				8222C24B1EFB6102008D0114 /* WBStatusPicture.swift in Sources */,
 				820436771EFA02C100A482FF /* UIButton+Extension.swift in Sources */,
