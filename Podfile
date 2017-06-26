@@ -6,4 +6,5 @@ target 'WeiBo' do
   pod 'YYModel'
   pod 'SVProgressHUD'
   pod 'SDWebImage'
+  pod 'pop'
 end

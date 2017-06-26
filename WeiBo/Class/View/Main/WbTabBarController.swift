@@ -111,8 +111,20 @@ extension WbTabBarController {
         tabBar.addSubview(composeBtn)
     }
     
+    //点击加号按钮事件
     func composeBtnClick(sender:UIButton) {
-        
+        let composeView = WBComposeView.composeView()
+        view.addSubview(composeView)
+        composeView.show {[weak self] (clsName) in
+            guard let clsName = clsName,
+                let cls = NSClassFromString(clsName) as? UIViewController.Type else {
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = WBNavigationController(rootViewController: vc)
+            self?.present(nav, animated: true, completion: nil)
+        }
     }
 
 }

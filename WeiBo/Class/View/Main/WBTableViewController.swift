@@ -25,7 +25,6 @@ class WBTableViewController: WBSuperViewController{
         tableView.dataSource = self
         tableView.separatorStyle = .none
         view.addSubview(tableView)
-        
     }
     
     func loadData() {

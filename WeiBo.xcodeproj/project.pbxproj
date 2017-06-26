@@ -58,6 +58,10 @@
 		82D6FD4A1EFFD78300E35C26 /* NKRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6FD461EFFD78300E35C26 /* NKRefreshControl.swift */; };
 		82D6FD4B1EFFD78300E35C26 /* NKRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82D6FD471EFFD78300E35C26 /* NKRefreshView.xib */; };
 		82D6FD4D1EFFD79D00E35C26 /* NKRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6FD4C1EFFD79D00E35C26 /* NKRefreshView.swift */; };
+		82E70A761F00F69E00629E0F /* WBComposeBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E70A721F00F69E00629E0F /* WBComposeBtnView.swift */; };
+		82E70A771F00F69E00629E0F /* WBComposeBtnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E70A731F00F69E00629E0F /* WBComposeBtnView.xib */; };
+		82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E70A741F00F69E00629E0F /* WBComposeView.swift */; };
+		82E70A791F00F69E00629E0F /* WBComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E70A751F00F69E00629E0F /* WBComposeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,10 @@
 		82D6FD461EFFD78300E35C26 /* NKRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKRefreshControl.swift; sourceTree = "<group>"; };
 		82D6FD471EFFD78300E35C26 /* NKRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NKRefreshView.xib; sourceTree = "<group>"; };
 		82D6FD4C1EFFD79D00E35C26 /* NKRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKRefreshView.swift; sourceTree = "<group>"; };
+		82E70A721F00F69E00629E0F /* WBComposeBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeBtnView.swift; sourceTree = "<group>"; };
+		82E70A731F00F69E00629E0F /* WBComposeBtnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeBtnView.xib; sourceTree = "<group>"; };
+		82E70A741F00F69E00629E0F /* WBComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeView.swift; sourceTree = "<group>"; };
+		82E70A751F00F69E00629E0F /* WBComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeView.xib; sourceTree = "<group>"; };
 		EDA5D93F9E700ABEB0259962 /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,6 +309,7 @@
 				8215BDE41EFA61CF00E0A642 /* WBSuperViewController.swift */,
 				8215BDE61EFA630500E0A642 /* WBTableViewController.swift */,
 				823AE1451EF8FA1E00CB1D86 /* Const.swift */,
+				82E70A711F00F69E00629E0F /* ComposeView */,
 				8215BDDC1EFA219B00E0A642 /* OAuth */,
 				8215BDDF1EFA234000E0A642 /* VisitorView */,
 				822CC2781EFE6A1300FFEA16 /* WelcomeVIew */,
@@ -438,6 +447,17 @@
 			path = NKRefresh;
 			sourceTree = "<group>";
 		};
+		82E70A711F00F69E00629E0F /* ComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				82E70A721F00F69E00629E0F /* WBComposeBtnView.swift */,
+				82E70A731F00F69E00629E0F /* WBComposeBtnView.xib */,
+				82E70A741F00F69E00629E0F /* WBComposeView.swift */,
+				82E70A751F00F69E00629E0F /* WBComposeView.xib */,
+			);
+			path = ComposeView;
+			sourceTree = "<group>";
+		};
 		F33EAE9EADAD3687E0F3E48A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,7 +577,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E70A791F00F69E00629E0F /* WBComposeView.xib in Resources */,
 				8222C24F1EFB6877008D0114 /* WBStatusNormalCell.xib in Resources */,
+				82E70A771F00F69E00629E0F /* WBComposeBtnView.xib in Resources */,
 				82D6FD491EFFD78300E35C26 /* NKMTRefreshView.xib in Resources */,
 				822CC2811EFE84CB00FFEA16 /* WBNewFeatureView.xib in Resources */,
 				82A448421EFD5BB100CA3A50 /* Emoticon.bundle in Resources */,
@@ -627,7 +649,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -653,11 +675,13 @@
 				8215BDE11EFA234000E0A642 /* VisitorView.swift in Sources */,
 				82C7921F1EFCE9E4004929EF /* NSDate+Extension.swift in Sources */,
 				8215BDE51EFA61CF00E0A642 /* WBSuperViewController.swift in Sources */,
+				82E70A761F00F69E00629E0F /* WBComposeBtnView.swift in Sources */,
 				823AE14F1EF8FA1E00CB1D86 /* WBQRCodeViewController.swift in Sources */,
 				82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */,
 				820436751EFA02C100A482FF /* Bundle+Extension.swift in Sources */,
 				82D6FD481EFFD78300E35C26 /* NKMTRefreshView.swift in Sources */,
 				8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */,
+				82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */,
 				823AE1521EF8FA1E00CB1D86 /* WBNavigationController.swift in Sources */,
 				820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */,
 				822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */,
