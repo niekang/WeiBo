@@ -14,9 +14,12 @@ class WBStatusListViewModel {
     
     var statusList = [WBStatusViewModel]()
     
-    func loadWBStatusListData(since_id:Int64 = 0, max_id:Int64 = 0, count:Int = 20, completion:@escaping (Bool)->Void) {
+    func loadWBStatusListData(isHeader:Bool = true, completion:@escaping (Bool)->Void) {
         
-        let parameters = ["since_id":"\(since_id)","max_id":"\(max_id)","count":"\(count)"]
+        let since_id = isHeader ? (statusList.first?.status.id ?? 0) : 0
+        let max_id = isHeader ? 0 : ((statusList.last?.status.id ?? 0) - 1)
+        
+        let parameters = ["since_id":"\(since_id)","max_id":"\(max_id)"]
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
@@ -27,13 +30,20 @@ class WBStatusListViewModel {
                     return
                 }
                 
+                var array = [WBStatusViewModel]()
                 for dict in statuses {
                     guard let status = WBStatus.yy_model(with: dict) else {
                         continue
                     }
-                    self.statusList.append(WBStatusViewModel(status: status))
+                    array.append(WBStatusViewModel(status: status))
                 }
                 
+                if isHeader {
+                    self.statusList = array + self.statusList
+                }else{
+                    self.statusList += array
+                }
+
                 self.cachSingleImage(statusLsistViewModel: self.statusList, completion: completion)
                 
             }else {

@@ -12,6 +12,8 @@ class WBTableViewController: WBSuperViewController{
     
     lazy var tableView = UITableView()
     
+    var isHeader = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -25,6 +27,10 @@ class WBTableViewController: WBSuperViewController{
         view.addSubview(tableView)
         
     }
+    
+    func loadData() {
+        
+    }
 }
 
 extension WBTableViewController: UITableViewDelegate, UITableViewDataSource{
@@ -36,5 +42,23 @@ extension WBTableViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         return UITableViewCell()
+    }
+    
+    /// 当滑到底部的时候加载数据
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && isHeader{
+            isHeader = false
+            
+            loadData()
+        }
     }
 }

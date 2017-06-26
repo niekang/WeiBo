@@ -20,8 +20,8 @@ class WBHomeViewController: WBBaseViewController {
     let refreshControl = NKRefreshControl()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         setupUI()
+        super.viewDidLoad()
     }
     
     override func loginSuccess() {
@@ -30,9 +30,12 @@ class WBHomeViewController: WBBaseViewController {
         loadData()
     }
     
-    func loadData() {
-        refreshControl.beginRefresh()
-        statusListViewModel.loadWBStatusListData() { (isSuccess) in
+    override func loadData() {
+        if isHeader {
+            refreshControl.beginRefresh()
+        }
+        statusListViewModel.loadWBStatusListData(isHeader: isHeader) { (isSuccess) in
+            self.isHeader = true
             self.tableView.reloadData()
             self.refreshControl.endRefresh()
         }

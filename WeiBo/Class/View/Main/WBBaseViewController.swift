@@ -49,4 +49,5 @@ extension WBBaseViewController {
     func logOut() {
         view.addSubview(visitorView)
     }
+    
 }
