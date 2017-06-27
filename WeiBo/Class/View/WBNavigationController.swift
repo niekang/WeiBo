@@ -14,13 +14,15 @@ class WBNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// 导航栏设置
         setupNavigationBarAppearance()
     }
     
     func setupNavigationBarAppearance() {
         navigationBar.barTintColor =  UIColor.nk_hexColor(hex: 0xF6F6F6)
     }
-    
+
+    /// 重载push函数 添加统一‘返回’按钮
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if childViewControllers.count > 0 {
             
@@ -34,6 +36,7 @@ class WBNavigationController: UINavigationController {
         super.pushViewController(viewController, animated: animated)
     }
     
+    /// 返回按钮事件
     func backAction() {
         popViewController(animated: true)
     }

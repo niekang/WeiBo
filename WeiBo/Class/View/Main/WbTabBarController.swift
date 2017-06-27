@@ -16,8 +16,11 @@ class WbTabBarController: UITabBarController {
     }
     
     func setup() {
+        /// 添加子控制器
         setControllers()
+        /// 添加加号按钮
         addComposeBtn()
+        /// 添加引导页面
         newFeatureView()
     }
 
@@ -117,7 +120,7 @@ extension WbTabBarController {
         view.addSubview(composeView)
         composeView.show {[weak self] (clsName) in
             guard let clsName = clsName,
-                let cls = NSClassFromString(clsName) as? UIViewController.Type else {
+                let cls = NSClassFromString(Bundle.main.nameSpace + "." + clsName) as? UIViewController.Type else {
                 return
             }
             

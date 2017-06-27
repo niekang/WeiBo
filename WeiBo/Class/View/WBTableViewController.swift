@@ -12,7 +12,7 @@ class WBTableViewController: WBSuperViewController{
     
     lazy var tableView = UITableView()
     
-    var isHeader = true
+    var isHeader = true  /// 是否是下拉
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,6 @@ extension WBTableViewController: UITableViewDelegate, UITableViewDataSource{
         return UITableViewCell()
     }
     
-    /// 当滑到底部的时候加载数据
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let section = indexPath.section
@@ -54,6 +53,7 @@ extension WBTableViewController: UITableViewDelegate, UITableViewDataSource{
         
         let count = tableView.numberOfRows(inSection: section)
         
+        /// 当滑到底部的时候加载数据
         if row == (count - 1) && isHeader{
             isHeader = false
             

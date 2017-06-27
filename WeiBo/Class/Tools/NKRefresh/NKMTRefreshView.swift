@@ -20,7 +20,6 @@ class NKMTRefreshView: NKRefreshView {
     /// 父视图高度
     override var parentViewHeight: CGFloat {
         didSet {
-            print("父视图高度 \(parentViewHeight)")
             
             if parentViewHeight < 50 {
                 return

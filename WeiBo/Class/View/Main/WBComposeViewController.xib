@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WBComposeViewController" customModule="WeiBo" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstant" destination="nla-EH-XYi" id="3XQ-SE-TCJ"/>
+                <outlet property="sendBtn" destination="7b7-7v-3TE" id="39P-Pq-5wk"/>
+                <outlet property="textView" destination="eg7-Dg-IXm" id="TmL-l0-4Vi"/>
+                <outlet property="titleBtn" destination="6Fa-3A-v41" id="70m-T8-ZpP"/>
+                <outlet property="toolbar" destination="gWH-Rp-4Vh" id="zS2-xH-Owa"/>
+                <outlet property="view" destination="iN0-l3-epB" id="9lI-b1-pUw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eg7-Dg-IXm" customClass="NKTextView" customModule="WeiBo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWH-Rp-4Vh">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <items/>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gWH-Rp-4Vh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AiD-Hc-edt"/>
+                <constraint firstItem="eg7-Dg-IXm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZAx-d2-4uw"/>
+                <constraint firstItem="gWH-Rp-4Vh" firstAttribute="top" secondItem="eg7-Dg-IXm" secondAttribute="bottom" id="ZcV-8k-ISz"/>
+                <constraint firstAttribute="trailing" secondItem="gWH-Rp-4Vh" secondAttribute="trailing" id="enu-32-Nh9"/>
+                <constraint firstAttribute="bottom" secondItem="gWH-Rp-4Vh" secondAttribute="bottom" id="nla-EH-XYi"/>
+                <constraint firstItem="eg7-Dg-IXm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rUV-NL-Efs"/>
+                <constraint firstAttribute="trailing" secondItem="eg7-Dg-IXm" secondAttribute="trailing" id="vUm-L8-Yiw"/>
+            </constraints>
+            <point key="canvasLocation" x="-50" y="-101"/>
+        </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Fa-3A-v41">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <attributedString key="attributedText">
+                <fragment>
+                    <string key="content">发微博
+</string>
+                    <attributes>
+                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content=" ">
+                    <attributes>
+                        <font key="NSFont" size="5" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment>
+                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                    <attributes>
+                        <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content="聂康">
+                    <attributes>
+                        <color key="NSColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <font key="NSFont" size="13" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+            </attributedString>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="-531" y="-79.5"/>
+        </label>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7b7-7v-3TE">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="发布" backgroundImage="common_button_orange">
+                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+            <connections>
+                <action selector="sendBtnClick:" destination="-1" eventType="touchUpInside" id="WVn-8V-DPn"/>
+            </connections>
+            <point key="canvasLocation" x="-551" y="15.5"/>
+        </button>
+    </objects>
+    <resources>
+        <image name="common_button_orange" width="11" height="35"/>
+        <image name="common_button_white_disable" width="11" height="35"/>
+    </resources>
+</document>

@@ -10,10 +10,6 @@ import UIKit
 import pop
 
 class WBComposeView: UIView {
-    
-    deinit {
-        print("释放了")
-    }
 
     @IBOutlet weak var closeBtn: UIButton!
     

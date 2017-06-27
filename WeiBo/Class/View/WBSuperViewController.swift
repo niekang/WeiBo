@@ -9,10 +9,13 @@
 import UIKit
 
 class WBSuperViewController: UIViewController {
+    
+    deinit {
+        WBLog("\(self.classForCoder)" + "释放了")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-
     }
 }

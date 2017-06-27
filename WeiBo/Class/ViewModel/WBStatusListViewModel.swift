@@ -14,11 +14,18 @@ class WBStatusListViewModel {
     
     var statusList = [WBStatusViewModel]()
     
+    
+    /// 加载微博数据
+    ///
+    /// - Parameters:
+    ///   - isHeader: 是否是下拉
+    ///   - completion: 回调
     func loadWBStatusListData(isHeader:Bool = true, completion:@escaping (Bool)->Void) {
         
-        let since_id = isHeader ? (statusList.first?.status.id ?? 0) : 0
-        let max_id = isHeader ? 0 : ((statusList.last?.status.id ?? 0) - 1)
+        let since_id = isHeader ? (statusList.first?.status.id ?? 0) : 0 //当since_id存在时返回大于max_id的数据
+        let max_id = isHeader ? 0 : ((statusList.last?.status.id ?? 0) - 1) // 当max_id存在时返回小于等于max_id的数据
         
+        /// count 不存在默认返回20条数据
         let parameters = ["since_id":"\(since_id)","max_id":"\(max_id)"]
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
@@ -37,13 +44,15 @@ class WBStatusListViewModel {
                     }
                     array.append(WBStatusViewModel(status: status))
                 }
-                
                 if isHeader {
+                    /// 下拉的时候 将数据拼接到数组前面
                     self.statusList = array + self.statusList
                 }else{
+                    /// 上拉的时候 将数据拼接到数组后面
                     self.statusList += array
                 }
 
+                /// 缓存单张视图
                 self.cachSingleImage(statusLsistViewModel: self.statusList, completion: completion)
                 
             }else {
@@ -53,6 +62,11 @@ class WBStatusListViewModel {
     }
     
     
+    /// 缓存单张视图
+    ///
+    /// - Parameters:
+    ///   - statusLsistViewModel: 所有微博数据
+    ///   - completion: 所有单张视图缓存完毕之后的回调
     func cachSingleImage(statusLsistViewModel:[WBStatusViewModel], completion:@escaping (Bool) -> Void) {
         
         if statusList.count > 0 {

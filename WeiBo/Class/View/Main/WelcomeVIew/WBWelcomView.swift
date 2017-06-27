@@ -14,6 +14,8 @@ class WBWelcomView: UIView {
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     
     @IBOutlet weak var welcomLabel: UILabel!
+    
+    
     class func welcomeView() -> WBWelcomView{
         let nib = UINib(nibName: "WBWelcomView", bundle: nil)
         
@@ -29,12 +31,14 @@ class WBWelcomView: UIView {
             let url = URL(string: avatar) else {
             return
         }
+        /// 设置用户头像
         iconView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "avatar_default_big"))
         
     }
     
     override func didMoveToWindow() {
         
+        //强制更新约束
         self.layoutIfNeeded()
         
         bottomConstant.constant = UIScreen.main.bounds.size.height - 200

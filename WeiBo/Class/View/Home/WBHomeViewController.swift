@@ -15,25 +15,27 @@ private let retweetedCellId = "WBStatusRetweetedCell"
 
 class WBHomeViewController: WBBaseViewController {
 
-    lazy var statusListViewModel = WBStatusListViewModel()
+    lazy var statusListViewModel = WBStatusListViewModel() // ViewModel 处理微博数据
     
-    let refreshControl = NKRefreshControl()
+    let refreshControl = NKRefreshControl() /// 下拉刷新控件
     
     override func viewDidLoad() {
-        setupUI()
+        setupUI() //在判断登录状态之前 注册table 接收到登录通知之后 显示数据
         super.viewDidLoad()
     }
     
     override func loginSuccess() {
         super.loginSuccess()
-        setupUI()
-        loadData()
+        setupUI() /// 注册table
+        loadData() // 加载数据
     }
     
     override func loadData() {
+        /// 如果是下拉，显示下拉动画
         if isHeader {
             refreshControl.beginRefresh()
         }
+        
         statusListViewModel.loadWBStatusListData(isHeader: isHeader) { (isSuccess) in
             self.isHeader = true
             self.tableView.reloadData()
