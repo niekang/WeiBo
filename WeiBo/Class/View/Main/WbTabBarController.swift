@@ -16,10 +16,9 @@ class WbTabBarController: UITabBarController {
     }
     
     func setup() {
-        /// 添加子控制器
-        setControllers()
-        /// 添加加号按钮
-        addComposeBtn()
+        /// 设置tabbar不透明
+        tabBar.barTintColor = UIColor.white
+//        tabBar.isTranslucent = false  //也可以
         /// 添加引导页面
         newFeatureView()
     }
@@ -31,6 +30,9 @@ class WbTabBarController: UITabBarController {
 extension WbTabBarController {
     //引导图
     func newFeatureView() {
+        /// 比较本地的版本与当前版本 判断是否是更新之后进入app
+        /// 1> 如果是 显示新特新界面
+        /// 2> 如果不是 继续判断是否显示欢迎界面
         if ((UserDefaults.standard.object(forKey: "app_version") as? String) != Bundle.main.version) {
             let newFeatureView = WBNewFeatureView.newFeatureView(enterWB: { [weak self] in
                 self?.welcomeView()
@@ -49,9 +51,14 @@ extension WbTabBarController {
     //欢迎界面
     func welcomeView() {
         if WBUserAccont.shared.access_token == nil {
+            /// 未登录显示子控制器
+            setupTabbar()
             return
         }
-        let welcomeView = WBWelcomView.welcomeView()
+        /// 已登录先显示欢迎界面
+        let welcomeView = WBWelcomView.welcomeView {[weak self] in
+            self?.setupTabbar()
+        }
         view.addSubview(welcomeView)
         welcomeView.frame = UIScreen.main.bounds
     }
@@ -60,6 +67,14 @@ extension WbTabBarController {
 
 // MARK: - 添加子控制器
 extension WbTabBarController {
+    
+    func setupTabbar() {
+        /// 添加子控制器
+        setControllers()
+        /// 添加加号按钮
+        addComposeBtn()
+    }
+    
     /// 准备子控制器创建信息
     func setControllers() {
         let dictArray = [
@@ -78,8 +93,9 @@ extension WbTabBarController {
         for dict in dictArray {
             let vc = controller(dict: dict)
             vcsArray.append(vc)
+            vc.view.backgroundColor = UIColor.nk_randomColor()
         }
-        
+    
         viewControllers = vcsArray
     }
     

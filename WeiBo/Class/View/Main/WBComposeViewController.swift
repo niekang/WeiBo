@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class WBComposeViewController: WBSuperViewController {
 
     @IBOutlet var titleBtn: UILabel!
-    
 
     @IBOutlet var sendBtn: UIButton!
     
@@ -20,6 +20,9 @@ class WBComposeViewController: WBSuperViewController {
     @IBOutlet weak var textView: NKTextView!
     
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
+    
+    lazy var emmotionInputView = EmotionInputView.inputView()
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -71,16 +74,37 @@ class WBComposeViewController: WBSuperViewController {
         
         bottomConstant.constant = view.bounds.height - rect.origin.y
         
+        emmotionInputView.frame.size.height = rect.size.height
+        
         UIView.animate(withDuration: duration) {
             self.view.layoutIfNeeded()
         }
         
-        WBLog(duration)
     }
     
     /// 点击发布
-   
     @IBAction func sendBtnClick(_ sender: Any) {
+        
+        guard let text = textView.text else {
+            return
+        }
+        
+        let image:UIImage? = nil
+        
+        WBNetworkManager.shared.uploadWB(text: text, image: image) { (isSuccess, json) in
+            if isSuccess {
+                SVProgressHUD.setMaximumDismissTimeInterval(1)
+                SVProgressHUD.showSuccess(withStatus: "发布成功")
+                NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: WBHomeVCShouldRefresh), object: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    /// 表情键盘
+    func emoticonKeyboard() {
+        textView.inputView = (textView.inputView == nil) ? emmotionInputView : nil
+        textView.reloadInputViews()
     }
     
 }
@@ -100,7 +124,6 @@ extension WBComposeViewController {
         sendBtn.isEnabled = false
         navigationItem.titleView = titleBtn
         
-        WBLog(sendBtn.isEnabled)
     }
     
     /// 返回
@@ -135,6 +158,10 @@ extension WBComposeViewController {
             
             let spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             items.append(spaceItem)
+            
+            if let actionName = dict["actionName"] {
+                btn.addTarget(self, action: Selector(actionName), for: .touchUpInside)
+            }
         }
         
         items.removeLast()

@@ -74,6 +74,8 @@ extension WBHomeViewController {
             setupBarButtonItems()
 
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData), name: NSNotification.Name.init(rawValue: WBHomeVCShouldRefresh), object: nil)
     }
     
     func setupBarButtonItems() {

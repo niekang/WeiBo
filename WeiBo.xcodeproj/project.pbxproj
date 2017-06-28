@@ -35,6 +35,7 @@
 		822CC27F1EFE84C400FFEA16 /* WBNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822CC27E1EFE84C400FFEA16 /* WBNewFeatureView.swift */; };
 		822CC2811EFE84CB00FFEA16 /* WBNewFeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 822CC2801EFE84CB00FFEA16 /* WBNewFeatureView.xib */; };
 		822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822CC2831EFEA91F00FFEA16 /* WBTitleButton.swift */; };
+		8236973C1F03964C006CE70E /* EmotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8236973B1F03964C006CE70E /* EmotionManager.swift */; };
 		823AE14D1EF8FA1E00CB1D86 /* WBDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1401EF8FA1D00CB1D86 /* WBDiscoverViewController.swift */; };
 		823AE14E1EF8FA1E00CB1D86 /* WBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1421EF8FA1D00CB1D86 /* WBHomeViewController.swift */; };
 		823AE14F1EF8FA1E00CB1D86 /* WBQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1431EF8FA1D00CB1D86 /* WBQRCodeViewController.swift */; };
@@ -47,13 +48,17 @@
 		824AFBE11F0231090040C222 /* WBSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDC1F0231090040C222 /* WBSuperViewController.swift */; };
 		824AFBE21F0231090040C222 /* WBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDD1F0231090040C222 /* WBTableViewController.swift */; };
 		824AFBED1F0233D00040C222 /* NKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBEC1F0233D00040C222 /* NKTextView.swift */; };
+		825CFF841F039B8D0089AE3C /* EmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825CFF831F039B8D0089AE3C /* EmotionPackage.swift */; };
+		825CFF861F039C750089AE3C /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825CFF851F039C750089AE3C /* Emotion.swift */; };
+		825CFF891F03AE3C0089AE3C /* EmotionInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825CFF881F03AE3C0089AE3C /* EmotionInputView.swift */; };
+		825CFF8B1F03AE6C0089AE3C /* EmotionInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 825CFF8A1F03AE6C0089AE3C /* EmotionInputView.xib */; };
 		82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629E901EF7B6AB00DA2D89 /* AppDelegate.swift */; };
 		82629E981EF7B6AB00DA2D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82629E971EF7B6AB00DA2D89 /* Assets.xcassets */; };
 		82629EA61EF7B6AB00DA2D89 /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EA51EF7B6AB00DA2D89 /* WeiBoTests.swift */; };
 		82629EB11EF7B6AB00DA2D89 /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */; };
 		827319AC1F024C7E005E6FE0 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827319AA1F024C7E005E6FE0 /* WBComposeViewController.swift */; };
 		827319AD1F024C7E005E6FE0 /* WBComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827319AB1F024C7E005E6FE0 /* WBComposeViewController.xib */; };
-		82A448421EFD5BB100CA3A50 /* Emoticon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82A448411EFD5BB100CA3A50 /* Emoticon.bundle */; };
+		82A448421EFD5BB100CA3A50 /* Emotion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82A448411EFD5BB100CA3A50 /* Emotion.bundle */; };
 		82C7921F1EFCE9E4004929EF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */; };
 		82C792211EFCFD89004929EF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C792201EFCFD89004929EF /* String+Extension.swift */; };
 		82D6FD481EFFD78300E35C26 /* NKMTRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6FD441EFFD78300E35C26 /* NKMTRefreshView.swift */; };
@@ -114,6 +119,7 @@
 		822CC27E1EFE84C400FFEA16 /* WBNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNewFeatureView.swift; sourceTree = "<group>"; };
 		822CC2801EFE84CB00FFEA16 /* WBNewFeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBNewFeatureView.xib; sourceTree = "<group>"; };
 		822CC2831EFEA91F00FFEA16 /* WBTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTitleButton.swift; sourceTree = "<group>"; };
+		8236973B1F03964C006CE70E /* EmotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionManager.swift; sourceTree = "<group>"; };
 		823AE1401EF8FA1D00CB1D86 /* WBDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDiscoverViewController.swift; sourceTree = "<group>"; };
 		823AE1421EF8FA1D00CB1D86 /* WBHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBHomeViewController.swift; sourceTree = "<group>"; };
 		823AE1431EF8FA1D00CB1D86 /* WBQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBQRCodeViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +132,10 @@
 		824AFBDC1F0231090040C222 /* WBSuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSuperViewController.swift; sourceTree = "<group>"; };
 		824AFBDD1F0231090040C222 /* WBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTableViewController.swift; sourceTree = "<group>"; };
 		824AFBEC1F0233D00040C222 /* NKTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKTextView.swift; sourceTree = "<group>"; };
+		825CFF831F039B8D0089AE3C /* EmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionPackage.swift; sourceTree = "<group>"; };
+		825CFF851F039C750089AE3C /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		825CFF881F03AE3C0089AE3C /* EmotionInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionInputView.swift; sourceTree = "<group>"; };
+		825CFF8A1F03AE6C0089AE3C /* EmotionInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmotionInputView.xib; sourceTree = "<group>"; };
 		82629E8D1EF7B6AB00DA2D89 /* WeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82629E901EF7B6AB00DA2D89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82629E971EF7B6AB00DA2D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,7 +148,7 @@
 		82629EB21EF7B6AB00DA2D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		827319AA1F024C7E005E6FE0 /* WBComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
 		827319AB1F024C7E005E6FE0 /* WBComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeViewController.xib; sourceTree = "<group>"; };
-		82A448411EFD5BB100CA3A50 /* Emoticon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticon.bundle; sourceTree = "<group>"; };
+		82A448411EFD5BB100CA3A50 /* Emotion.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emotion.bundle; sourceTree = "<group>"; };
 		82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		82C792201EFCFD89004929EF /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		82D6FD441EFFD78300E35C26 /* NKMTRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKMTRefreshView.swift; sourceTree = "<group>"; };
@@ -350,6 +360,15 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
+		825CFF871F03AE230089AE3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				825CFF881F03AE3C0089AE3C /* EmotionInputView.swift */,
+				825CFF8A1F03AE6C0089AE3C /* EmotionInputView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		82629E841EF7B6AB00DA2D89 = {
 			isa = PBXGroup;
 			children = (
@@ -447,7 +466,11 @@
 		82A448401EFD5BB100CA3A50 /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
-				82A448411EFD5BB100CA3A50 /* Emoticon.bundle */,
+				825CFF871F03AE230089AE3C /* View */,
+				8236973B1F03964C006CE70E /* EmotionManager.swift */,
+				825CFF831F039B8D0089AE3C /* EmotionPackage.swift */,
+				825CFF851F039C750089AE3C /* Emotion.swift */,
+				82A448411EFD5BB100CA3A50 /* Emotion.bundle */,
 			);
 			path = Emotion;
 			sourceTree = "<group>";
@@ -601,11 +624,12 @@
 				82E70A771F00F69E00629E0F /* WBComposeBtnView.xib in Resources */,
 				82D6FD491EFFD78300E35C26 /* NKMTRefreshView.xib in Resources */,
 				822CC2811EFE84CB00FFEA16 /* WBNewFeatureView.xib in Resources */,
-				82A448421EFD5BB100CA3A50 /* Emoticon.bundle in Resources */,
+				82A448421EFD5BB100CA3A50 /* Emotion.bundle in Resources */,
 				82629E981EF7B6AB00DA2D89 /* Assets.xcassets in Resources */,
 				82D6FD4B1EFFD78300E35C26 /* NKRefreshView.xib in Resources */,
 				820138801EFC0AFB00244A2B /* WBStatusRetweetedCell.xib in Resources */,
 				822CC27C1EFE6A5500FFEA16 /* WBWelcomView.xib in Resources */,
+				825CFF8B1F03AE6C0089AE3C /* EmotionInputView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,10 +710,12 @@
 				8222C2531EFB9714008D0114 /* UIImage+Extension.swift in Sources */,
 				8204367A1EFA02C100A482FF /* UIViewFrame+Extension.swift in Sources */,
 				82C792211EFCFD89004929EF /* String+Extension.swift in Sources */,
+				8236973C1F03964C006CE70E /* EmotionManager.swift in Sources */,
 				8222C24D1EFB6454008D0114 /* WBStatusViewModel.swift in Sources */,
 				824AFBE11F0231090040C222 /* WBSuperViewController.swift in Sources */,
 				827319AC1F024C7E005E6FE0 /* WBComposeViewController.swift in Sources */,
 				824AFBE01F0231090040C222 /* WBNavigationController.swift in Sources */,
+				825CFF861F039C750089AE3C /* Emotion.swift in Sources */,
 				820436791EFA02C100A482FF /* UILabel+Extension.swift in Sources */,
 				8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */,
 				822CC27A1EFE6A4400FFEA16 /* WBWelcomView.swift in Sources */,
@@ -699,6 +725,7 @@
 				823AE14F1EF8FA1E00CB1D86 /* WBQRCodeViewController.swift in Sources */,
 				82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */,
 				820436751EFA02C100A482FF /* Bundle+Extension.swift in Sources */,
+				825CFF891F03AE3C0089AE3C /* EmotionInputView.swift in Sources */,
 				82D6FD481EFFD78300E35C26 /* NKMTRefreshView.swift in Sources */,
 				8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */,
 				82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */,
@@ -719,6 +746,7 @@
 				82D6FD4D1EFFD79D00E35C26 /* NKRefreshView.swift in Sources */,
 				82D6FD4A1EFFD78300E35C26 /* NKRefreshControl.swift in Sources */,
 				8222C24B1EFB6102008D0114 /* WBStatusPicture.swift in Sources */,
+				825CFF841F039B8D0089AE3C /* EmotionPackage.swift in Sources */,
 				820436771EFA02C100A482FF /* UIButton+Extension.swift in Sources */,
 				8215BDF81EFA76F700E0A642 /* WBStatus.swift in Sources */,
 				824AFBDE1F0231090040C222 /* Const.swift in Sources */,

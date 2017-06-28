@@ -25,6 +25,7 @@ let kTabBarHeight = 49 as CGFloat
 let WBLoginSuccessNotification = "WBLoginNotification"
 let WBLogOutNotification = "WBNotLoginNotification"
 
+let WBHomeVCShouldRefresh = "WBHomeVCShouldRefresh" // 有新的微博消息
 
 func WBLog<T>(_ item:T){
     #if DEBUG

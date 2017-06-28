@@ -18,6 +18,11 @@ class WBNewFeatureView: UIView {
     
     var enterWB: (() -> ())?
     
+    
+    /// 从xib加载视图
+    ///
+    /// - Parameter enterWB: 进入app回调
+    /// - Returns: 返回视图
     class func newFeatureView(enterWB:(() -> ())? = nil) -> WBNewFeatureView{
         let nib = UINib(nibName: "WBNewFeatureView", bundle: nil)
         
@@ -29,6 +34,7 @@ class WBNewFeatureView: UIView {
         return welcomeView
     }
     
+    /// 布局scrollView
     override func awakeFromNib() {
         let rect = UIScreen.main.bounds
         for i in 0..<4 {
@@ -43,9 +49,9 @@ class WBNewFeatureView: UIView {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
         enterBtn.isHidden = true
-        WBLog(subviews)
     }
 
+    /// 进入微博按钮点击
     @IBAction func enterBtnClick(_ sender: Any) {
         removeFromSuperview()
         enterWB?()
@@ -54,7 +60,9 @@ class WBNewFeatureView: UIView {
 
 extension WBNewFeatureView:UIScrollViewDelegate {
     
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        /// 计算当前在哪一页
         let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         if page == scrollView.subviews.count {
             removeFromSuperview()

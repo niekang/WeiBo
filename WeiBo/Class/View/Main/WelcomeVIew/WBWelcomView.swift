@@ -15,13 +15,16 @@ class WBWelcomView: UIView {
     
     @IBOutlet weak var welcomLabel: UILabel!
     
+    var completion: (()->())?
     
-    class func welcomeView() -> WBWelcomView{
+    class func welcomeView(completion:(()->())?) -> WBWelcomView{
         let nib = UINib(nibName: "WBWelcomView", bundle: nil)
         
-        let welcomeView = nib.instantiate(withOwner: nil, options: nil).first
+        let welcomeView = nib.instantiate(withOwner: nil, options: nil).first as! WBWelcomView
         
-        return welcomeView as! WBWelcomView
+        welcomeView.completion = completion
+        
+        return welcomeView
     }
     
     override func awakeFromNib() {
@@ -55,9 +58,16 @@ class WBWelcomView: UIView {
             UIView.animate(withDuration: 1, animations: { 
                 self.welcomLabel.alpha = 1
             }, completion: { (_) in
-                self.perform(#selector(self.removeFromSuperview), with: nil, afterDelay: 1)
+                self.perform(#selector(self.enterApplication), with: nil, afterDelay: 0.5)
             })
         }
+    }
+    
+    func enterApplication() {
+        removeFromSuperview()
+        completion?()
+        /// 调用removeFromSuperview后 会再次调用didMoveToWindow 所以为了防止回调两次 释放 completion
+        completion = nil
     }
     
 }

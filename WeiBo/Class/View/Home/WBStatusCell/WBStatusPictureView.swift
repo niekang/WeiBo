@@ -47,17 +47,16 @@ class WBStatusPictureView: UIView {
                                          height: imageWidth)
             }
             
-            var index = 0
             for (i, url) in urls.enumerated() {
-                index = i
-                let imageView = subviews[index] as! UIImageView
-                imageView.nk_setImage(URLString: url.thumbnail_pic, placeholderImageName: nil)
-                imageView.isHidden = false
-                
+                var index = i
                 //4张配图的时候特殊处理
                 if (i == 2 || i == 3) && urls.count == 4 {
                     index = i + 1
                 }
+                let imageView = subviews[index] as! UIImageView
+                imageView.nk_setImage(URLString: url.thumbnail_pic, placeholderImageName: nil)
+                imageView.isHidden = false
+                
             }
 
             
