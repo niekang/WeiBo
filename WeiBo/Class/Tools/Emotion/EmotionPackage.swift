@@ -42,4 +42,27 @@ class EmotionPackage:NSObject {
     /// 使用懒加载可以避免后续的解包
     lazy var emotions = [Emotion]()
 
+    /// 表情页面数量
+    var page: Int {
+        return (emotions.count - 1) / 20 + 1
+    }
+    
+    /// page页 对应的所有表情
+    ///
+    /// - Parameter page: indexPath.row
+    func emotions(page:Int) ->[Emotion]{
+        //每页的表情数量
+        let count = 20
+        let location = count * page
+        var length = count
+        if location + length > emotions.count {
+            length = emotions.count - location
+        }
+        
+        let subRange = NSRange(location: location, length: length)
+        
+        let array = (emotions as NSArray).subarray(with: subRange)
+        
+        return array as! [Emotion]
+    }
 }

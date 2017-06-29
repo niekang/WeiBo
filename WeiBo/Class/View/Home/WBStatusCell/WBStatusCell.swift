@@ -29,14 +29,14 @@ class WBStatusCell: UITableViewCell {
     @IBOutlet weak var vipImageView: UIImageView!
     
     /// 正文
-    @IBOutlet weak var contentLab: UILabel!
+    @IBOutlet weak var contentLab: NKLabel!
     
     //底部工具条
     @IBOutlet weak var statusToolBar: WBStatusTooBar!
     
     @IBOutlet weak var statusPicView: WBStatusPictureView!
     
-    @IBOutlet weak var retweedtedLab: UILabel?
+    @IBOutlet weak var retweedtedLab: NKLabel?
     
     var statusViewModel:WBStatusViewModel? {
         didSet{
@@ -72,5 +72,26 @@ class WBStatusCell: UITableViewCell {
         layer.shouldRasterize = true
         
         layer.rasterizationScale = UIScreen.main.scale
+        
+        // 设置微博文本代理
+        contentLab.delegate = self
+        retweedtedLab?.delegate = self
+
     }
 }
+
+extension WBStatusCell: NKLabelDelegate {
+    
+    func labelDidSelectedLinkText(label: NKLabel, text: String) {
+        
+        // 判断是否是 URL
+        if !text.hasPrefix("http://") {
+            return
+        }
+        
+        // 插入 ? 表示如果代理没有实现协议方法，就什么都不做
+        // 如果使用 !，代理没有实现协议方法，仍然强行执行，会崩溃！
+//        delegate?.statusCellDidSelectedURLString?(cell: self, urlString: text)
+    }
+}
+

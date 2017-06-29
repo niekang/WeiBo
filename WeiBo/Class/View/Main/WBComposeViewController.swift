@@ -21,7 +21,12 @@ class WBComposeViewController: WBSuperViewController {
     
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     
-    lazy var emmotionInputView = EmotionInputView.inputView()
+    lazy var emmotionInputView:EmotionInputView = {
+        let v = EmotionInputView.inputView(selectEmotion: {[weak self] (em) in
+            self?.textView.insertEmoticon(em: em)
+        })
+        return v
+    }()
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -85,10 +90,8 @@ class WBComposeViewController: WBSuperViewController {
     /// 点击发布
     @IBAction func sendBtnClick(_ sender: Any) {
         
-        guard let text = textView.text else {
-            return
-        }
-        
+        let text = textView.emoticonText
+    
         let image:UIImage? = nil
         
         WBNetworkManager.shared.uploadWB(text: text, image: image) { (isSuccess, json) in
@@ -103,9 +106,12 @@ class WBComposeViewController: WBSuperViewController {
     
     /// 表情键盘
     func emoticonKeyboard() {
+        textView.becomeFirstResponder()
+        
         textView.inputView = (textView.inputView == nil) ? emmotionInputView : nil
         textView.reloadInputViews()
     }
+    
     
 }
 

@@ -15,13 +15,19 @@
 		820436771EFA02C100A482FF /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820436701EFA02C100A482FF /* UIButton+Extension.swift */; };
 		820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820436711EFA02C100A482FF /* UIColor+Extension.swift */; };
 		820436791EFA02C100A482FF /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820436721EFA02C100A482FF /* UILabel+Extension.swift */; };
-		8204367A1EFA02C100A482FF /* UIViewFrame+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820436731EFA02C100A482FF /* UIViewFrame+Extension.swift */; };
 		8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */; };
 		8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */; };
 		8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */; };
 		8215BDE11EFA234000E0A642 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDE01EFA234000E0A642 /* VisitorView.swift */; };
 		8215BDF41EFA764E00E0A642 /* WBStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDF31EFA764E00E0A642 /* WBStatusListViewModel.swift */; };
 		8215BDF81EFA76F700E0A642 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDF71EFA76F700E0A642 /* WBStatus.swift */; };
+		8216B7B01F048FDF00650F29 /* EmotionToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B7AF1F048FDF00650F29 /* EmotionToolView.swift */; };
+		8216B7B41F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B7B31F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift */; };
+		8216B7B81F0497E600650F29 /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B7B71F0497E600650F29 /* EmotionCollectionViewCell.swift */; };
+		8216B7BA1F049EC700650F29 /* UIViewFrame+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B7B91F049EC700650F29 /* UIViewFrame+Extension.swift */; };
+		8216B7BC1F04B11200650F29 /* EmotionAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B7BB1F04B11200650F29 /* EmotionAttachment.swift */; };
+		8216B7BE1F04C80B00650F29 /* EmotionTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B7BD1F04C80B00650F29 /* EmotionTipView.swift */; };
+		8216B7C11F04CEE000650F29 /* NKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8216B7C01F04CEE000650F29 /* NKLabel.swift */; };
 		8222C2451EFB5A99008D0114 /* WBStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222C2441EFB5A99008D0114 /* WBStatusCell.swift */; };
 		8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222C2481EFB5EDE008D0114 /* WBUser.swift */; };
 		8222C24B1EFB6102008D0114 /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222C24A1EFB6102008D0114 /* WBStatusPicture.swift */; };
@@ -99,13 +105,19 @@
 		820436701EFA02C100A482FF /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		820436711EFA02C100A482FF /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		820436721EFA02C100A482FF /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		820436731EFA02C100A482FF /* UIViewFrame+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewFrame+Extension.swift"; sourceTree = "<group>"; };
 		8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccont.swift; sourceTree = "<group>"; };
 		8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		8215BDE01EFA234000E0A642 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		8215BDF31EFA764E00E0A642 /* WBStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusListViewModel.swift; sourceTree = "<group>"; };
 		8215BDF71EFA76F700E0A642 /* WBStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatus.swift; sourceTree = "<group>"; };
+		8216B7AF1F048FDF00650F29 /* EmotionToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionToolView.swift; sourceTree = "<group>"; };
+		8216B7B31F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		8216B7B71F0497E600650F29 /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		8216B7B91F049EC700650F29 /* UIViewFrame+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewFrame+Extension.swift"; sourceTree = "<group>"; };
+		8216B7BB1F04B11200650F29 /* EmotionAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAttachment.swift; sourceTree = "<group>"; };
+		8216B7BD1F04C80B00650F29 /* EmotionTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionTipView.swift; sourceTree = "<group>"; };
+		8216B7C01F04CEE000650F29 /* NKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKLabel.swift; sourceTree = "<group>"; };
 		8222C2441EFB5A99008D0114 /* WBStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusCell.swift; sourceTree = "<group>"; };
 		8222C2481EFB5EDE008D0114 /* WBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUser.swift; sourceTree = "<group>"; };
 		8222C24A1EFB6102008D0114 /* WBStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
@@ -201,12 +213,12 @@
 		8204366D1EFA02C100A482FF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8216B7B91F049EC700650F29 /* UIViewFrame+Extension.swift */,
 				8204366E1EFA02C100A482FF /* Bundle+Extension.swift */,
 				8204366F1EFA02C100A482FF /* UIBarButtonItem+Extension.swift */,
 				820436701EFA02C100A482FF /* UIButton+Extension.swift */,
 				820436711EFA02C100A482FF /* UIColor+Extension.swift */,
 				820436721EFA02C100A482FF /* UILabel+Extension.swift */,
-				820436731EFA02C100A482FF /* UIViewFrame+Extension.swift */,
 				8222C2501EFB921F008D0114 /* UIImageView+Extension.swift */,
 				8222C2521EFB9714008D0114 /* UIImage+Extension.swift */,
 				82C7921E1EFCE9E4004929EF /* NSDate+Extension.swift */,
@@ -245,6 +257,14 @@
 				8215BDE01EFA234000E0A642 /* VisitorView.swift */,
 			);
 			path = VisitorView;
+			sourceTree = "<group>";
+		};
+		8216B7BF1F04CECD00650F29 /* AttributeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				8216B7C01F04CEE000650F29 /* NKLabel.swift */,
+			);
+			path = AttributeLabel;
 			sourceTree = "<group>";
 		};
 		8222C2431EFB5A90008D0114 /* WBStatusCell */ = {
@@ -365,6 +385,10 @@
 			children = (
 				825CFF881F03AE3C0089AE3C /* EmotionInputView.swift */,
 				825CFF8A1F03AE6C0089AE3C /* EmotionInputView.xib */,
+				8216B7AF1F048FDF00650F29 /* EmotionToolView.swift */,
+				8216B7B31F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift */,
+				8216B7B71F0497E600650F29 /* EmotionCollectionViewCell.swift */,
+				8216B7BD1F04C80B00650F29 /* EmotionTipView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -444,6 +468,7 @@
 		82629EC61EF7B8D800DA2D89 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8216B7BF1F04CECD00650F29 /* AttributeLabel */,
 				824AFBE71F0233A40040C222 /* TextView */,
 				82D6FD431EFFD78300E35C26 /* NKRefresh */,
 				82A448401EFD5BB100CA3A50 /* Emotion */,
@@ -470,6 +495,7 @@
 				8236973B1F03964C006CE70E /* EmotionManager.swift */,
 				825CFF831F039B8D0089AE3C /* EmotionPackage.swift */,
 				825CFF851F039C750089AE3C /* Emotion.swift */,
+				8216B7BB1F04B11200650F29 /* EmotionAttachment.swift */,
 				82A448411EFD5BB100CA3A50 /* Emotion.bundle */,
 			);
 			path = Emotion;
@@ -702,13 +728,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8216B7B81F0497E600650F29 /* EmotionCollectionViewCell.swift in Sources */,
 				8222C2511EFB921F008D0114 /* UIImageView+Extension.swift in Sources */,
 				823AE1551EF8FA1E00CB1D86 /* WBMineViewController.swift in Sources */,
+				8216B7BA1F049EC700650F29 /* UIViewFrame+Extension.swift in Sources */,
 				823AE1541EF8FA1E00CB1D86 /* WBMessageViewController.swift in Sources */,
 				82036D351EFBC1360074361B /* WBStatusPictureView.swift in Sources */,
 				823AE14D1EF8FA1E00CB1D86 /* WBDiscoverViewController.swift in Sources */,
 				8222C2531EFB9714008D0114 /* UIImage+Extension.swift in Sources */,
-				8204367A1EFA02C100A482FF /* UIViewFrame+Extension.swift in Sources */,
 				82C792211EFCFD89004929EF /* String+Extension.swift in Sources */,
 				8236973C1F03964C006CE70E /* EmotionManager.swift in Sources */,
 				8222C24D1EFB6454008D0114 /* WBStatusViewModel.swift in Sources */,
@@ -719,6 +746,7 @@
 				820436791EFA02C100A482FF /* UILabel+Extension.swift in Sources */,
 				8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */,
 				822CC27A1EFE6A4400FFEA16 /* WBWelcomView.swift in Sources */,
+				8216B7BC1F04B11200650F29 /* EmotionAttachment.swift in Sources */,
 				8215BDE11EFA234000E0A642 /* VisitorView.swift in Sources */,
 				82C7921F1EFCE9E4004929EF /* NSDate+Extension.swift in Sources */,
 				82E70A761F00F69E00629E0F /* WBComposeBtnView.swift in Sources */,
@@ -734,16 +762,20 @@
 				822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */,
 				824AFBDF1F0231090040C222 /* WBBaseViewController.swift in Sources */,
 				824AFBED1F0233D00040C222 /* NKTextView.swift in Sources */,
+				8216B7B01F048FDF00650F29 /* EmotionToolView.swift in Sources */,
 				8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */,
 				8222C2551EFBAA7D008D0114 /* WBStatusTooBar.swift in Sources */,
+				8216B7BE1F04C80B00650F29 /* EmotionTipView.swift in Sources */,
 				823AE14E1EF8FA1E00CB1D86 /* WBHomeViewController.swift in Sources */,
 				823AE1531EF8FA1E00CB1D86 /* WbTabBarController.swift in Sources */,
 				8222C2451EFB5A99008D0114 /* WBStatusCell.swift in Sources */,
+				8216B7B41F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift in Sources */,
 				822CC27F1EFE84C400FFEA16 /* WBNewFeatureView.swift in Sources */,
 				8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */,
 				8215BDF41EFA764E00E0A642 /* WBStatusListViewModel.swift in Sources */,
 				820436761EFA02C100A482FF /* UIBarButtonItem+Extension.swift in Sources */,
 				82D6FD4D1EFFD79D00E35C26 /* NKRefreshView.swift in Sources */,
+				8216B7C11F04CEE000650F29 /* NKLabel.swift in Sources */,
 				82D6FD4A1EFFD78300E35C26 /* NKRefreshControl.swift in Sources */,
 				8222C24B1EFB6102008D0114 /* WBStatusPicture.swift in Sources */,
 				825CFF841F039B8D0089AE3C /* EmotionPackage.swift in Sources */,

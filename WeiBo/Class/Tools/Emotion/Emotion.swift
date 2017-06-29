@@ -18,7 +18,22 @@ class Emotion: NSObject {
     /// 表情图片名称，用于本地图文混排
     var png: String?
     /// emoji 的十六进制编码
-    var code: String?
+    var code: String?{
+        didSet {
+            
+            guard let code = code else {
+                return
+            }
+            
+            let scanner = Scanner(string: code)
+            
+            var result: UInt32 = 0
+            scanner.scanHexInt32(&result)
+            
+            emoji = String(Character(UnicodeScalar(result)!))
+        }
+
+    }
     /// 表情使用次数
     var times: Int = 0
     /// emoji 的字符串
@@ -44,6 +59,35 @@ class Emotion: NSObject {
         
         return UIImage(named: "\(directory)/\(png)", in: bundle, compatibleWith: nil)
     }
+    
+    /// 将当前的图像转换生成图片的属性文本
+    func imageText(font: UIFont) -> NSAttributedString {
+        
+        // 1. 判断图像是否存在
+        guard let image = image else {
+            return NSAttributedString(string: "")
+        }
+        
+        // 2. 创建文本附件
+        let attachment = EmotionAttachment()
+        
+        // 记录属性文本文字
+        attachment.chs = chs
+        
+        attachment.image = image
+        let height = font.lineHeight
+        attachment.bounds = CGRect(x: 0, y: -4, width: height, height: height)
+        
+        // 3. 返回图片属性文本
+        let attrStrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
+        
+        // 设置字体属性
+        attrStrM.addAttributes([NSFontAttributeName: font], range: NSRange(location: 0, length: 1))
+        
+        // 4. 返回属性文本
+        return attrStrM
+    }
+
     
     override var description: String {
         return yy_modelDescription()
