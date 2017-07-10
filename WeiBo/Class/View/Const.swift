@@ -8,9 +8,9 @@
 
 import UIKit
 
-let WBAPPkey = "1205476206"
+let WBAPPkey = ""
 
-let WBAppSecret = "491d493c293d8946fbb6459d4c3f8deb"
+let WBAppSecret = ""
 
 let WBRedirectURL = "http://baidu.com"
 
