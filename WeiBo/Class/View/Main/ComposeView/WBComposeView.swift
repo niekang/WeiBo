@@ -41,7 +41,7 @@ class WBComposeView: UIView {
     }
     
     /// 列表按钮点击事件
-    func clickButton(selectedButton: WBComposeBtnView) {
+    @objc func clickButton(selectedButton: WBComposeBtnView) {
         // 1. 判断当前显示的视图
         let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
         let v = scrollView.subviews[page]

@@ -10,6 +10,7 @@ import UIKit
 
 class EmotionPackage:NSObject {
     
+//    weak var manager:EmotionManager?
     /// 表情包的分组名
     var groupName: String?
     /// 背景图片名称
@@ -18,6 +19,7 @@ class EmotionPackage:NSObject {
     /// 表情包目录，从目录下加载 info.plist 可以创建表情模型数组
     var directory: String? {
         didSet {
+//            manager = EmotionManager.shared;
             // 当设置目录时，从目录下加载 info.plist
             guard let directory = directory,
                 let path = Bundle.main.path(forResource: "Emotion.bundle", ofType: nil),

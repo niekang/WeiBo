@@ -73,7 +73,7 @@ class EmotionCollectionViewCell: UICollectionViewCell {
         tipView.isHidden = true
     }
     
-    func emotionClick(btn:UIButton) {
+    @objc func emotionClick(btn:UIButton) {
         let tag = btn.tag
         
         var em: Emotion?
@@ -88,7 +88,7 @@ class EmotionCollectionViewCell: UICollectionViewCell {
     
     /// 长按手势识别 - 是一个非常非常重要的手势
     /// 可以保证一个对象监听两种点击手势！而且不需要考虑解决手势冲突！
-    func longGesture(gesture: UILongPressGestureRecognizer) {
+    @objc func longGesture(gesture: UILongPressGestureRecognizer) {
         
         // 测试添加提示视图
         // addSubview(tipView)

@@ -21,8 +21,8 @@ extension String {
             return ("","")
         }
 
-        let link = (self as NSString).substring(with: result.rangeAt(1))
-        let text = (self as NSString).substring(with: result.rangeAt(2))
+        let link = (self as NSString).substring(with: result.range(at: 1))
+        let text = (self as NSString).substring(with: result.range(at: 2))
 
         return (link,text)
     }

@@ -39,21 +39,21 @@ extension WBBaseViewController {
     }
     
     ///注册
-    func resisterBtnClick(sender:UIButton) {
+    @objc func resisterBtnClick(sender:UIButton) {
         WBUserAccont.shared.login()
     }
     ///登录
-    func logBtnClick(sender:UIButton) {
+    @objc func logBtnClick(sender:UIButton) {
         WBUserAccont.shared.login()
     }
     
     ///登录成功监听方法
-    func loginSuccess() {
+    @objc func loginSuccess() {
         visitorView.removeFromSuperview()
     }
     
     /// 退出登录监听方法
-    func logOut() {
+    @objc func logOut() {
         view.addSubview(visitorView)
     }
     

@@ -53,6 +53,7 @@ class WBStatusCell: UITableViewCell {
             //设置配图
             statusPicView.statusViewModel = statusViewModel
             //正文
+            contentLab.patterns = ["武汉"]
             contentLab.attributedText = statusViewModel?.statusAttrText
             //设置被转发微博文字
             retweedtedLab?.attributedText = statusViewModel?.retweetedAttrText

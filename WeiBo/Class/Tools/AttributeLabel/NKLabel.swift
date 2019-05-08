@@ -72,11 +72,11 @@ public class NKLabel: UILabel {
         var range = NSRange(location: 0, length: 0)
         var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
         
-        attributes[NSFontAttributeName] = font!
-        attributes[NSForegroundColorAttributeName] = textColor
+        attributes[NSAttributedStringKey.font] = font!
+        attributes[NSAttributedStringKey.foregroundColor] = textColor
         attrStringM.addAttributes(attributes, range: range)
         
-        attributes[NSForegroundColorAttributeName] = linkTextColor
+        attributes[NSAttributedStringKey.foregroundColor] = linkTextColor
         
         for r in linkRanges {
             attrStringM.setAttributes(attributes, range: r)
@@ -84,17 +84,18 @@ public class NKLabel: UILabel {
     }
     
     /// use regex check all link ranges
-    private let patterns = ["[a-zA-Z]*://[a-zA-Z0-9/\\.]*", "#.*?#", "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*"]
+    open var patterns = ["[a-zA-Z]*://[a-zA-Z0-9/\\.]*", "#.*?#", "@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*"]
+    
     private func regexLinkRanges(_ attrString: NSAttributedString) {
         linkRanges.removeAll()
-        let regexRange = NSRange(location: 0, length: attrString.string.characters.count)
+        let regexRange = NSRange(location: 0, length: attrString.string.count)
         
         for pattern in patterns {
             let regex = try! NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.dotMatchesLineSeparators)
             let results = regex.matches(in: attrString.string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: regexRange)
             
             for r in results {
-                linkRanges.append(r.rangeAt(0))
+                linkRanges.append(r.range(at: 0))
             }
         }
     }
@@ -109,7 +110,7 @@ public class NKLabel: UILabel {
         
         var range = NSRange(location: 0, length: 0)
         var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
-        var paragraphStyle = attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle
+        var paragraphStyle = attributes[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle
         
         if paragraphStyle != nil {
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -117,7 +118,7 @@ public class NKLabel: UILabel {
             // iOS 8.0 can not get the paragraphStyle directly
             paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
-            attributes[NSParagraphStyleAttributeName] = paragraphStyle
+            attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
             
             attrStringM.setAttributes(attributes, range: range)
         }
@@ -190,13 +191,13 @@ public class NKLabel: UILabel {
         }
         
         var attributes = textStorage.attributes(at: 0, effectiveRange: nil)
-        attributes[NSForegroundColorAttributeName] = linkTextColor
+        attributes[NSAttributedStringKey.foregroundColor] = linkTextColor
         let range = selectedRange!
         
         if isSet {
-            attributes[NSBackgroundColorAttributeName] = selectedBackgroudColor
+            attributes[NSAttributedStringKey.backgroundColor] = selectedBackgroudColor
         } else {
-            attributes[NSBackgroundColorAttributeName] = UIColor.clear
+            attributes[NSAttributedStringKey.backgroundColor] = UIColor.clear
             selectedRange = nil
         }
         

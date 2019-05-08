@@ -21,7 +21,7 @@ class NKTextView: UITextView {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func textViewTextDidChange() {
+    @objc func textViewTextDidChange() {
         // 如果有文本，不显示占位标签，否则显示
         placeholderLabel.isHidden = hasText
     }
@@ -50,7 +50,7 @@ extension NKTextView {
             
             // 如果字典中包含 NSAttachment `Key` 说明是图片，否则是文本
             // 下一个目标：从 attachment 中如果能够获得 chs 就可以了！
-            if let attachment = dict["NSAttachment"] as? EmotionAttachment {
+            if let attachment = dict[NSAttributedStringKey.attachment] as? EmotionAttachment {
                 // print("图片 \(attachment)")
                 result += attachment.chs ?? ""
             } else {

@@ -70,7 +70,7 @@ class WBComposeViewController: WBSuperViewController {
     }
     
     /// 键盘高度监控
-    func keyboardFrameChange(noti:Notification) {
+    @objc func keyboardFrameChange(noti:Notification) {
         guard let info = noti.userInfo,
             let rect = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
             let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else {
@@ -133,7 +133,7 @@ extension WBComposeViewController {
     }
     
     /// 返回
-    func back() {
+    @objc func back() {
         dismiss(animated: true, completion: nil)
     }
     

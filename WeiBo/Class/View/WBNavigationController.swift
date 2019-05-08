@@ -37,7 +37,7 @@ class WBNavigationController: UINavigationController {
     }
     
     /// 返回按钮事件
-    func backAction() {
+    @objc func backAction() {
         popViewController(animated: true)
     }
 }

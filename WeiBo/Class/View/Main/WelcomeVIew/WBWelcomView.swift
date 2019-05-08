@@ -63,7 +63,7 @@ class WBWelcomView: UIView {
         }
     }
     
-    func enterApplication() {
+    @objc func enterApplication() {
         removeFromSuperview()
         completion?()
         /// 调用removeFromSuperview后 会再次调用didMoveToWindow 所以为了防止回调两次 释放 completion

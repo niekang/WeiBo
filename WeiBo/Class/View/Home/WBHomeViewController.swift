@@ -30,7 +30,7 @@ class WBHomeViewController: WBBaseViewController {
         loadData() // 加载数据
     }
     
-    override func loadData() {
+    @objc override func loadData() {
         /// 如果是下拉，显示下拉动画
         if isHeader {
             refreshControl.beginRefresh()
@@ -89,16 +89,16 @@ extension WBHomeViewController {
         btn.addTarget(self, action: #selector(titleButtonClick(btn:)), for: .touchUpInside)
     }
     
-    func leftButtonClick() {
+    @objc func leftButtonClick() {
         
     }
     
-    func rightButtonClick() {
+    @objc func rightButtonClick() {
         let QRCodeVC = WBQRCodeViewController()
         navigationController?.pushViewController(QRCodeVC, animated: true)
     }
     
-    func titleButtonClick(btn:UIButton) {
+    @objc func titleButtonClick(btn:UIButton) {
         btn.isSelected = !btn.isSelected
     }
 

@@ -107,7 +107,7 @@ extension EmotionManager {
         // 3. 遍历所有匹配结果
         for m in matches.reversed() {
             
-            let r = m.rangeAt(0)
+            let r = m.range(at: 0)
             
             let subStr = (attrString.string as NSString).substring(with: r)
             
@@ -120,8 +120,8 @@ extension EmotionManager {
         }
         
         // 4. *** 统一设置一遍字符串的属性，除了需要设置字体，还需要设置`颜色`！
-        attrString.addAttributes([NSFontAttributeName: font,
-                                  NSForegroundColorAttributeName: UIColor.darkGray],
+        attrString.addAttributes([NSAttributedStringKey.font: font,
+                                  NSAttributedStringKey.foregroundColor: UIColor.darkGray],
                                  range: NSRange(location: 0, length: attrString.length))
         
         return attrString

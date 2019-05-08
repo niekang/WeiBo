@@ -37,7 +37,7 @@ class WBOAuthViewController: WBSuperViewController {
         webview.load(URLRequest(url: url))
     }
     
-    func backAction() {
+    @objc func backAction() {
         dismiss(animated: true, completion: nil)
     }
 

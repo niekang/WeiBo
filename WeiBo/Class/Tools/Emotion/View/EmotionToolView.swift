@@ -48,7 +48,7 @@ class EmotionToolView: UIView {
         }
     }
     
-    func packageClick(btn:UIButton) {
+    @objc func packageClick(btn:UIButton) {
         // 通知代理执行协议方法
         delegate?.emotionToolViewDidSelectedItemIndex(toolView: self, index: btn.tag)
     }
