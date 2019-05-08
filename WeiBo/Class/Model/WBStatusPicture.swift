@@ -9,6 +9,7 @@
 import UIKit
 
 /// 微博配图模型
+@objcMembers
 class WBStatusPicture: NSObject {
 
     /// 缩略图地址 - 新浪返回的缩略图令人发指

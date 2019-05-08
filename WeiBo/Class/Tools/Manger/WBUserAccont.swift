@@ -9,6 +9,7 @@
 import Foundation
 import YYModel
 
+@objcMembers
 class WBUserAccont: NSObject {
     
     static let shared : WBUserAccont = WBUserAccont()
@@ -19,7 +20,7 @@ class WBUserAccont: NSObject {
     
     var expires_in:Int = 0
     
-    var remind_in:Int = 0
+    var remind_in:String?
     
     /// 过期日期
     var expiresDate: Date?
@@ -80,6 +81,11 @@ extension WBUserAccont {
                 return
             }
             //给当前模型赋值
+//            self.access_token = dict["access_token"] as? String
+//            self.uid = dict["uid"] as? String
+//            self.expires_in = dict["expires_in"] as! Int
+//            self.remind_in = dict["remind_in"] as? String
+//YYModel方法有问题
             self.yy_modelSet(with: dict)
             //请求用户信息
             self.requestUserInfo(completion: { (isSuccess, json) in

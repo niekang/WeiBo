@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 class WBUser: NSObject {
     /// 用户id
     var id:Int64 = 0

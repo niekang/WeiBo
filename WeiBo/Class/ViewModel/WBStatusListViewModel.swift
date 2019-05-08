@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import SDWebImage
 
+@objcMembers
 class WBStatusListViewModel {
     
     var statusList = [WBStatusViewModel]()
