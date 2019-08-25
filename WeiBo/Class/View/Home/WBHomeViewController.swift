@@ -64,7 +64,7 @@ extension WBHomeViewController {
         if navigationItem.titleView == nil{
             tableView.register(UINib(nibName: normalCellId, bundle: nil), forCellReuseIdentifier: normalCellId)
             tableView.register(UINib(nibName: retweetedCellId, bundle: nil), forCellReuseIdentifier: retweetedCellId)
-            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedRowHeight = 300
             
             tableView.addSubview(refreshControl)

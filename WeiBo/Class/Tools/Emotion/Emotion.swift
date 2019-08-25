@@ -82,7 +82,7 @@ class Emotion: NSObject {
         let attrStrM = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
         
         // 设置字体属性
-        attrStrM.addAttributes([NSAttributedStringKey.font: font], range: NSRange(location: 0, length: 1))
+        attrStrM.addAttributes([NSAttributedString.Key.font: font], range: NSRange(location: 0, length: 1))
         
         // 4. 返回属性文本
         return attrStrM

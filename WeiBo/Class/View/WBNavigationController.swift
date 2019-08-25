@@ -24,7 +24,7 @@ class WBNavigationController: UINavigationController {
 
     /// 重载push函数 添加统一‘返回’按钮
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if childViewControllers.count > 0 {
+        if children.count > 0 {
             
             viewController.hidesBottomBarWhenPushed = true
             

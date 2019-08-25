@@ -72,11 +72,11 @@ public class NKLabel: UILabel {
         var range = NSRange(location: 0, length: 0)
         var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
         
-        attributes[NSAttributedStringKey.font] = font!
-        attributes[NSAttributedStringKey.foregroundColor] = textColor
+        attributes[NSAttributedString.Key.font] = font!
+        attributes[NSAttributedString.Key.foregroundColor] = textColor
         attrStringM.addAttributes(attributes, range: range)
         
-        attributes[NSAttributedStringKey.foregroundColor] = linkTextColor
+        attributes[NSAttributedString.Key.foregroundColor] = linkTextColor
         
         for r in linkRanges {
             attrStringM.setAttributes(attributes, range: r)
@@ -110,7 +110,7 @@ public class NKLabel: UILabel {
         
         var range = NSRange(location: 0, length: 0)
         var attributes = attrStringM.attributes(at: 0, effectiveRange: &range)
-        var paragraphStyle = attributes[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle
+        var paragraphStyle = attributes[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle
         
         if paragraphStyle != nil {
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -118,7 +118,7 @@ public class NKLabel: UILabel {
             // iOS 8.0 can not get the paragraphStyle directly
             paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
-            attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+            attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
             
             attrStringM.setAttributes(attributes, range: range)
         }
@@ -191,13 +191,13 @@ public class NKLabel: UILabel {
         }
         
         var attributes = textStorage.attributes(at: 0, effectiveRange: nil)
-        attributes[NSAttributedStringKey.foregroundColor] = linkTextColor
+        attributes[NSAttributedString.Key.foregroundColor] = linkTextColor
         let range = selectedRange!
         
         if isSet {
-            attributes[NSAttributedStringKey.backgroundColor] = selectedBackgroudColor
+            attributes[NSAttributedString.Key.backgroundColor] = selectedBackgroudColor
         } else {
-            attributes[NSAttributedStringKey.backgroundColor] = UIColor.clear
+            attributes[NSAttributedString.Key.backgroundColor] = UIColor.clear
             selectedRange = nil
         }
         

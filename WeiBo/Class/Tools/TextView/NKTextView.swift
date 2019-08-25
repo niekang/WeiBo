@@ -50,7 +50,7 @@ extension NKTextView {
             
             // 如果字典中包含 NSAttachment `Key` 说明是图片，否则是文本
             // 下一个目标：从 attachment 中如果能够获得 chs 就可以了！
-            if let attachment = dict[NSAttributedStringKey.attachment] as? EmotionAttachment {
+            if let attachment = dict[NSAttributedString.Key.attachment] as? EmotionAttachment {
                 // print("图片 \(attachment)")
                 result += attachment.chs ?? ""
             } else {
@@ -113,7 +113,7 @@ extension NKTextView {
 extension NKTextView {
     
     func setupUI() {
-        NotificationCenter.default.addObserver(self, selector: #selector(textViewTextDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(textViewTextDidChange), name: UITextView.textDidChangeNotification, object: nil)
         
         placeholderLabel.frame.origin = CGPoint(x: 5, y: 8)
         placeholderLabel.backgroundColor = backgroundColor

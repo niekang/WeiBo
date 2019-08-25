@@ -116,7 +116,7 @@ extension WbTabBarController {
         vc.title = title
         vc.tabBarItem.image = UIImage(named:imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
-        vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.orange], for: .selected)
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.orange], for: .selected)
         vc.visitorView.visitorInfoDictionary = visitorDic
         let nav = WBNavigationController(rootViewController: vc)
         return nav

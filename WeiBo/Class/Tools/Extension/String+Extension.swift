@@ -17,7 +17,7 @@ extension String {
         let pattern = "<a href=\"(.*?)\".*?>(.*?)</a>"
         
         guard let regular = try? NSRegularExpression(pattern: pattern, options:  []) ,
-            let result = regular.firstMatch(in: self, options: [], range: NSMakeRange(0, characters.count)) else {
+            let result = regular.firstMatch(in: self, options: [], range: NSMakeRange(0, count)) else {
             return ("","")
         }
 

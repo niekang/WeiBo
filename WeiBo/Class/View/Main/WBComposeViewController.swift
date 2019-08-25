@@ -44,7 +44,7 @@ class WBComposeViewController: WBSuperViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameChange(noti:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameChange(noti:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         /// 导航条设置
         setupNavigationBar()
         /// 底部工具条
@@ -72,8 +72,8 @@ class WBComposeViewController: WBSuperViewController {
     /// 键盘高度监控
     @objc func keyboardFrameChange(noti:Notification) {
         guard let info = noti.userInfo,
-            let rect = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-            let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else {
+            let rect = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+            let duration = (info[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else {
             return
         }
         

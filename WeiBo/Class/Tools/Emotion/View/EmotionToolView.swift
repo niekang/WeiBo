@@ -75,10 +75,10 @@ extension EmotionToolView {
             
             let size = imageN?.size ?? CGSize()
             
-            let inset = UIEdgeInsetsMake(size.height * 0.5,
-                                         size.width * 0.5,
-                                         size.height * 0.5,
-                                         size.width * 0.5)
+            let inset = UIEdgeInsets(top: size.height * 0.5,
+                                     left: size.width * 0.5,
+                                     bottom: size.height * 0.5,
+                                     right: size.width * 0.5)
             imageN = imageN?.resizableImage(withCapInsets: inset)
             imageH = imageN?.resizableImage(withCapInsets: inset)
             

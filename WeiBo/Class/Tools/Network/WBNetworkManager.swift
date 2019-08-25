@@ -115,7 +115,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         if image != nil {
             name = "image"
-            data = UIImagePNGRepresentation(image!)
+            data = image!.pngData()
         }
 
         var parameters = ["status": text] as [String:AnyObject]
