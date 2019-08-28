@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBMineViewController: WBBaseViewController {
+class WBMineViewController: WBTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

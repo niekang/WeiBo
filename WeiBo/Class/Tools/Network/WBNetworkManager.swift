@@ -10,7 +10,7 @@ import Foundation
 import AFNetworking
 import SVProgressHUD
 
-enum HTTPMethod {
+enum WBHTTPMethod {
     case GET
     case POST
 }
@@ -25,7 +25,7 @@ class WBNetworkManager: AFHTTPSessionManager {
     }()
     
     @discardableResult
-    func request(method:HTTPMethod = .GET, URLString: String, parameters: Any?, completion:@escaping ((Bool, Any?) -> Void)) -> URLSessionDataTask? {
+    func request(method:WBHTTPMethod = .GET, URLString: String, parameters: Any?, completion:@escaping ((Bool, Any?) -> Void)) -> URLSessionDataTask? {
         
         var parameters = parameters as? [String:AnyObject]
         

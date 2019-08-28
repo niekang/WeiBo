@@ -13,7 +13,7 @@ private let normalCellId = "WBStatusNormalCell"
 
 private let retweetedCellId = "WBStatusRetweetedCell"
 
-class WBHomeViewController: WBBaseViewController {
+class WBHomeViewController: WBTabViewController {
 
     lazy var statusListViewModel = WBStatusListViewModel() // ViewModel 处理微博数据
     

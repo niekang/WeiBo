@@ -10,11 +10,11 @@ import UIKit
 import SVProgressHUD
 import SDWebImage
 
-@objcMembers
 class WBStatusListViewModel {
     
-    var statusList = [WBStatusViewModel]()
+    let httpClient = HttpClient()
     
+    var statusList = [WBStatusViewModel]()
     
     /// 加载微博数据
     ///
@@ -29,37 +29,51 @@ class WBStatusListViewModel {
         /// count 不存在默认返回20条数据
         let parameters = ["since_id":"\(since_id)","max_id":"\(max_id)"]
         
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        
-        WBNetworkManager.shared.request(URLString: urlString, parameters: parameters) { (isSuccess, json) in
-            
-            if isSuccess == true {
-                guard let statuses = ((json as? [String:AnyObject])?["statuses"]) as? [[String:AnyObject]] else{
-                    return
-                }
-                
-                var array = [WBStatusViewModel]()
-                for dict in statuses {
-                    guard let status = WBStatus.yy_model(with: dict) else {
-                        continue
-                    }
-                    array.append(WBStatusViewModel(status: status))
-                }
-                if isHeader {
-                    /// 下拉的时候 将数据拼接到数组前面
-                    self.statusList = array + self.statusList
-                }else{
-                    /// 上拉的时候 将数据拼接到数组后面
-                    self.statusList += array
-                }
-
-                /// 缓存单张视图
-                self.cachSingleImage(statusLsistViewModel: self.statusList, completion: completion)
-                
-            }else {
-                completion(false)
+        httpClient.get(urlString: WBAPI_HomeList, params: parameters, success: { (statusData: WBStatusData) in
+            guard let status = statusData.statuses else {
+                return
             }
+            let array = status.map({ (model) -> WBStatusViewModel in
+                return WBStatusViewModel(status: model)
+            })
+            
+            isHeader ? (self.statusList += array) : (self.statusList = array)
+            
+            self.cachSingleImage(statusLsistViewModel: self.statusList, completion: completion)
+
+        }) { (_, _) in
+            completion(false)
         }
+        
+//        WBNetworkManager.shared.request(URLString: urlString, parameters: parameters) { (isSuccess, json) in
+//
+//            if isSuccess == true {
+//                guard let statuses = ((json as? [String:AnyObject])?["statuses"]) as? [[String:AnyObject]] else{
+//                    return
+//                }
+//
+//                var array = [WBStatusViewModel]()
+//                for dict in statuses {
+//                    guard let status = WBStatus.yy_model(with: dict) else {
+//                        continue
+//                    }
+//                    array.append(WBStatusViewModel(status: status))
+//                }
+//                if isHeader {
+//                    /// 下拉的时候 将数据拼接到数组前面
+//                    self.statusList = array + self.statusList
+//                }else{
+//                    /// 上拉的时候 将数据拼接到数组后面
+//                    self.statusList += array
+//                }
+//
+//                /// 缓存单张视图
+//                self.cachSingleImage(statusLsistViewModel: self.statusList, completion: completion)
+//
+//            }else {
+//                completion(false)
+//            }
+//        }
     }
     
     

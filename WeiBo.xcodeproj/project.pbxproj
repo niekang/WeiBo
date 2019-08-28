@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		411862309F96B0CA9ED0767E /* Pods_WeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3156A35D1937E9BB05AA6AB6 /* Pods_WeiBo.framework */; };
+		4C48E50A2314D04300ABF93A /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E5092314D04300ABF93A /* Const.swift */; };
+		4C48E5112314E0AA00ABF93A /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E5102314E0AA00ABF93A /* HttpClient.swift */; };
+		4C48E5132315086900ABF93A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E5122315086900ABF93A /* API.swift */; };
+		4C48E51523150D8400ABF93A /* WBBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E51423150D8400ABF93A /* WBBaseModel.swift */; };
+		4C48E51B231537FC00ABF93A /* PageStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E51A231537FC00ABF93A /* PageStrategy.swift */; };
+		4C48E51E2315382600ABF93A /* PageStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E51D2315382600ABF93A /* PageStateManager.swift */; };
+		4C48E52C23154E6E00ABF93A /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E52B23154E6E00ABF93A /* WBBaseViewController.swift */; };
+		4C48E52E23154E9F00ABF93A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E52D23154E9F00ABF93A /* PageViewController.swift */; };
+		4C48E5302315508D00ABF93A /* PageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E52F2315508D00ABF93A /* PageTableViewController.swift */; };
 		820138801EFC0AFB00244A2B /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8201387F1EFC0AFB00244A2B /* WBStatusRetweetedCell.xib */; };
 		82036D351EFBC1360074361B /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036D341EFBC1360074361B /* WBStatusPictureView.swift */; };
 		820436751EFA02C100A482FF /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204366E1EFA02C100A482FF /* Bundle+Extension.swift */; };
@@ -48,8 +57,7 @@
 		823AE1531EF8FA1E00CB1D86 /* WbTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1481EF8FA1E00CB1D86 /* WbTabBarController.swift */; };
 		823AE1541EF8FA1E00CB1D86 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE14A1EF8FA1E00CB1D86 /* WBMessageViewController.swift */; };
 		823AE1551EF8FA1E00CB1D86 /* WBMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE14C1EF8FA1E00CB1D86 /* WBMineViewController.swift */; };
-		824AFBDE1F0231090040C222 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBD91F0231090040C222 /* Const.swift */; };
-		824AFBDF1F0231090040C222 /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDA1F0231090040C222 /* WBBaseViewController.swift */; };
+		824AFBDF1F0231090040C222 /* WBTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDA1F0231090040C222 /* WBTabViewController.swift */; };
 		824AFBE01F0231090040C222 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDB1F0231090040C222 /* WBNavigationController.swift */; };
 		824AFBE11F0231090040C222 /* WBSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDC1F0231090040C222 /* WBSuperViewController.swift */; };
 		824AFBE21F0231090040C222 /* WBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDD1F0231090040C222 /* WBTableViewController.swift */; };
@@ -60,8 +68,6 @@
 		825CFF8B1F03AE6C0089AE3C /* EmotionInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 825CFF8A1F03AE6C0089AE3C /* EmotionInputView.xib */; };
 		82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629E901EF7B6AB00DA2D89 /* AppDelegate.swift */; };
 		82629E981EF7B6AB00DA2D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82629E971EF7B6AB00DA2D89 /* Assets.xcassets */; };
-		82629EA61EF7B6AB00DA2D89 /* WeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EA51EF7B6AB00DA2D89 /* WeiBoTests.swift */; };
-		82629EB11EF7B6AB00DA2D89 /* WeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */; };
 		827319AC1F024C7E005E6FE0 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827319AA1F024C7E005E6FE0 /* WBComposeViewController.swift */; };
 		827319AD1F024C7E005E6FE0 /* WBComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827319AB1F024C7E005E6FE0 /* WBComposeViewController.xib */; };
 		82A448421EFD5BB100CA3A50 /* Emotion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 82A448411EFD5BB100CA3A50 /* Emotion.bundle */; };
@@ -78,25 +84,17 @@
 		82E70A791F00F69E00629E0F /* WBComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E70A751F00F69E00629E0F /* WBComposeView.xib */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		82629EA21EF7B6AB00DA2D89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82629E851EF7B6AB00DA2D89 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 82629E8C1EF7B6AB00DA2D89;
-			remoteInfo = WeiBo;
-		};
-		82629EAD1EF7B6AB00DA2D89 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82629E851EF7B6AB00DA2D89 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 82629E8C1EF7B6AB00DA2D89;
-			remoteInfo = WeiBo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3156A35D1937E9BB05AA6AB6 /* Pods_WeiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C48E5092314D04300ABF93A /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		4C48E5102314E0AA00ABF93A /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		4C48E5122315086900ABF93A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		4C48E51423150D8400ABF93A /* WBBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseModel.swift; sourceTree = "<group>"; };
+		4C48E51A231537FC00ABF93A /* PageStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageStrategy.swift; sourceTree = "<group>"; };
+		4C48E51D2315382600ABF93A /* PageStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateManager.swift; sourceTree = "<group>"; };
+		4C48E52B23154E6E00ABF93A /* WBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
+		4C48E52D23154E9F00ABF93A /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4C48E52F2315508D00ABF93A /* PageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTableViewController.swift; sourceTree = "<group>"; };
 		62080142AD096097CFF29C40 /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		8201387F1EFC0AFB00244A2B /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		82036D341EFBC1360074361B /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
@@ -138,8 +136,7 @@
 		823AE1481EF8FA1E00CB1D86 /* WbTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WbTabBarController.swift; sourceTree = "<group>"; };
 		823AE14A1EF8FA1E00CB1D86 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		823AE14C1EF8FA1E00CB1D86 /* WBMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMineViewController.swift; sourceTree = "<group>"; };
-		824AFBD91F0231090040C222 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		824AFBDA1F0231090040C222 /* WBBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
+		824AFBDA1F0231090040C222 /* WBTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTabViewController.swift; sourceTree = "<group>"; };
 		824AFBDB1F0231090040C222 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
 		824AFBDC1F0231090040C222 /* WBSuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSuperViewController.swift; sourceTree = "<group>"; };
 		824AFBDD1F0231090040C222 /* WBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTableViewController.swift; sourceTree = "<group>"; };
@@ -152,12 +149,6 @@
 		82629E901EF7B6AB00DA2D89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82629E971EF7B6AB00DA2D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82629E9C1EF7B6AB00DA2D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82629EA11EF7B6AB00DA2D89 /* WeiBoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		82629EA51EF7B6AB00DA2D89 /* WeiBoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoTests.swift; sourceTree = "<group>"; };
-		82629EA71EF7B6AB00DA2D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82629EAC1EF7B6AB00DA2D89 /* WeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoUITests.swift; sourceTree = "<group>"; };
-		82629EB21EF7B6AB00DA2D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		827319AA1F024C7E005E6FE0 /* WBComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
 		827319AB1F024C7E005E6FE0 /* WBComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeViewController.xib; sourceTree = "<group>"; };
 		82A448411EFD5BB100CA3A50 /* Emotion.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emotion.bundle; sourceTree = "<group>"; };
@@ -184,20 +175,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82629E9E1EF7B6AB00DA2D89 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82629EA91EF7B6AB00DA2D89 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -208,6 +185,34 @@
 				62080142AD096097CFF29C40 /* Pods-WeiBo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C48E5082314CF9F00ABF93A /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				4C48E5092314D04300ABF93A /* Const.swift */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		4C48E50F2314D70600ABF93A /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				4C48E5102314E0AA00ABF93A /* HttpClient.swift */,
+				4C48E5122315086900ABF93A /* API.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		4C48E519231537FB00ABF93A /* PageStrategy */ = {
+			isa = PBXGroup;
+			children = (
+				4C48E51A231537FC00ABF93A /* PageStrategy.swift */,
+				4C48E52D23154E9F00ABF93A /* PageViewController.swift */,
+				4C48E51D2315382600ABF93A /* PageStateManager.swift */,
+				4C48E52F2315508D00ABF93A /* PageTableViewController.swift */,
+			);
+			path = PageStrategy;
 			sourceTree = "<group>";
 		};
 		8204366D1EFA02C100A482FF /* Extension */ = {
@@ -308,11 +313,11 @@
 		823AE13E1EF8FA1D00CB1D86 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				824AFBD91F0231090040C222 /* Const.swift */,
-				824AFBDA1F0231090040C222 /* WBBaseViewController.swift */,
+				824AFBDA1F0231090040C222 /* WBTabViewController.swift */,
 				824AFBDB1F0231090040C222 /* WBNavigationController.swift */,
 				824AFBDC1F0231090040C222 /* WBSuperViewController.swift */,
 				824AFBDD1F0231090040C222 /* WBTableViewController.swift */,
+				4C48E52B23154E6E00ABF93A /* WBBaseViewController.swift */,
 				823AE1441EF8FA1D00CB1D86 /* Main */,
 				823AE1411EF8FA1D00CB1D86 /* Home */,
 				823AE1491EF8FA1E00CB1D86 /* Message */,
@@ -397,8 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				82629E8F1EF7B6AB00DA2D89 /* WeiBo */,
-				82629EA41EF7B6AB00DA2D89 /* WeiBoTests */,
-				82629EAF1EF7B6AB00DA2D89 /* WeiBoUITests */,
 				82629E8E1EF7B6AB00DA2D89 /* Products */,
 				15BA16F09E12C7B8235EE0E6 /* Pods */,
 				F33EAE9EADAD3687E0F3E48A /* Frameworks */,
@@ -409,8 +412,6 @@
 			isa = PBXGroup;
 			children = (
 				82629E8D1EF7B6AB00DA2D89 /* WeiBo.app */,
-				82629EA11EF7B6AB00DA2D89 /* WeiBoTests.xctest */,
-				82629EAC1EF7B6AB00DA2D89 /* WeiBoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -426,27 +427,10 @@
 			path = WeiBo;
 			sourceTree = "<group>";
 		};
-		82629EA41EF7B6AB00DA2D89 /* WeiBoTests */ = {
-			isa = PBXGroup;
-			children = (
-				82629EA51EF7B6AB00DA2D89 /* WeiBoTests.swift */,
-				82629EA71EF7B6AB00DA2D89 /* Info.plist */,
-			);
-			path = WeiBoTests;
-			sourceTree = "<group>";
-		};
-		82629EAF1EF7B6AB00DA2D89 /* WeiBoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				82629EB01EF7B6AB00DA2D89 /* WeiBoUITests.swift */,
-				82629EB21EF7B6AB00DA2D89 /* Info.plist */,
-			);
-			path = WeiBoUITests;
-			sourceTree = "<group>";
-		};
 		82629EBE1EF7B8D800DA2D89 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				4C48E5082314CF9F00ABF93A /* Const */,
 				823AE13E1EF8FA1D00CB1D86 /* View */,
 				82629EC51EF7B8D800DA2D89 /* Model */,
 				82629EC81EF7B8D800DA2D89 /* ViewModel */,
@@ -461,6 +445,7 @@
 				8215BDF71EFA76F700E0A642 /* WBStatus.swift */,
 				8222C2481EFB5EDE008D0114 /* WBUser.swift */,
 				8222C24A1EFB6102008D0114 /* WBStatusPicture.swift */,
+				4C48E51423150D8400ABF93A /* WBBaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -468,6 +453,8 @@
 		82629EC61EF7B8D800DA2D89 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4C48E519231537FB00ABF93A /* PageStrategy */,
+				4C48E50F2314D70600ABF93A /* Http */,
 				8216B7BF1F04CECD00650F29 /* AttributeLabel */,
 				824AFBE71F0233A40040C222 /* TextView */,
 				82D6FD431EFFD78300E35C26 /* NKRefresh */,
@@ -544,7 +531,6 @@
 				82629E8A1EF7B6AB00DA2D89 /* Frameworks */,
 				82629E8B1EF7B6AB00DA2D89 /* Resources */,
 				9FCA80E9D1301121D0C1D214 /* [CP] Embed Pods Frameworks */,
-				77A6149E465F3D8E45A95780 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -554,42 +540,6 @@
 			productName = WeiBo;
 			productReference = 82629E8D1EF7B6AB00DA2D89 /* WeiBo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		82629EA01EF7B6AB00DA2D89 /* WeiBoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82629EB81EF7B6AB00DA2D89 /* Build configuration list for PBXNativeTarget "WeiBoTests" */;
-			buildPhases = (
-				82629E9D1EF7B6AB00DA2D89 /* Sources */,
-				82629E9E1EF7B6AB00DA2D89 /* Frameworks */,
-				82629E9F1EF7B6AB00DA2D89 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				82629EA31EF7B6AB00DA2D89 /* PBXTargetDependency */,
-			);
-			name = WeiBoTests;
-			productName = WeiBoTests;
-			productReference = 82629EA11EF7B6AB00DA2D89 /* WeiBoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		82629EAB1EF7B6AB00DA2D89 /* WeiBoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82629EBB1EF7B6AB00DA2D89 /* Build configuration list for PBXNativeTarget "WeiBoUITests" */;
-			buildPhases = (
-				82629EA81EF7B6AB00DA2D89 /* Sources */,
-				82629EA91EF7B6AB00DA2D89 /* Frameworks */,
-				82629EAA1EF7B6AB00DA2D89 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				82629EAE1EF7B6AB00DA2D89 /* PBXTargetDependency */,
-			);
-			name = WeiBoUITests;
-			productName = WeiBoUITests;
-			productReference = 82629EAC1EF7B6AB00DA2D89 /* WeiBoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -605,16 +555,6 @@
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
-					};
-					82629EA01EF7B6AB00DA2D89 = {
-						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 82629E8C1EF7B6AB00DA2D89;
-					};
-					82629EAB1EF7B6AB00DA2D89 = {
-						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 82629E8C1EF7B6AB00DA2D89;
 					};
 				};
 			};
@@ -633,8 +573,6 @@
 			projectRoot = "";
 			targets = (
 				82629E8C1EF7B6AB00DA2D89 /* WeiBo */,
-				82629EA01EF7B6AB00DA2D89 /* WeiBoTests */,
-				82629EAB1EF7B6AB00DA2D89 /* WeiBoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -659,62 +597,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82629E9F1EF7B6AB00DA2D89 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82629EAA1EF7B6AB00DA2D89 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		77A6149E465F3D8E45A95780 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9FCA80E9D1301121D0C1D214 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8EDAA05F77CDE45C94B128E /* [CP] Check Pods Manifest.lock */ = {
@@ -746,8 +665,10 @@
 				8222C2511EFB921F008D0114 /* UIImageView+Extension.swift in Sources */,
 				823AE1551EF8FA1E00CB1D86 /* WBMineViewController.swift in Sources */,
 				8216B7BA1F049EC700650F29 /* UIViewFrame+Extension.swift in Sources */,
+				4C48E52C23154E6E00ABF93A /* WBBaseViewController.swift in Sources */,
 				823AE1541EF8FA1E00CB1D86 /* WBMessageViewController.swift in Sources */,
 				82036D351EFBC1360074361B /* WBStatusPictureView.swift in Sources */,
+				4C48E5132315086900ABF93A /* API.swift in Sources */,
 				823AE14D1EF8FA1E00CB1D86 /* WBDiscoverViewController.swift in Sources */,
 				8222C2531EFB9714008D0114 /* UIImage+Extension.swift in Sources */,
 				82C792211EFCFD89004929EF /* String+Extension.swift in Sources */,
@@ -770,11 +691,12 @@
 				825CFF891F03AE3C0089AE3C /* EmotionInputView.swift in Sources */,
 				82D6FD481EFFD78300E35C26 /* NKMTRefreshView.swift in Sources */,
 				8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */,
+				4C48E52E23154E9F00ABF93A /* PageViewController.swift in Sources */,
 				82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */,
 				820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */,
 				824AFBE21F0231090040C222 /* WBTableViewController.swift in Sources */,
 				822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */,
-				824AFBDF1F0231090040C222 /* WBBaseViewController.swift in Sources */,
+				824AFBDF1F0231090040C222 /* WBTabViewController.swift in Sources */,
 				824AFBED1F0233D00040C222 /* NKTextView.swift in Sources */,
 				8216B7B01F048FDF00650F29 /* EmotionToolView.swift in Sources */,
 				8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */,
@@ -782,6 +704,8 @@
 				8216B7BE1F04C80B00650F29 /* EmotionTipView.swift in Sources */,
 				823AE14E1EF8FA1E00CB1D86 /* WBHomeViewController.swift in Sources */,
 				823AE1531EF8FA1E00CB1D86 /* WbTabBarController.swift in Sources */,
+				4C48E51B231537FC00ABF93A /* PageStrategy.swift in Sources */,
+				4C48E5112314E0AA00ABF93A /* HttpClient.swift in Sources */,
 				8222C2451EFB5A99008D0114 /* WBStatusCell.swift in Sources */,
 				8216B7B41F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift in Sources */,
 				822CC27F1EFE84C400FFEA16 /* WBNewFeatureView.swift in Sources */,
@@ -794,41 +718,15 @@
 				8222C24B1EFB6102008D0114 /* WBStatusPicture.swift in Sources */,
 				825CFF841F039B8D0089AE3C /* EmotionPackage.swift in Sources */,
 				820436771EFA02C100A482FF /* UIButton+Extension.swift in Sources */,
+				4C48E51523150D8400ABF93A /* WBBaseModel.swift in Sources */,
 				8215BDF81EFA76F700E0A642 /* WBStatus.swift in Sources */,
-				824AFBDE1F0231090040C222 /* Const.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82629E9D1EF7B6AB00DA2D89 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82629EA61EF7B6AB00DA2D89 /* WeiBoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82629EA81EF7B6AB00DA2D89 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82629EB11EF7B6AB00DA2D89 /* WeiBoUITests.swift in Sources */,
+				4C48E51E2315382600ABF93A /* PageStateManager.swift in Sources */,
+				4C48E5302315508D00ABF93A /* PageTableViewController.swift in Sources */,
+				4C48E50A2314D04300ABF93A /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		82629EA31EF7B6AB00DA2D89 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 82629E8C1EF7B6AB00DA2D89 /* WeiBo */;
-			targetProxy = 82629EA21EF7B6AB00DA2D89 /* PBXContainerItemProxy */;
-		};
-		82629EAE1EF7B6AB00DA2D89 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 82629E8C1EF7B6AB00DA2D89 /* WeiBo */;
-			targetProxy = 82629EAD1EF7B6AB00DA2D89 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		82629EB31EF7B6AB00DA2D89 /* Debug */ = {
@@ -933,6 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -954,6 +853,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeiBo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -964,60 +864,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		82629EB91EF7B6AB00DA2D89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WeiBoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nk.WeiBoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo.app/WeiBo";
-			};
-			name = Debug;
-		};
-		82629EBA1EF7B6AB00DA2D89 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WeiBoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nk.WeiBoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeiBo.app/WeiBo";
-			};
-			name = Release;
-		};
-		82629EBC1EF7B6AB00DA2D89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = WeiBoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nk.WeiBoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = WeiBo;
-			};
-			name = Debug;
-		};
-		82629EBD1EF7B6AB00DA2D89 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = WeiBoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nk.WeiBoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = WeiBo;
 			};
 			name = Release;
 		};
@@ -1038,24 +884,6 @@
 			buildConfigurations = (
 				82629EB61EF7B6AB00DA2D89 /* Debug */,
 				82629EB71EF7B6AB00DA2D89 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		82629EB81EF7B6AB00DA2D89 /* Build configuration list for PBXNativeTarget "WeiBoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				82629EB91EF7B6AB00DA2D89 /* Debug */,
-				82629EBA1EF7B6AB00DA2D89 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		82629EBB1EF7B6AB00DA2D89 /* Build configuration list for PBXNativeTarget "WeiBoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				82629EBC1EF7B6AB00DA2D89 /* Debug */,
-				82629EBD1EF7B6AB00DA2D89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

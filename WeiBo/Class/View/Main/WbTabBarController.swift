@@ -105,7 +105,7 @@ extension WbTabBarController {
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
             let visitorDic = dict["visitor"] as? [String:String],
-            let cls = NSClassFromString(Bundle.main.nameSpace + "." + className) as? WBBaseViewController.Type else {
+            let cls = NSClassFromString(Bundle.main.nameSpace + "." + className) as? WBTabViewController.Type else {
                 let vc = UIViewController()
                 vc.view.backgroundColor = UIColor.red
                 vc.tabBarItem.isEnabled = false

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBStatusViewModel:CustomStringConvertible{
+class WBStatusViewModel{
     
     var status:WBStatus
     //会员图标 (内存换CPU)
@@ -82,10 +82,7 @@ class WBStatusViewModel:CustomStringConvertible{
         //计算行高
         rowHeight = caculateRowHeight()
     }
-    
-    var description: String {
-        return status.description
-    }
+
 
 }
 

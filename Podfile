@@ -7,4 +7,7 @@ target 'WeiBo' do
   pod 'SVProgressHUD'
   pod 'SDWebImage'
   pod 'pop'
+  pod 'RxAlamofire'
+  pod 'HandyJSON'
+  pod 'SnapKit'
 end

@@ -17,7 +17,6 @@ class WBTitleButton: UIButton {
         }else {
             setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
             setImage(UIImage(named:"navigationbar_arrow_up"), for: .selected)
-
             setTitle(title! + " ", for: .normal)
             setTitleColor(UIColor.darkGray, for: .normal)
             titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
@@ -36,9 +35,7 @@ class WBTitleButton: UIButton {
            let _ = imageView?.image else {
             return
         }
-        
         titleLabel?.frame.origin.x = 0
-        
         imageView?.frame.origin.x = titleLabel!.bounds.width
     }
 }

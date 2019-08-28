@@ -39,7 +39,7 @@ class WBUserAccont: NSObject {
             let dict = try? JSONSerialization.jsonObject(with: json as Data, options: []) as? [String:AnyObject] else {
             return
         }
-        yy_modelSet(with:dict ?? [:])
+        yy_modelSet(with:dict )
     }
     
     //跳转登录界面

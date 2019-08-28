@@ -8,8 +8,7 @@
 
 import UIKit
 
-@objcMembers
-class WBUser: NSObject {
+class WBUser: BaseModel {
     /// 用户id
     var id:Int64 = 0
     /// 用户昵称
@@ -20,9 +19,5 @@ class WBUser: NSObject {
     var verified_type: Int = 0
     /// 会员等级 0-6
     var mbrank: Int = 0
-    
-    override var description: String {
-        return yy_modelDescription()
-    }
 
 }

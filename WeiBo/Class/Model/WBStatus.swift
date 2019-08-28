@@ -8,8 +8,11 @@
 
 import UIKit
 
-@objcMembers
-class WBStatus: NSObject {
+class WBStatusData: BaseModel {
+    var statuses: [WBStatus]?
+}
+
+class WBStatus: BaseModel {
     /// Int 类型，在 64 位的机器是 64 位，在 32 位机器就是 32 位
     /// 如果不写 Int64 在 iPad 2/iPhone 5/5c/4s/4 都无法正常运行
     var id: Int64 = 0
@@ -45,16 +48,4 @@ class WBStatus: NSObject {
     /// 微博配图模型数组
     var pic_urls: [WBStatusPicture]?
     
-    /// 重写 description 的计算型属性
-    override var description: String {
-        return yy_modelDescription()
-    }
-    
-    /// 类函数 -> 告诉第三方框架 YY_Model 如果遇到数组类型的属性，数组中存放的对象是什么类？
-    /// NSArray 中保存对象的类型通常是 `id` 类型
-    /// OC 中的泛型是 Swift 推出后，苹果为了兼容给 OC 增加的
-    /// 从运行时角度，仍然不知道数组中应该存放什么类型的对象
-    @objc class func modelContainerPropertyGenericClass() -> [String: AnyClass] {
-        return ["pic_urls": WBStatusPicture.self]
-    }
 }

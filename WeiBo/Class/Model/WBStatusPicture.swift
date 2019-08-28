@@ -1,16 +1,15 @@
 //
 //  WBStatusPicture.swift
-//  传智微博
+//  WeiBo
 //
-//  Created by apple on 16/7/5.
-//  Copyright © 2016年 itcast. All rights reserved.
+//  Created by 聂康  on 2017/6/21.
+//  Copyright © 2017年 com.nk. All rights reserved.
 //
 
 import UIKit
 
 /// 微博配图模型
-@objcMembers
-class WBStatusPicture: NSObject {
+class WBStatusPicture: BaseModel {
 
     /// 缩略图地址 - 新浪返回的缩略图令人发指
     var thumbnail_pic: String? {
@@ -27,7 +26,5 @@ class WBStatusPicture: NSObject {
     /// 大尺寸图片
     var largePic: String?
     
-    override var description: String {
-        return yy_modelDescription()
-    }
+
 }
