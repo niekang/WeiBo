@@ -8,8 +8,9 @@
 
 import UIKit
 
-class WBBaseViewController: PageViewController {
+class WBBaseViewController: UIViewController {
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
