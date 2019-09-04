@@ -105,7 +105,7 @@ class WBComposeViewController: WBSuperViewController {
     }
     
     /// 表情键盘
-    func emoticonKeyboard() {
+    @objc func emoticonKeyboard() {
         textView.becomeFirstResponder()
         
         textView.inputView = (textView.inputView == nil) ? emmotionInputView : nil

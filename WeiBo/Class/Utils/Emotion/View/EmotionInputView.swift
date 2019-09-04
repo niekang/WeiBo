@@ -41,6 +41,8 @@ class EmotionInputView: UIView {
         frame = CGRect(x: 0, y: 0, width: kWidth, height: 253)
         
         collectionView.register(EmotionCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.delegate = self;
+        collectionView.dataSource = self;
         
         // 设置分页控件的图片
         let bundle = EmotionManager.shared.bundle
@@ -57,13 +59,30 @@ class EmotionInputView: UIView {
         // 使用 KVC 设置私有成员属性
         pageControl.setValue(normalImage, forKey: "_pageImage")
         pageControl.setValue(selectedImage, forKey: "_currentPageImage")
-
+        
     }
 }
 
 
-// MARK: - UICollectionViewDelegate
-extension EmotionInputView: UICollectionViewDelegate {
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+extension EmotionInputView: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return EmotionManager.shared.packages.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return EmotionManager.shared.packages[section].page
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! EmotionCollectionViewCell
+        cell.emotions = EmotionManager.shared.packages[indexPath.section].emotions(page: indexPath.row)
+        cell.delegate = self
+        return cell
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
@@ -105,24 +124,6 @@ extension EmotionInputView: UICollectionViewDelegate {
     }
 }
 
-extension EmotionInputView: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return EmotionManager.shared.packages.count
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return EmotionManager.shared.packages[section].page
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! EmotionCollectionViewCell
-        cell.emotions = EmotionManager.shared.packages[indexPath.section].emotions(page: indexPath.row)
-        cell.delegate = self
-        return cell
-    }
-}
 
 extension EmotionInputView:EmotionCollectionViewCellDelegate {
     

@@ -94,7 +94,7 @@ extension EmotionToolView {
         }
         
         // 默认选中第0个按钮
-        (subviews[0] as! UIButton).isSelected = true
+        (subviews.first as? UIButton)?.isSelected = true
 
     }
     

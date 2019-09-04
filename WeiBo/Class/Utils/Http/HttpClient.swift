@@ -79,7 +79,7 @@ public class HttpClient {
             .responseString { (response) in
                 switch response.result {
                     case let .success(value):
-                        let parseData: T? = self.parseJSON(value)
+                        let parseData: T? = HttpClient.parseJSON(value)
                         guard let data = parseData else {
                             let error = JSONError()
                             failure(error, error.localizedDescription)
@@ -123,7 +123,7 @@ public class HttpClient {
                 switch response.result {
                     case let .success(value):
                         WBLog(response.result.value)
-                        let parseData: [T?]? = self.parseJSONArray(value)
+                        let parseData: [T?]? = HttpClient.parseJSONArray(value)
                         guard let data = parseData else {
                             let error = JSONError()
                             failure(error, error.localizedDescription)
@@ -145,12 +145,16 @@ public class HttpClient {
 
 extension HttpClient {
     
-    func parseJSON<T: HandyJSON>(_ jsonString: String?) -> T? {
+    static func parseJSON<T: HandyJSON>(_ jsonString: String?) -> T? {
         return T.deserialize(from: jsonString)
     }
     
-    func parseJSONArray<T: HandyJSON>(_ jsonString: String?) -> [T?]? {
+    static func parseJSONArray<T: HandyJSON>(_ jsonString: String?) -> [T?]? {
         return [T].deserialize(from: jsonString)
+    }
+    
+    static func parseJSONArray<T: HandyJSON>(_ array: [Any]?) -> [T?]? {
+        return [T].deserialize(from: array)
     }
 }
 

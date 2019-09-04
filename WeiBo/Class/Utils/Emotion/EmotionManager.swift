@@ -36,14 +36,17 @@ class EmotionManager {
         guard let path = Bundle.main.path(forResource: "Emotion.bundle", ofType: nil),
             let bundle = Bundle(path: path),
             let plistPath = bundle.path(forResource:"emotions.plist", ofType:nil),
-            let array = NSArray(contentsOfFile: plistPath) as? [[String: String]],
-            let models = NSArray.yy_modelArray(with: EmotionPackage.self, json: array) as? [EmotionPackage] else {
+            let array = NSArray(contentsOfFile: plistPath) as? [[String: String]] else {
             return
         }
         
+        let models: [EmotionPackage?]? = HttpClient.parseJSONArray(array)
         // 设置表情包数据
         // 使用 += 不需要再次给 packages 分配空间，直接追加数据
-        packages += models
+        guard let modelArray = models as? [EmotionPackage] else {
+            return
+        }
+        packages += modelArray
      
     }
 

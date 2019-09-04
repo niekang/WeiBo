@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Emotion: NSObject {
+class Emotion: BaseModel {
 
     /// 表情类型 false - 图片表情 / true - emoji
     var type = false
@@ -88,9 +88,5 @@ class Emotion: NSObject {
         return attrStrM
     }
 
-    
-    override var description: String {
-        return yy_modelDescription()
-    }
 
 }
