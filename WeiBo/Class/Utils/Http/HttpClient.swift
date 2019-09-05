@@ -6,11 +6,12 @@
 //  Copyright © 2019 com.nk. All rights reserved.
 //
 
-import RxAlamofire
 import HandyJSON
 import Alamofire
 
 public class HttpClient {
+    
+    static let shared = HttpClient()
     
     public var baseURL: String = ""
     public var headers: HTTPHeaders = [:]

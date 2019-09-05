@@ -102,11 +102,11 @@ extension WbTabBarController {
     
     /// 根据提供的信息创建相应的控制器
     func controller(dict:[String:Any]) -> UIViewController{
-        guard let vc = dict["vc"] as? BaseViewController,
+        guard let vc = dict["vc"] as? VisitorViewProtocol & UIViewController,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
             let visitorDic = dict["visitor"] as? [String:String] else {
-                let vc = UIViewController()
+                let vc = BaseViewController()
                 vc.view.backgroundColor = UIColor.red
                 vc.tabBarItem.isEnabled = false
                 return vc

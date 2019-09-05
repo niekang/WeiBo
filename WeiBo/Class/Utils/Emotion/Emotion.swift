@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Emotion: BaseModel {
+class Emotion: BaseModel, Equatable {
 
     /// 表情类型 false - 图片表情 / true - emoji
     var type = false
@@ -88,5 +88,9 @@ class Emotion: BaseModel {
         return attrStrM
     }
 
+
+    static func == (lhs: Emotion, rhs: Emotion) -> Bool {
+        return lhs.code == rhs.code
+    }
 
 }

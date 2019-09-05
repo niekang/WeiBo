@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import YYModel
+import HandyJSON
 
-@objcMembers
-class WBUserAccont: NSObject {
+
+class WBUserAccont: BaseModel {
     
-    static let shared : WBUserAccont = WBUserAccont()
+    static let shared  = WBUserAccont()
     
     let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!.appending("/user")
 
@@ -22,9 +22,6 @@ class WBUserAccont: NSObject {
     
     var remind_in:String?
     
-    /// 过期日期
-    var expiresDate: Date?
-    
     /// 用户昵称
     var screen_name: String?
     /// 用户头像地址（大图），180×180像素
@@ -32,14 +29,15 @@ class WBUserAccont: NSObject {
 
     var uid:String?
     
-    private override init() {
+    required init() {
         super.init()
         //从本地加载用户信息
         guard let json = NSData(contentsOfFile: path),
             let dict = try? JSONSerialization.jsonObject(with: json as Data, options: []) as? [String:AnyObject] else {
             return
         }
-        yy_modelSet(with:dict )
+        
+        reset(dict, shouldUpdate: true)
     }
     
     //跳转登录界面
@@ -51,9 +49,40 @@ class WBUserAccont: NSObject {
         let nav = WBNavigationController(rootViewController: oauthVC)
         modelVC.present(nav, animated: true, completion: nil)
     }
+    
+    func reset(_ dict: [String: Any], shouldUpdate: Bool = false) {
+        self.access_token = nil
+        self.uid = nil
+        self.remind_in = nil
+        self.screen_name = nil
+        self.avatar_large = nil
+        self.expires_in = 0
+        
+        if(shouldUpdate) {
+            update(dict)
+        }
+    }
+    
+    func update(_ dict: [String: Any]) {
+        if let access_token = dict["access_token"] as? String {
+            self.access_token = access_token
+        }
+        if let uid = dict["uid"] as? String {
+            self.uid = uid
+        }
+        if let remind_in = dict["remind_in"] as? String {
+            self.remind_in = remind_in
+        }
+        if let screen_name = dict["screen_name"] as? String {
+            self.screen_name = screen_name
+        }
+        if let avatar_large = dict["avatar_large"] as? String {
+            self.avatar_large = avatar_large
+        }
+        if let expires_in = dict["expires_in"] as? Int {
+            self.expires_in = expires_in
+        }
 
-    override var description: String {
-        return yy_modelDescription()
     }
     
 }
@@ -69,36 +98,34 @@ extension WBUserAccont {
     ///   - completion: 返回授权是否成功
     func requestToken(code:String, completion:@escaping ((Bool) -> Void)) {
         
-        let urlString = "https://api.weibo.com/oauth2/access_token"
-        let params = ["client_id": WBAPPkey,
-                      "client_secret": WBAppSecret,
-                      "grant_type": "authorization_code",
-                      "code": code,
-                      "redirect_uri": WBRedirectURL]
+        let params = [
+            "client_id": WBAPPkey,
+            "client_secret": WBAppSecret,
+            "grant_type": "authorization_code",
+            "code": code,
+            "redirect_uri": WBRedirectURL
+        ]
         
-        WBNetworkManager.shared.request(method: .POST, URLString: urlString, parameters: params, completion:{ (isSuccess, json) in
-            guard let dict = json as? [String:AnyObject] else {
+        HttpClient.shared.post(urlString: WBAPI_Auth, params: params, success: { (userAccount: WBUserAccont) in
+            guard let dict = userAccount.toJSON() else {
                 return
             }
-            //给当前模型赋值
-//            self.access_token = dict["access_token"] as? String
-//            self.uid = dict["uid"] as? String
-//            self.expires_in = dict["expires_in"] as! Int
-//            self.remind_in = dict["remind_in"] as? String
-//YYModel方法有问题
-            self.yy_modelSet(with: dict)
+            self.reset(dict, shouldUpdate: true)
             //请求用户信息
             self.requestUserInfo(completion: { (isSuccess, json) in
-                guard let dict = json as? [String:AnyObject] else {
+                guard let dict = json as? [String:Any] else {
                     return
                 }
                 //给当前模型赋值
-                self.yy_modelSet(with: dict)
+                self.update(dict)
                 //将用户信息保存在本地
                 self.saveAccout()
                 completion(isSuccess)
             })
-        })
+            
+        }) { (_, _) in
+            completion(false)
+        }
         
     }
     
@@ -107,16 +134,19 @@ extension WBUserAccont {
     ///
     /// - Parameter completion: 完成回调
     func requestUserInfo(completion:@escaping ((Bool, Any?) -> Void)) {
-        let infoApi = "https://api.weibo.com/2/users/show.json"
-        let params = ["uid":uid]
-        WBNetworkManager.shared.request(URLString: infoApi, parameters: params, completion:completion)
+        let params = ["uid":uid ?? ""]
+        HttpClient.shared.get(urlString: WBAPI_UserInfo, params: params, success: { (user: WBUser) in
+            completion(true, user.toJSON())
+        }) { (error, _) in
+            completion(false, error)
+        }
     }
     
     /// 保存用户信息
     ///
     /// - Parameter json: 用户信息的json数据
     func saveAccout() {
-        let json = (self.yy_modelToJSONObject() as? [String:AnyObject]) ?? [:]
+        let json = (self.toJSON()) ?? [:]
         guard let jsonData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
             return
         }

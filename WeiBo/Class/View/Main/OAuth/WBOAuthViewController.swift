@@ -57,7 +57,8 @@ extension WBOAuthViewController:WKNavigationDelegate {
             return
         }
         
-        if let code = webView.url?.query?.substring(from: "code.".endIndex) {
+        if let subString = webView.url?.query?["code.".endIndex...]{
+            let code = String(subString)
             WBUserAccont.shared.requestToken(code: code, completion: { (isSuccess) in
                 if isSuccess == true {
                     SVProgressHUD.showSuccess(withStatus: "登录成功!")

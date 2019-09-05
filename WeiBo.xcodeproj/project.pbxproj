@@ -22,6 +22,7 @@
 		820436791EFA02C100A482FF /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820436721EFA02C100A482FF /* UILabel+Extension.swift */; };
 		820BBA1B231D89F50012ADFB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA1A231D89F50012ADFB /* BaseViewController.swift */; };
 		820BBA1D231D8A070012ADFB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */; };
+		820BBA2323216E5F0012ADFB /* WBBaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA2223216E5F0012ADFB /* WBBaseTabViewController.swift */; };
 		8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */; };
 		8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */; };
 		8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */; };
@@ -96,6 +97,7 @@
 		820436721EFA02C100A482FF /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		820BBA1A231D89F50012ADFB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		820BBA2223216E5F0012ADFB /* WBBaseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseTabViewController.swift; sourceTree = "<group>"; };
 		8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccont.swift; sourceTree = "<group>"; };
 		8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				824AFBDB1F0231090040C222 /* WBNavigationController.swift */,
+				820BBA2223216E5F0012ADFB /* WBBaseTabViewController.swift */,
 				823AE1441EF8FA1D00CB1D86 /* Main */,
 				823AE1411EF8FA1D00CB1D86 /* Home */,
 				823AE1491EF8FA1E00CB1D86 /* Message */,
@@ -648,6 +651,7 @@
 			files = (
 				8216B7B81F0497E600650F29 /* EmotionCollectionViewCell.swift in Sources */,
 				8222C2511EFB921F008D0114 /* UIImageView+Extension.swift in Sources */,
+				820BBA2323216E5F0012ADFB /* WBBaseTabViewController.swift in Sources */,
 				823AE1551EF8FA1E00CB1D86 /* WBMineViewController.swift in Sources */,
 				8216B7BA1F049EC700650F29 /* UIViewFrame+Extension.swift in Sources */,
 				820BBA1B231D89F50012ADFB /* BaseViewController.swift in Sources */,
@@ -814,7 +818,7 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nk.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -836,7 +840,7 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeiBo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nk.WeiBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

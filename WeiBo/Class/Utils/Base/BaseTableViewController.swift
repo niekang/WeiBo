@@ -35,8 +35,8 @@ class BaseTableViewController<T>: BaseViewController, UITableViewDataSource, UIT
     }()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.view.addSubview(tableView)
+        super.viewDidLoad()
     }
     
     //MARK: Override
@@ -66,6 +66,10 @@ class BaseTableViewController<T>: BaseViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.didSelectedCell?(indexPath, self.dataSource[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.willDisplayCell?(indexPath, self.dataSource[indexPath.row])
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

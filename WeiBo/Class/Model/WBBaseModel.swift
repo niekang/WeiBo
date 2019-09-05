@@ -8,10 +8,9 @@
 
 import HandyJSON
 
-class BaseModel: NSObject, HandyJSON {
+class BaseModel: HandyJSON {
     
-    required override init() {
-        super.init()
+    required init() {
     }
 }
 

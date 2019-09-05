@@ -13,13 +13,11 @@ private let normalCellId = "WBStatusNormalCell"
 
 private let retweetedCellId = "WBStatusRetweetedCell"
 
-class WBHomeViewController: BaseTableViewController<WBStatusViewModel> {
+class WBHomeViewController: WBBaseTabViewController<WBStatusViewModel> {
 
     lazy var statusListViewModel = WBStatusListViewModel() // ViewModel 处理微博数据
     
     let refreshControl = NKRefreshControl() /// 下拉刷新控件
-    
-    var isHeader = true  /// 是否是下拉
     
     override func viewDidLoad() {
         setupUI() //在判断登录状态之前 注册table 接收到登录通知之后 显示数据
@@ -37,20 +35,29 @@ class WBHomeViewController: BaseTableViewController<WBStatusViewModel> {
     
     @objc override func loadData() {
         /// 如果是下拉，显示下拉动画
-        if isHeader {
-            refreshControl.beginRefresh()
+        refreshControl.beginRefresh()
+
+        statusListViewModel.loadWBStatusListData(isHeader: true) {[weak self] (isSuccess) in
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.refreshControl.endRefresh()
+            weakSelf.dataSource = weakSelf.statusListViewModel.statusList
+            weakSelf.tableView.reloadData()
         }
-        
-        statusListViewModel.loadWBStatusListData(isHeader: isHeader) {[weak self] (isSuccess) in
+    }
+    
+    override func loadMoreData() {
+        statusListViewModel.loadWBStatusListData(isHeader: false) {[weak self] (isSuccess) in
             
             guard let weakSelf = self else {
                 return
             }
             weakSelf.dataSource = weakSelf.statusListViewModel.statusList
-            weakSelf.isHeader = true
             weakSelf.tableView.reloadData()
             weakSelf.refreshControl.endRefresh()
         }
+
     }
 }
 
@@ -68,18 +75,10 @@ extension WBHomeViewController {
         self.willDisplayCell = {[unowned self](indexPath, statusViewModel) in
             
             let row = indexPath.row
-            let section = indexPath.section
-            
-            if row < 0 || section < 0 {
-                return
-            }
-            
-            let count = self.tableView.numberOfRows(inSection: section)
             
             /// 当滑到底部的时候加载数据
-            if row == (count - 1) && self.isHeader{
-                self.isHeader = false
-                self.loadData()
+            if row == (self.dataSource.count - 1){
+                self.loadMoreData()
             }
         }
     }

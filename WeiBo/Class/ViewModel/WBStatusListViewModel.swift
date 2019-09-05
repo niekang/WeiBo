@@ -12,8 +12,6 @@ import SDWebImage
 
 class WBStatusListViewModel {
     
-    let httpClient = HttpClient()
-    
     var statusList = [WBStatusViewModel]()
     
     /// 加载微博数据
@@ -29,8 +27,9 @@ class WBStatusListViewModel {
         /// count 不存在默认返回20条数据
         let parameters = ["since_id":"\(since_id)","max_id":"\(max_id)"]
         
-        httpClient.get(urlString: WBAPI_HomeList, params: parameters, success: { (statusData: WBStatusData) in
+        HttpClient.shared.get(urlString: WBAPI_HomeList, params: parameters, success: { (statusData: WBStatusData) in
             guard let status = statusData.statuses else {
+                completion(true)
                 return
             }
             let array = status.map({ (model) -> WBStatusViewModel in
