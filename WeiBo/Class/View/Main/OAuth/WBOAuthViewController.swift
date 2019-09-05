@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import SVProgressHUD
 
-class WBOAuthViewController: WBSuperViewController {
+class WBOAuthViewController: BaseViewController {
     
     private var webview =  WKWebView()
     

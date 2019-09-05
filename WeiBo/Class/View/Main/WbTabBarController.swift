@@ -77,16 +77,17 @@ extension WbTabBarController {
     
     /// 准备子控制器创建信息
     func setControllers() {
+        
         let dictArray = [
-            ["className":"WBHomeViewController","title":"首页","imageName":"tabbar_home","visitor":["image":"","tip":"关注一些人，回这里看看有什么惊喜"]],
+            ["vc":WBHomeViewController(),"title":"首页","imageName":"tabbar_home","visitor":["image":"","tip":"关注一些人，回这里看看有什么惊喜"]],
             
-            ["className":"WBMessageViewController","title":"消息","imageName":"tabbar_message_center","visitor":["image":"visitordiscover_image_message","tip":"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
+            ["vc":WBMessageViewController(),"title":"消息","imageName":"tabbar_message_center","visitor":["image":"visitordiscover_image_message","tip":"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
             
-            ["className":"","title":"","imageName":"","visitor":["image":"","tip":""]],
+            ["vc":"","title":"","imageName":"","visitor":["image":"","tip":""]],
             
-            ["className":"WBDiscoverViewController","title":"发现","imageName":"tabbar_discover","visitor":["image":"visitordiscover_image_message","tip":"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
+            ["vc":WBDiscoverViewController(),"title":"发现","imageName":"tabbar_discover","visitor":["image":"visitordiscover_image_message","tip":"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
             
-            ["className":"WBMineViewController","title":"我的","imageName":"tabbar_profile","visitor":["image":"visitordiscover_image_profile","tip":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]
+            ["vc":WBMineViewController(),"title":"我的","imageName":"tabbar_profile","visitor":["image":"visitordiscover_image_profile","tip":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]
         ];
         
         var vcsArray = [UIViewController]()
@@ -101,18 +102,16 @@ extension WbTabBarController {
     
     /// 根据提供的信息创建相应的控制器
     func controller(dict:[String:Any]) -> UIViewController{
-        guard let className = dict["className"] as? String,
+        guard let vc = dict["vc"] as? BaseViewController,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
-            let visitorDic = dict["visitor"] as? [String:String],
-            let cls = NSClassFromString(Bundle.main.nameSpace + "." + className) as? WBTabViewController.Type else {
+            let visitorDic = dict["visitor"] as? [String:String] else {
                 let vc = UIViewController()
                 vc.view.backgroundColor = UIColor.red
                 vc.tabBarItem.isEnabled = false
                 return vc
         }
         
-        let vc = cls.init()
         vc.title = title
         vc.tabBarItem.image = UIImage(named:imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)

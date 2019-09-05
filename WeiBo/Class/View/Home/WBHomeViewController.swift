@@ -13,11 +13,13 @@ private let normalCellId = "WBStatusNormalCell"
 
 private let retweetedCellId = "WBStatusRetweetedCell"
 
-class WBHomeViewController: WBTabViewController {
+class WBHomeViewController: BaseTableViewController<WBStatusViewModel> {
 
     lazy var statusListViewModel = WBStatusListViewModel() // ViewModel 处理微博数据
     
     let refreshControl = NKRefreshControl() /// 下拉刷新控件
+    
+    var isHeader = true  /// 是否是下拉
     
     override func viewDidLoad() {
         setupUI() //在判断登录状态之前 注册table 接收到登录通知之后 显示数据
@@ -27,8 +29,11 @@ class WBHomeViewController: WBTabViewController {
     override func loginSuccess() {
         super.loginSuccess()
         setupUI() /// 注册table
+        configTable()
         loadData() // 加载数据
     }
+    
+    
     
     @objc override func loadData() {
         /// 如果是下拉，显示下拉动画
@@ -36,26 +41,49 @@ class WBHomeViewController: WBTabViewController {
             refreshControl.beginRefresh()
         }
         
-        statusListViewModel.loadWBStatusListData(isHeader: isHeader) { (isSuccess) in
-            self.isHeader = true
-            self.tableView.reloadData()
-            self.refreshControl.endRefresh()
+        statusListViewModel.loadWBStatusListData(isHeader: isHeader) {[weak self] (isSuccess) in
+            
+            guard let weakSelf = self else {
+                return
+            }
+            weakSelf.dataSource = weakSelf.statusListViewModel.statusList
+            weakSelf.isHeader = true
+            weakSelf.tableView.reloadData()
+            weakSelf.refreshControl.endRefresh()
         }
     }
 }
 
 extension WBHomeViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusListViewModel.statusList.count
+    
+    func configTable() {
+        
+        self.configCell = {[unowned self](indexPath, statusViewModel) in
+            let cellId = (statusViewModel.status.retweeted_status != nil) ? retweetedCellId : normalCellId
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
+            cell.statusViewModel = statusViewModel
+            return cell
+        }
+        
+        self.willDisplayCell = {[unowned self](indexPath, statusViewModel) in
+            
+            let row = indexPath.row
+            let section = indexPath.section
+            
+            if row < 0 || section < 0 {
+                return
+            }
+            
+            let count = self.tableView.numberOfRows(inSection: section)
+            
+            /// 当滑到底部的时候加载数据
+            if row == (count - 1) && self.isHeader{
+                self.isHeader = false
+                self.loadData()
+            }
+        }
     }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let statusViewModel = statusListViewModel.statusList[indexPath.row]
-        let cellId = (statusViewModel.status.retweeted_status != nil) ? retweetedCellId : normalCellId
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
-        cell.statusViewModel = statusViewModel
-        return cell
-    }
+    
 }
 
 extension WBHomeViewController {

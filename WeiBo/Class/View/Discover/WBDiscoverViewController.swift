@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBDiscoverViewController: WBTabViewController {
+class WBDiscoverViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WBStatusViewModel{
+class WBStatusViewModel {
     
     var status:WBStatus
     //会员图标 (内存换CPU)
@@ -82,7 +82,7 @@ class WBStatusViewModel{
         //计算行高
         rowHeight = caculateRowHeight()
     }
-
+    
 
 }
 

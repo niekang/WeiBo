@@ -13,7 +13,6 @@
 		4C48E5132315086900ABF93A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E5122315086900ABF93A /* API.swift */; };
 		4C48E51523150D8400ABF93A /* WBBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E51423150D8400ABF93A /* WBBaseModel.swift */; };
 		4C48E51E2315382600ABF93A /* PageStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E51D2315382600ABF93A /* PageStateManager.swift */; };
-		4C48E52C23154E6E00ABF93A /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C48E52B23154E6E00ABF93A /* WBBaseViewController.swift */; };
 		820138801EFC0AFB00244A2B /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8201387F1EFC0AFB00244A2B /* WBStatusRetweetedCell.xib */; };
 		82036D351EFBC1360074361B /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82036D341EFBC1360074361B /* WBStatusPictureView.swift */; };
 		820436751EFA02C100A482FF /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8204366E1EFA02C100A482FF /* Bundle+Extension.swift */; };
@@ -56,10 +55,7 @@
 		823AE1531EF8FA1E00CB1D86 /* WbTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE1481EF8FA1E00CB1D86 /* WbTabBarController.swift */; };
 		823AE1541EF8FA1E00CB1D86 /* WBMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE14A1EF8FA1E00CB1D86 /* WBMessageViewController.swift */; };
 		823AE1551EF8FA1E00CB1D86 /* WBMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823AE14C1EF8FA1E00CB1D86 /* WBMineViewController.swift */; };
-		824AFBDF1F0231090040C222 /* WBTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDA1F0231090040C222 /* WBTabViewController.swift */; };
 		824AFBE01F0231090040C222 /* WBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDB1F0231090040C222 /* WBNavigationController.swift */; };
-		824AFBE11F0231090040C222 /* WBSuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDC1F0231090040C222 /* WBSuperViewController.swift */; };
-		824AFBE21F0231090040C222 /* WBTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBDD1F0231090040C222 /* WBTableViewController.swift */; };
 		824AFBED1F0233D00040C222 /* NKTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFBEC1F0233D00040C222 /* NKTextView.swift */; };
 		825CFF841F039B8D0089AE3C /* EmotionPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825CFF831F039B8D0089AE3C /* EmotionPackage.swift */; };
 		825CFF861F039C750089AE3C /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825CFF851F039C750089AE3C /* Emotion.swift */; };
@@ -90,7 +86,6 @@
 		4C48E5122315086900ABF93A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4C48E51423150D8400ABF93A /* WBBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseModel.swift; sourceTree = "<group>"; };
 		4C48E51D2315382600ABF93A /* PageStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateManager.swift; sourceTree = "<group>"; };
-		4C48E52B23154E6E00ABF93A /* WBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseViewController.swift; sourceTree = "<group>"; };
 		62080142AD096097CFF29C40 /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		8201387F1EFC0AFB00244A2B /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		82036D341EFBC1360074361B /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
@@ -134,10 +129,7 @@
 		823AE1481EF8FA1E00CB1D86 /* WbTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WbTabBarController.swift; sourceTree = "<group>"; };
 		823AE14A1EF8FA1E00CB1D86 /* WBMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMessageViewController.swift; sourceTree = "<group>"; };
 		823AE14C1EF8FA1E00CB1D86 /* WBMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBMineViewController.swift; sourceTree = "<group>"; };
-		824AFBDA1F0231090040C222 /* WBTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTabViewController.swift; sourceTree = "<group>"; };
 		824AFBDB1F0231090040C222 /* WBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNavigationController.swift; sourceTree = "<group>"; };
-		824AFBDC1F0231090040C222 /* WBSuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBSuperViewController.swift; sourceTree = "<group>"; };
-		824AFBDD1F0231090040C222 /* WBTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTableViewController.swift; sourceTree = "<group>"; };
 		824AFBEC1F0233D00040C222 /* NKTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NKTextView.swift; sourceTree = "<group>"; };
 		825CFF831F039B8D0089AE3C /* EmotionPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EmotionPackage.swift; sourceTree = "<group>"; };
 		825CFF851F039C750089AE3C /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
@@ -310,11 +302,7 @@
 		823AE13E1EF8FA1D00CB1D86 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				824AFBDA1F0231090040C222 /* WBTabViewController.swift */,
 				824AFBDB1F0231090040C222 /* WBNavigationController.swift */,
-				824AFBDC1F0231090040C222 /* WBSuperViewController.swift */,
-				824AFBDD1F0231090040C222 /* WBTableViewController.swift */,
-				4C48E52B23154E6E00ABF93A /* WBBaseViewController.swift */,
 				823AE1441EF8FA1D00CB1D86 /* Main */,
 				823AE1411EF8FA1D00CB1D86 /* Home */,
 				823AE1491EF8FA1E00CB1D86 /* Message */,
@@ -662,7 +650,6 @@
 				8222C2511EFB921F008D0114 /* UIImageView+Extension.swift in Sources */,
 				823AE1551EF8FA1E00CB1D86 /* WBMineViewController.swift in Sources */,
 				8216B7BA1F049EC700650F29 /* UIViewFrame+Extension.swift in Sources */,
-				4C48E52C23154E6E00ABF93A /* WBBaseViewController.swift in Sources */,
 				820BBA1B231D89F50012ADFB /* BaseViewController.swift in Sources */,
 				823AE1541EF8FA1E00CB1D86 /* WBMessageViewController.swift in Sources */,
 				82036D351EFBC1360074361B /* WBStatusPictureView.swift in Sources */,
@@ -672,7 +659,6 @@
 				82C792211EFCFD89004929EF /* String+Extension.swift in Sources */,
 				8236973C1F03964C006CE70E /* EmotionManager.swift in Sources */,
 				8222C24D1EFB6454008D0114 /* WBStatusViewModel.swift in Sources */,
-				824AFBE11F0231090040C222 /* WBSuperViewController.swift in Sources */,
 				827319AC1F024C7E005E6FE0 /* WBComposeViewController.swift in Sources */,
 				824AFBE01F0231090040C222 /* WBNavigationController.swift in Sources */,
 				825CFF861F039C750089AE3C /* Emotion.swift in Sources */,
@@ -691,9 +677,7 @@
 				8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */,
 				82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */,
 				820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */,
-				824AFBE21F0231090040C222 /* WBTableViewController.swift in Sources */,
 				822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */,
-				824AFBDF1F0231090040C222 /* WBTabViewController.swift in Sources */,
 				824AFBED1F0233D00040C222 /* NKTextView.swift in Sources */,
 				8216B7B01F048FDF00650F29 /* EmotionToolView.swift in Sources */,
 				8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */,

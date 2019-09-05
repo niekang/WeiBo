@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class WBComposeViewController: WBSuperViewController {
+class WBComposeViewController: BaseViewController {
 
     @IBOutlet var titleBtn: UILabel!
 

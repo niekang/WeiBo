@@ -12,20 +12,23 @@ class BaseTableViewController<T>: BaseViewController, UITableViewDataSource, UIT
     
     typealias ConfigCellClosure = (IndexPath, T) -> UITableViewCell
     typealias ConfigCellHeightClosure = (IndexPath, T) -> CGFloat
-    typealias DidSelecetdCellClosure = (IndexPath, T) -> Void
+    typealias CommonConfigClosure = (IndexPath, T) -> Void
     typealias ScrollClosure = (UIScrollView) -> Void
 
     //MARK: dataSource, delegate closure
     public var configCell: ConfigCellClosure!
     public var configCellHeight: ConfigCellHeightClosure?
-    public var didSelectedCell: DidSelecetdCellClosure?
-    public var didScroll: ScrollClosure?
+    public var willDisplayCell: CommonConfigClosure?
+    public var didSelectedCell: CommonConfigClosure?
     public var endDecelerating: ScrollClosure?
+    public var didScroll: ScrollClosure?
 
     public var dataSource = [T]()
     
     private(set) lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame)
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.backgroundColor = UIColor.white
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
