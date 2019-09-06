@@ -30,7 +30,7 @@ class WBWelcomView: UIView {
     override func awakeFromNib() {
         iconView.layer.cornerRadius = iconView.width * 0.5
         iconView.layer.masksToBounds = true
-        guard let avatar = WBUserAccont.shared.avatar_large,
+        guard let avatar = WBUserAccont.shared.profile_image_url,
             let url = URL(string: avatar) else {
             return
         }

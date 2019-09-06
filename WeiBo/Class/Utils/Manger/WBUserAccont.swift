@@ -24,8 +24,9 @@ class WBUserAccont: BaseModel {
     
     /// 用户昵称
     var screen_name: String?
-    /// 用户头像地址（大图），180×180像素
-    var avatar_large: String?
+    /// 用户头像地址
+    var profile_image_url: String?
+    
 
     var uid:String?
     
@@ -55,7 +56,7 @@ class WBUserAccont: BaseModel {
         self.uid = nil
         self.remind_in = nil
         self.screen_name = nil
-        self.avatar_large = nil
+        self.profile_image_url = nil
         self.expires_in = 0
         
         if(shouldUpdate) {
@@ -76,8 +77,8 @@ class WBUserAccont: BaseModel {
         if let screen_name = dict["screen_name"] as? String {
             self.screen_name = screen_name
         }
-        if let avatar_large = dict["avatar_large"] as? String {
-            self.avatar_large = avatar_large
+        if let profile_image_url = dict["profile_image_url"] as? String {
+            self.profile_image_url = profile_image_url
         }
         if let expires_in = dict["expires_in"] as? Int {
             self.expires_in = expires_in
