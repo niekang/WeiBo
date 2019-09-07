@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (4.8.2)
+  - Differentiator (4.0.1)
   - HandyJSON (5.0.0)
   - pop (1.0.10)
   - RxAlamofire (5.0.0):
@@ -22,49 +23,63 @@ PODS:
   - RxAlamofire/Core (5.0.0):
     - Alamofire (~> 4.8)
     - RxSwift (~> 5.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
   - RxSwift (5.0.0)
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
-  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
   - HandyJSON
   - pop
   - RxAlamofire
+  - RxDataSources
   - SDWebImage
   - SnapKit
   - SVProgressHUD
-  - YYModel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Alamofire
+    - Differentiator
     - HandyJSON
     - pop
     - RxAlamofire
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
     - RxSwift
     - SDWebImage
     - SnapKit
     - SVProgressHUD
-    - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   RxAlamofire: e7875a012aff55345672d0f70a2a9cd6aeb0f211
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 30f71e4c040e25d7ae2fc34beb25be8a2b2c74aa
+PODFILE CHECKSUM: 3c932f7caef166f47c33cbab1d6bc610f0153908
 
 COCOAPODS: 1.7.5

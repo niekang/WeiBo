@@ -65,14 +65,14 @@ extension WBHomeViewController {
     
     func configTable() {
         
-        self.configCell = {[unowned self](indexPath, statusViewModel) in
+        self.configCell = {[unowned self](indexPath, statusViewModel, _, _) in
             let cellId = (statusViewModel.status.retweeted_status != nil) ? retweetedCellId : normalCellId
             let cell = self.tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
             cell.statusViewModel = statusViewModel
             return cell
         }
         
-        self.willDisplayCell = {[unowned self](indexPath, statusViewModel) in
+        self.willDisplayCell = {[unowned self](indexPath, statusViewModel, _ , _ ) in
             
             let row = indexPath.row
             

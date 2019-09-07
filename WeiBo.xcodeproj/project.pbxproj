@@ -23,6 +23,7 @@
 		820BBA1B231D89F50012ADFB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA1A231D89F50012ADFB /* BaseViewController.swift */; };
 		820BBA1D231D8A070012ADFB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */; };
 		820BBA2323216E5F0012ADFB /* WBBaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA2223216E5F0012ADFB /* WBBaseTabViewController.swift */; };
+		820BBA252323F34D0012ADFB /* BaseSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA242323F34D0012ADFB /* BaseSectionTableViewController.swift */; };
 		8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */; };
 		8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */; };
 		8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */; };
@@ -98,6 +99,7 @@
 		820BBA1A231D89F50012ADFB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		820BBA2223216E5F0012ADFB /* WBBaseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseTabViewController.swift; sourceTree = "<group>"; };
+		820BBA242323F34D0012ADFB /* BaseSectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSectionTableViewController.swift; sourceTree = "<group>"; };
 		8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccont.swift; sourceTree = "<group>"; };
 		8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				4C48E51D2315382600ABF93A /* PageStateManager.swift */,
 				820BBA1A231D89F50012ADFB /* BaseViewController.swift */,
 				820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */,
+				820BBA242323F34D0012ADFB /* BaseSectionTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -597,26 +600,32 @@
 				"${PODS_ROOT}/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +693,7 @@
 				822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */,
 				824AFBED1F0233D00040C222 /* NKTextView.swift in Sources */,
 				8216B7B01F048FDF00650F29 /* EmotionToolView.swift in Sources */,
+				820BBA252323F34D0012ADFB /* BaseSectionTableViewController.swift in Sources */,
 				8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */,
 				8222C2551EFBAA7D008D0114 /* WBStatusTooBar.swift in Sources */,
 				8216B7BE1F04C80B00650F29 /* EmotionTipView.swift in Sources */,

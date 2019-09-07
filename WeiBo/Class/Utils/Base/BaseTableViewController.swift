@@ -10,9 +10,10 @@ import UIKit
 
 class BaseTableViewController<T>: BaseViewController, UITableViewDataSource, UITableViewDelegate {
     
-    typealias ConfigCellClosure = (IndexPath, T) -> UITableViewCell
-    typealias ConfigCellHeightClosure = (IndexPath, T) -> CGFloat
-    typealias CommonConfigClosure = (IndexPath, T) -> Void
+    
+    typealias ConfigCellClosure = (IndexPath, T, [T], UITableView) -> UITableViewCell
+    typealias ConfigCellHeightClosure = (IndexPath, T, [T], UITableView) -> CGFloat
+    typealias CommonConfigClosure = (IndexPath, T, [T], UITableView) -> Void
     typealias ScrollClosure = (UIScrollView) -> Void
 
     //MARK: dataSource, delegate closure
@@ -57,19 +58,19 @@ class BaseTableViewController<T>: BaseViewController, UITableViewDataSource, UIT
         guard let configCellHeight = self.configCellHeight else {
             return tableView.rowHeight
         }
-        return configCellHeight(indexPath, self.dataSource[indexPath.row])
+        return configCellHeight(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.configCell(indexPath, self.dataSource[indexPath.row])
+        return self.configCell(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.didSelectedCell?(indexPath, self.dataSource[indexPath.row])
+        self.didSelectedCell?(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.willDisplayCell?(indexPath, self.dataSource[indexPath.row])
+        self.willDisplayCell?(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
