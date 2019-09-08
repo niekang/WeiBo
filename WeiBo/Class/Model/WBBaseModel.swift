@@ -14,3 +14,6 @@ class BaseModel: HandyJSON {
     }
 }
 
+protocol BaseHandyJSON: HandyJSON {
+    
+}

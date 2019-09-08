@@ -8,23 +8,38 @@
 
 import UIKit
 
-class WBMessageViewController: WBBaseTabViewController<Any> {
+class WBMessageViewController: WBBaseTabViewController<WBMessage> {
+    
+    private let data = [
+        ["title": "@我的", "icon":"messagescenter_at"],
+        ["title":"评论","icon":"messagescenter_comments"],
+        ["title":"赞","icon":"messagescenter_good"]
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configTable()
 
-        // Do any additional setup after loading the view.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+extension WBMessageViewController {
+    
+    func configTable() {
+        
+        self.tableView.rowHeight = 70
+        self.dataSource = data.map({ (item) in
+            return WBMessage(title: item["title"], detail: nil, icon: item["icon"])
+        });
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let cellIden = "WBMessageCellTableViewCell"
+        self.tableView.register(UINib(nibName: cellIden, bundle: nil), forCellReuseIdentifier: cellIden)
+        
+        self.configCell = {indexPath, model, _, tableView in
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIden) as! WBMessageCellTableViewCell
+            cell.model = model
+            return cell
+        }
     }
-    */
-
 }
