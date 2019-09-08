@@ -10,4 +10,5 @@ target 'WeiBo' do
   pod 'HandyJSON'
   pod 'SnapKit'
   pod 'RxDataSources'
+  pod 'URLNavigator'
 end
