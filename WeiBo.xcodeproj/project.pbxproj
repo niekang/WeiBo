@@ -28,6 +28,7 @@
 		820BBA29232567EB0012ADFB /* WBMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA28232567EB0012ADFB /* WBMessage.swift */; };
 		820BBA3023256C4C0012ADFB /* WBMessageCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA2E23256C4C0012ADFB /* WBMessageCellTableViewCell.swift */; };
 		820BBA3123256C4C0012ADFB /* WBMessageCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820BBA2F23256C4C0012ADFB /* WBMessageCellTableViewCell.xib */; };
+		820BBA332326AA980012ADFB /* WBMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820BBA322326AA980012ADFB /* WBMineViewController.xib */; };
 		8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */; };
 		8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */; };
 		8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */; };
@@ -108,6 +109,7 @@
 		820BBA28232567EB0012ADFB /* WBMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessage.swift; sourceTree = "<group>"; };
 		820BBA2E23256C4C0012ADFB /* WBMessageCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageCellTableViewCell.swift; sourceTree = "<group>"; };
 		820BBA2F23256C4C0012ADFB /* WBMessageCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBMessageCellTableViewCell.xib; sourceTree = "<group>"; };
+		820BBA322326AA980012ADFB /* WBMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBMineViewController.xib; sourceTree = "<group>"; };
 		8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccont.swift; sourceTree = "<group>"; };
 		8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				823AE14C1EF8FA1E00CB1D86 /* WBMineViewController.swift */,
+				820BBA322326AA980012ADFB /* WBMineViewController.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				822CC2811EFE84CB00FFEA16 /* WBNewFeatureView.xib in Resources */,
 				820BBA3123256C4C0012ADFB /* WBMessageCellTableViewCell.xib in Resources */,
 				82A448421EFD5BB100CA3A50 /* Emotion.bundle in Resources */,
+				820BBA332326AA980012ADFB /* WBMineViewController.xib in Resources */,
 				82629E981EF7B6AB00DA2D89 /* Assets.xcassets in Resources */,
 				82D6FD4B1EFFD78300E35C26 /* NKRefreshView.xib in Resources */,
 				820138801EFC0AFB00244A2B /* WBStatusRetweetedCell.xib in Resources */,

@@ -28,7 +28,7 @@ class WBHomeViewController: WBBaseTabViewController<WBStatusViewModel> {
         super.loginSuccess()
         setupUI() /// 注册table
         configTable()
-        loadData() // 加载数据
+//        loadData() // 加载数据
     }
     
     
