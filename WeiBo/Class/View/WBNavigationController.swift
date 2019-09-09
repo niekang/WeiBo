@@ -19,7 +19,7 @@ class WBNavigationController: UINavigationController {
     }
     
     func setupNavigationBarAppearance() {
-        navigationBar.barTintColor =  UIColor.nk_hexColor(hex: 0xF6F6F6)
+        navigationBar.barTintColor =  UIColor.hexColor(hex: 0xF6F6F6)
     }
 
     /// 重载push函数 添加统一‘返回’按钮

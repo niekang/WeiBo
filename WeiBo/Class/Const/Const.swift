@@ -26,6 +26,9 @@ let WBLoginSuccessNotification = "WBLoginNotification"
 let WBLogOutNotification = "WBNotLoginNotification"
 let WBHomeVCShouldRefresh = "WBHomeVCShouldRefresh" // 有新的微博消息
 
+let GrayBGColor = UIColor.rgbColor(red: 237, green: 237, blue: 238)
+
+
 //常用函数
 func WBLog<T>(_ item:T){
     #if DEBUG

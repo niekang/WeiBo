@@ -13,37 +13,37 @@ import UIKit
 extension UILabel {
     
     @discardableResult
-    func nk_text(_ text:String) -> Self {
+    func text(_ text:String) -> Self {
         self.text = text
         return self
     }
     
     @discardableResult
-    func nk_fontSize(_ fontSize:CGFloat) -> Self {
+    func fontSize(_ fontSize:CGFloat) -> Self {
         font = UIFont.systemFont(ofSize: fontSize)
         return self
     }
     
     @discardableResult
-    func nk_textColor(_ textColor:UIColor) -> Self {
+    func textColor(_ textColor:UIColor) -> Self {
         self.textColor = textColor
         return self
     }
     
     @discardableResult
-    func nk_textAlignment(_ textAlignment:NSTextAlignment) -> Self {
+    func textAlignment(_ textAlignment:NSTextAlignment) -> Self {
         self.textAlignment = textAlignment
         return self
     }
     
     
     @discardableResult
-    func nk_numberOfLines(_ numberOfLines:Int) -> Self {
+    func numberOfLines(_ numberOfLines:Int) -> Self {
         self.numberOfLines = numberOfLines
         return self
     }
     @discardableResult
-    func nk_backgroundColor(_ backgroundColor:UIColor) -> Self {
+    func backgroundColor(_ backgroundColor:UIColor) -> Self {
         self.backgroundColor = backgroundColor
         return self
     }

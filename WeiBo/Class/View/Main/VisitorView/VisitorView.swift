@@ -10,6 +10,27 @@ import UIKit
 
 class VisitorView: UIView {
     
+    weak var target: UIViewController? {
+        didSet{
+            target?.view.addSubview(self)
+            
+            //
+            self.logBtn.action(self, #selector(logBtnClick(sender:)))
+            self.registerBtn.action(self, #selector(resisterBtnClick(sender:)))
+            
+            /// 监听登录状态
+            NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: Notification.Name(WBLoginSuccessNotification), object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(logOut), name: Notification.Name(WBLogOutNotification), object: nil)
+            
+            /// 判断是否登录
+            (WBUserAccont.shared.access_token != nil) ? loginSuccess() : logOut()
+
+        }
+    }
+    
+    var loginClousure: (()-> ())?
+    var logoutClousure : (() -> ())?
+    
     var visitorInfoDictionary:[String:String]?{
         didSet{
             guard let imageName = visitorInfoDictionary?["image"],
@@ -17,7 +38,7 @@ class VisitorView: UIView {
                     return
             }
             
-            tipLab.nk_text(message)
+            tipLab.text(message)
 
             if imageName == "" {
                 startAnimation()
@@ -40,19 +61,20 @@ class VisitorView: UIView {
     lazy var maskImageView = UIImageView(image: UIImage(named: "visitordiscover_feed_mask_smallicon"))
     
     //提示标签
-    lazy var tipLab = UILabel().nk_fontSize(16).nk_numberOfLines(0)
+    lazy var tipLab = UILabel().fontSize(16).numberOfLines(0)
 
     //注册按钮
-    lazy var registerBtn = UIButton().nk_title("注册").nk_textColor(UIColor.orange).nk_backgroundImage("common_button_white_disable")
+    lazy var registerBtn = UIButton().title("注册").textColor(UIColor.orange).backgroundImage("common_button_white_disable")
     
     //登录按钮
-    lazy var logBtn = UIButton().nk_title("登录").nk_textColor(UIColor.orange).nk_backgroundImage("common_button_white_disable")
+    lazy var logBtn = UIButton().title("登录").textColor(UIColor.orange).backgroundImage("common_button_white_disable")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.white
         setup()
     }
-    
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -75,7 +97,33 @@ extension VisitorView {
         
         //添加约束
         addConstrains()
+        
     }
+    
+    // MARK: - 添加登录通知,处理访客视图
+    
+    ///注册
+    @objc func resisterBtnClick(sender:UIButton) {
+        WBUserAccont.shared.login()
+    }
+    ///登录
+    @objc func logBtnClick(sender:UIButton) {
+        WBUserAccont.shared.login()
+    }
+    
+    ///登录成功监听方法
+    @objc func loginSuccess() {
+        self.removeFromSuperview()
+        self.loginClousure?()
+    }
+    
+    /// 退出登录监听方法
+    @objc func logOut() {
+        self.target?.view.addSubview(self)
+        self.target?.view.bringSubviewToFront(self)
+        self.logoutClousure?()
+    }
+
     
     func startAnimation() {
         let anima = CABasicAnimation(keyPath: "transform.rotation")

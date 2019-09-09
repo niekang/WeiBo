@@ -47,7 +47,7 @@ class WBStatusCell: UITableViewCell {
             //认证图标
             vipImageView.image = statusViewModel?.vipIcon
             //设置头像
-            iconView.nk_setImage(URLString: statusViewModel?.status.user?.profile_image_url, placeholderImageName: "avatar_default_big", isAvatar: true)
+            iconView.setImage(URLString: statusViewModel?.status.user?.profile_image_url, placeholderImageName: "avatar_default_big", isAvatar: true)
             //设置底部工具条数据
             statusToolBar.statusViewModel = statusViewModel
             //设置配图
@@ -60,7 +60,7 @@ class WBStatusCell: UITableViewCell {
             // 设置来源
             sourceLab.text = statusViewModel?.status.source
             // 设置时间
-            timeLab.text = statusViewModel?.status.createdDate?.nk_dateDescription
+            timeLab.text = statusViewModel?.status.createdDate?.dateDescription
         }
     }
     

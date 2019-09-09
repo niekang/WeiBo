@@ -17,7 +17,7 @@ extension Date {
     
     /// 计算与当前系统时间偏差 delta 秒数的日期字符串
     /// 在 Swift 中，如果要定义结构体的 `类`函数，使用 static 修饰 -> 静态函数
-    static func nk_dateString(delta: TimeInterval) -> String {
+    static func dateString(delta: TimeInterval) -> String {
         
         let date = Date(timeIntervalSinceNow: delta)
         
@@ -32,7 +32,7 @@ extension Date {
     /// - parameter string: Tue Sep 15 12:12:00 +0800 2015
     ///
     /// - returns: 日期
-    static func nk_sinaDate(string: String) -> Date? {
+    static func sinaDate(string: String) -> Date? {
         
         // 1. 设置日期格式
         dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss zzz yyyy"
@@ -49,7 +49,7 @@ extension Date {
      MM-dd HH:mm(一年内)
      yyyy-MM-dd HH:mm(更早期)
      */
-    var nk_dateDescription: String {
+    var dateDescription: String {
         
         // 1. 判断日期是否是今天
         if calendar.isDateInToday(self) {

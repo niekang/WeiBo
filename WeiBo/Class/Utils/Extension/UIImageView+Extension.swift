@@ -10,7 +10,7 @@ import SDWebImage
 
 extension UIImageView {
     
-    func nk_setImage(URLString:String?, placeholderImageName:String?, isAvatar:Bool = false) {
+    func setImage(URLString:String?, placeholderImageName:String?, isAvatar:Bool = false) {
 
         guard let URLString = URLString, let url = URL(string: URLString) else {
             return

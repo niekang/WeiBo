@@ -41,6 +41,8 @@ class BaseSectionTableViewController<T: SectionModelType>: BaseViewController, U
     typealias ConfigCellHeightClosure = (IndexPath, T.Item, [T], UITableView) -> CGFloat
     typealias CommonConfigClosure = (IndexPath, T.Item, [T], UITableView) -> Void
     typealias ScrollClosure = (UIScrollView) -> Void
+    typealias ConfigViewClosure = (Int, [T], UITableView) -> UIView?
+    typealias ConfigViewHeightClosure = (Int, [T], UITableView) -> CGFloat
     
     //MARK: dataSource, delegate closure
     public var configCell: ConfigCellClosure!
@@ -49,6 +51,12 @@ class BaseSectionTableViewController<T: SectionModelType>: BaseViewController, U
     public var didSelectedCell: CommonConfigClosure?
     public var endDecelerating: ScrollClosure?
     public var didScroll: ScrollClosure?
+    public var viewForHeader: ConfigViewClosure?
+    public var viewForFooter: ConfigViewClosure?
+    public var heightForHeader: ConfigViewHeightClosure?
+    public var heightForFooter: ConfigViewHeightClosure?
+
+
     
     public var dataSource = [T]()
     
@@ -76,6 +84,10 @@ class BaseSectionTableViewController<T: SectionModelType>: BaseViewController, U
     }
     
     //MARK:  UITableViewDataSource, UITableViewDelegate
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.dataSource.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource[section].items.count
     }
@@ -91,6 +103,22 @@ class BaseSectionTableViewController<T: SectionModelType>: BaseViewController, U
         return self.configCell(indexPath, self.dataSource[indexPath.section].items[indexPath.row], self.dataSource, tableView)
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.viewForHeader?(section, self.dataSource, tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return self.viewForFooter?(section, self.dataSource, tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.heightForHeader?(section, self.dataSource, tableView) ?? 0.0001
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return self.heightForFooter?(section, self.dataSource, tableView) ?? 0.0001
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.didSelectedCell?(indexPath, self.dataSource[indexPath.section].items[indexPath.row], self.dataSource, tableView)
     }
@@ -99,6 +127,7 @@ class BaseSectionTableViewController<T: SectionModelType>: BaseViewController, U
         self.willDisplayCell?(indexPath, self.dataSource[indexPath.section].items[indexPath.row], self.dataSource, tableView)
 
     }
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.didScroll?(scrollView)

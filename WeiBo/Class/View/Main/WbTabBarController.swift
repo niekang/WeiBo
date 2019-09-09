@@ -94,7 +94,7 @@ extension WbTabBarController {
         for dict in dictArray {
             let vc = controller(dict: dict)
             vcsArray.append(vc)
-            vc.view.backgroundColor = UIColor.nk_randomColor()
+            vc.view.backgroundColor = UIColor.randomColor()
         }
     
         viewControllers = vcsArray
@@ -123,7 +123,7 @@ extension WbTabBarController {
     
     /// 添加加号按钮
     func addComposeBtn(){
-        let composeBtn = UIButton().nk_image("tabbar_compose_icon_add").nk_backgroundImage("tabbar_compose_button").nk_action(self, #selector(composeBtnClick(sender:)))
+        let composeBtn = UIButton().image("tabbar_compose_icon_add").backgroundImage("tabbar_compose_button").action(self, #selector(composeBtnClick(sender:)))
         let w = tabBar.width/5
         composeBtn.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
         tabBar.addSubview(composeBtn)

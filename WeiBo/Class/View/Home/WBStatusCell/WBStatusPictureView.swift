@@ -54,7 +54,7 @@ class WBStatusPictureView: UIView {
                     index = i + 1
                 }
                 let imageView = subviews[index] as! UIImageView
-                imageView.nk_setImage(URLString: url.thumbnail_pic, placeholderImageName: nil)
+                imageView.setImage(URLString: url.thumbnail_pic, placeholderImageName: nil)
                 imageView.isHidden = false
                 
             }
