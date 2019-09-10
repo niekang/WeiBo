@@ -7,19 +7,18 @@
 //
 
 import UIKit
+import RxDataSources
 
-class WBMineViewController: BaseSectionTableViewController<SectionModel<Any, Any>> {
-    
-    lazy var visitorView = VisitorView(frame: self.view.bounds)
+class WBMineViewController: WBBaseTabViewController {
     
     let headerView = WBMineHeaderView.loadNib()
     
+    let adapter = TableViewSectionDataSource<SectionModel<Any, Any>>()
+    
     override func viewDidLoad() {
+        self.setUI()
+        self.configTable()
         super.viewDidLoad()
-        visitorView.show(in: self) {
-            self.setUI()
-            self.configTable()
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,28 +26,26 @@ class WBMineViewController: BaseSectionTableViewController<SectionModel<Any, Any
     }
 }
 
-extension WBMineViewController: VisitorViewProtocol {
-    
-    
-    func getVisitorView() -> VisitorView {
-        return self.visitorView
-    }
-}
-
 extension WBMineViewController {
     
     func configTable() {
-        self.dataSource = [
+        
+        
+        tableView.delegate = adapter
+        tableView.dataSource = adapter
+        
+        adapter.dataSource = [
             SectionModel(section: 0, items: []),
         ]
         
-        self.viewForHeader = { section, _, _ in
+        adapter.viewForHeader = { section, _ in
             return self.headerView
         }
         
-        self.heightForHeader = { section, _, _ in
+        adapter.heightForHeader = { section, _ in
             return self.headerView.height
         }
+        
     }
     
     func setUI() {

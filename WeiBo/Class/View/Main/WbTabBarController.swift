@@ -102,7 +102,7 @@ extension WbTabBarController {
     
     /// 根据提供的信息创建相应的控制器
     func controller(dict:[String:Any]) -> UIViewController{
-        guard let vc = dict["vc"] as? VisitorViewProtocol & UIViewController,
+        guard let vc = dict["vc"] as? WBBaseTabViewController,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
             let visitorDic = dict["visitor"] as? [String:String] else {
@@ -116,7 +116,7 @@ extension WbTabBarController {
         vc.tabBarItem.image = UIImage(named:imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.orange], for: .selected)
-        vc.getVisitorView().visitorInfoDictionary = visitorDic
+        vc.visitorView.visitorInfoDictionary = visitorDic
         let nav = WBNavigationController(rootViewController: vc)
         return nav
     }

@@ -10,9 +10,6 @@ import UIKit
 
 class VisitorView: UIView {
     
-    var loginClousure: (()-> ())?
-    var logoutClousure : (() -> ())?
-    
     var visitorInfoDictionary:[String:String]?{
         didSet{
             guard let imageName = visitorInfoDictionary?["image"],
@@ -66,13 +63,6 @@ class VisitorView: UIView {
 
     }
     
-    func show(in viewController: UIViewController, loginCompletion: (() -> ())?){
-        self.removeFromSuperview()
-        self.loginClousure = loginCompletion
-        viewController.view.addSubview(self)
-        /// 判断是否登录
-        (WBUserAccont.shared.access_token != nil) ? self.loginSuccess() : self.logOut()
-    }
 }
 
 
@@ -93,38 +83,7 @@ extension VisitorView {
         //添加约束
         addConstrains()
         
-        //
-        self.logBtn.action(self, #selector(logBtnClick(sender:)))
-        self.registerBtn.action(self, #selector(resisterBtnClick(sender:)))
-        
-        /// 监听登录状态
-        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: Notification.Name(WBLoginSuccessNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(logOut), name: Notification.Name(WBLogOutNotification), object: nil)
     }
-    
-    // MARK: - 添加登录通知,处理访客视图
-    
-    ///注册
-    @objc func resisterBtnClick(sender:UIButton) {
-        WBUserAccont.shared.login()
-    }
-    ///登录
-    @objc func logBtnClick(sender:UIButton) {
-        WBUserAccont.shared.login()
-    }
-    
-    ///登录成功监听方法
-    @objc func loginSuccess() {
-        self.loginClousure?()
-        self.removeFromSuperview()
-    }
-    
-    /// 退出登录监听方法
-    @objc func logOut() {
-        self.removeFromSuperview()
-        self.logoutClousure?()
-    }
-
     
     func startAnimation() {
         let anima = CABasicAnimation(keyPath: "transform.rotation")

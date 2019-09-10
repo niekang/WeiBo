@@ -22,9 +22,7 @@
 		820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820436711EFA02C100A482FF /* UIColor+Extension.swift */; };
 		820436791EFA02C100A482FF /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820436721EFA02C100A482FF /* UILabel+Extension.swift */; };
 		820BBA1B231D89F50012ADFB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA1A231D89F50012ADFB /* BaseViewController.swift */; };
-		820BBA1D231D8A070012ADFB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */; };
 		820BBA2323216E5F0012ADFB /* WBBaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA2223216E5F0012ADFB /* WBBaseTabViewController.swift */; };
-		820BBA252323F34D0012ADFB /* BaseSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA242323F34D0012ADFB /* BaseSectionTableViewController.swift */; };
 		820BBA29232567EB0012ADFB /* WBMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA28232567EB0012ADFB /* WBMessage.swift */; };
 		820BBA3023256C4C0012ADFB /* WBMessageCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA2E23256C4C0012ADFB /* WBMessageCellTableViewCell.swift */; };
 		820BBA3123256C4C0012ADFB /* WBMessageCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820BBA2F23256C4C0012ADFB /* WBMessageCellTableViewCell.xib */; };
@@ -33,6 +31,9 @@
 		820BBA3A2326B3C50012ADFB /* WBMineHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA392326B3C50012ADFB /* WBMineHeaderButton.swift */; };
 		820BBA3C2326B3D70012ADFB /* WBMineHeaderButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820BBA3B2326B3D70012ADFB /* WBMineHeaderButton.xib */; };
 		820BBA3F2326B6E30012ADFB /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA3E2326B6E30012ADFB /* File.swift */; };
+		820BBA422328020E0012ADFB /* TableViewSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA412328020E0012ADFB /* TableViewSectionDataSource.swift */; };
+		820BBA44232810270012ADFB /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA43232810270012ADFB /* TableViewDataSource.swift */; };
+		820BBA46232813340012ADFB /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820BBA45232813340012ADFB /* BaseTableViewController.swift */; };
 		8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */; };
 		8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */; };
 		8215BDDE1EFA21B900E0A642 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */; };
@@ -107,9 +108,7 @@
 		820436711EFA02C100A482FF /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		820436721EFA02C100A482FF /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		820BBA1A231D89F50012ADFB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		820BBA2223216E5F0012ADFB /* WBBaseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBBaseTabViewController.swift; sourceTree = "<group>"; };
-		820BBA242323F34D0012ADFB /* BaseSectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSectionTableViewController.swift; sourceTree = "<group>"; };
 		820BBA28232567EB0012ADFB /* WBMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessage.swift; sourceTree = "<group>"; };
 		820BBA2E23256C4C0012ADFB /* WBMessageCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessageCellTableViewCell.swift; sourceTree = "<group>"; };
 		820BBA2F23256C4C0012ADFB /* WBMessageCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBMessageCellTableViewCell.xib; sourceTree = "<group>"; };
@@ -118,6 +117,9 @@
 		820BBA392326B3C50012ADFB /* WBMineHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMineHeaderButton.swift; sourceTree = "<group>"; };
 		820BBA3B2326B3D70012ADFB /* WBMineHeaderButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WBMineHeaderButton.xib; sourceTree = "<group>"; };
 		820BBA3E2326B6E30012ADFB /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		820BBA412328020E0012ADFB /* TableViewSectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSectionDataSource.swift; sourceTree = "<group>"; };
+		820BBA43232810270012ADFB /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		820BBA45232813340012ADFB /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		8215BDD51EFA05FD00E0A642 /* WBNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		8215BDDA1EFA105300E0A642 /* WBUserAccont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBUserAccont.swift; sourceTree = "<group>"; };
 		8215BDDD1EFA21B900E0A642 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
@@ -219,10 +221,9 @@
 		4C48E519231537FB00ABF93A /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				820BBA45232813340012ADFB /* BaseTableViewController.swift */,
 				4C48E51D2315382600ABF93A /* PageStateManager.swift */,
 				820BBA1A231D89F50012ADFB /* BaseViewController.swift */,
-				820BBA1C231D8A070012ADFB /* BaseTableViewController.swift */,
-				820BBA242323F34D0012ADFB /* BaseSectionTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -286,6 +287,15 @@
 				820BBA3E2326B6E30012ADFB /* File.swift */,
 			);
 			path = LoadNib;
+			sourceTree = "<group>";
+		};
+		820BBA40232801DD0012ADFB /* TableViewAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				820BBA412328020E0012ADFB /* TableViewSectionDataSource.swift */,
+				820BBA43232810270012ADFB /* TableViewDataSource.swift */,
+			);
+			path = TableViewAdapter;
 			sourceTree = "<group>";
 		};
 		8215BDD71EFA0EC900E0A642 /* Manger */ = {
@@ -501,6 +511,7 @@
 		82629EC61EF7B8D800DA2D89 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				820BBA40232801DD0012ADFB /* TableViewAdapter */,
 				820BBA3D2326B6C90012ADFB /* LoadNib */,
 				4C48E5352324A4F100ABF93A /* Route */,
 				4C48E519231537FB00ABF93A /* Base */,
@@ -734,6 +745,7 @@
 				4C48E5132315086900ABF93A /* API.swift in Sources */,
 				820BBA3F2326B6E30012ADFB /* File.swift in Sources */,
 				823AE14D1EF8FA1E00CB1D86 /* WBDiscoverViewController.swift in Sources */,
+				820BBA422328020E0012ADFB /* TableViewSectionDataSource.swift in Sources */,
 				8222C2531EFB9714008D0114 /* UIImage+Extension.swift in Sources */,
 				82C792211EFCFD89004929EF /* String+Extension.swift in Sources */,
 				8236973C1F03964C006CE70E /* EmotionManager.swift in Sources */,
@@ -759,10 +771,11 @@
 				82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */,
 				820436781EFA02C100A482FF /* UIColor+Extension.swift in Sources */,
 				822CC2841EFEA91F00FFEA16 /* WBTitleButton.swift in Sources */,
+				820BBA44232810270012ADFB /* TableViewDataSource.swift in Sources */,
 				4C48E537232501B800ABF93A /* Route.swift in Sources */,
 				824AFBED1F0233D00040C222 /* NKTextView.swift in Sources */,
 				8216B7B01F048FDF00650F29 /* EmotionToolView.swift in Sources */,
-				820BBA252323F34D0012ADFB /* BaseSectionTableViewController.swift in Sources */,
+				820BBA46232813340012ADFB /* BaseTableViewController.swift in Sources */,
 				8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */,
 				8222C2551EFBAA7D008D0114 /* WBStatusTooBar.swift in Sources */,
 				8216B7BE1F04C80B00650F29 /* EmotionTipView.swift in Sources */,
@@ -773,7 +786,6 @@
 				8216B7B41F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift in Sources */,
 				822CC27F1EFE84C400FFEA16 /* WBNewFeatureView.swift in Sources */,
 				8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */,
-				820BBA1D231D8A070012ADFB /* BaseTableViewController.swift in Sources */,
 				8215BDF41EFA764E00E0A642 /* WBStatusListViewModel.swift in Sources */,
 				820436761EFA02C100A482FF /* UIBarButtonItem+Extension.swift in Sources */,
 				82D6FD4D1EFFD79D00E35C26 /* NKRefreshView.swift in Sources */,

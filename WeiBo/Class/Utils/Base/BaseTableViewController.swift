@@ -2,82 +2,36 @@
 //  BaseTableViewController.swift
 //  WeiBo
 //
-//  Created by 聂康 on 2019/9/3.
+//  Created by 聂康 on 2019/9/11.
 //  Copyright © 2019 com.nk. All rights reserved.
 //
 
 import UIKit
 
-class BaseTableViewController<T>: BaseViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    
-    typealias ConfigCellClosure = (IndexPath, T, [T], UITableView) -> UITableViewCell
-    typealias ConfigCellHeightClosure = (IndexPath, T, [T], UITableView) -> CGFloat
-    typealias CommonConfigClosure = (IndexPath, T, [T], UITableView) -> Void
-    typealias ScrollClosure = (UIScrollView) -> Void
+class BaseTableViewController: BaseViewController {
 
-    //MARK: dataSource, delegate closure
-    public var configCell: ConfigCellClosure!
-    public var configCellHeight: ConfigCellHeightClosure?
-    public var willDisplayCell: CommonConfigClosure?
-    public var didSelectedCell: CommonConfigClosure?
-    public var endDecelerating: ScrollClosure?
-    public var didScroll: ScrollClosure?
-
-    public var dataSource = [T]()
-    
-    private(set) lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame)
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.backgroundColor = UIColor.white
-        tableView.dataSource = self
-        tableView.delegate = self
         return tableView
     }()
 
     override func viewDidLoad() {
-        self.view.addSubview(tableView)
         super.viewDidLoad()
+        self.view.addSubview(tableView)
+        // Do any additional setup after loading the view.
     }
     
-    //MARK: Override
-    public func loadData() {
-        
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
-    public func loadMoreData() {
-        
-    }
-    
-    //MARK:  UITableViewDataSource, UITableViewDelegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let configCellHeight = self.configCellHeight else {
-            return tableView.rowHeight
-        }
-        return configCellHeight(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.configCell(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.didSelectedCell?(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.willDisplayCell?(indexPath, self.dataSource[indexPath.row], self.dataSource, tableView)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.didScroll?(scrollView)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.endDecelerating?(scrollView)
-    }
+    */
+
 }
