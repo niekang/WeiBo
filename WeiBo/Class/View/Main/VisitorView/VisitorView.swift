@@ -10,24 +10,6 @@ import UIKit
 
 class VisitorView: UIView {
     
-    weak var target: UIViewController? {
-        didSet{
-            target?.view.addSubview(self)
-            
-            //
-            self.logBtn.action(self, #selector(logBtnClick(sender:)))
-            self.registerBtn.action(self, #selector(resisterBtnClick(sender:)))
-            
-            /// 监听登录状态
-            NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: Notification.Name(WBLoginSuccessNotification), object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(logOut), name: Notification.Name(WBLogOutNotification), object: nil)
-            
-            /// 判断是否登录
-            (WBUserAccont.shared.access_token != nil) ? loginSuccess() : logOut()
-
-        }
-    }
-    
     var loginClousure: (()-> ())?
     var logoutClousure : (() -> ())?
     
@@ -78,6 +60,19 @@ class VisitorView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+
+    }
+    
+    func show(in viewController: UIViewController, loginCompletion: (() -> ())?){
+        self.removeFromSuperview()
+        self.loginClousure = loginCompletion
+        viewController.view.addSubview(self)
+        /// 判断是否登录
+        (WBUserAccont.shared.access_token != nil) ? self.loginSuccess() : self.logOut()
+    }
 }
 
 
@@ -98,6 +93,13 @@ extension VisitorView {
         //添加约束
         addConstrains()
         
+        //
+        self.logBtn.action(self, #selector(logBtnClick(sender:)))
+        self.registerBtn.action(self, #selector(resisterBtnClick(sender:)))
+        
+        /// 监听登录状态
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: Notification.Name(WBLoginSuccessNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(logOut), name: Notification.Name(WBLogOutNotification), object: nil)
     }
     
     // MARK: - 添加登录通知,处理访客视图
@@ -113,14 +115,13 @@ extension VisitorView {
     
     ///登录成功监听方法
     @objc func loginSuccess() {
-        self.removeFromSuperview()
         self.loginClousure?()
+        self.removeFromSuperview()
     }
     
     /// 退出登录监听方法
     @objc func logOut() {
-        self.target?.view.addSubview(self)
-        self.target?.view.bringSubviewToFront(self)
+        self.removeFromSuperview()
         self.logoutClousure?()
     }
 

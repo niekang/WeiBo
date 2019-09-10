@@ -9,19 +9,23 @@
 import UIKit
 
 protocol VisitorViewProtocol {
-    var visitorView: VisitorView {get set}
+    func getVisitorView() -> VisitorView
 }
 
-
-class WBBaseTabViewController<T>: BaseTableViewController<T>, VisitorViewProtocol{
+class WBBaseTabViewController<T>: BaseTableViewController<T> {
     
-    var visitorView = VisitorView(frame: CGRect(x: 0, y: kNavHeight, width: kWidth, height: kHeight - kNavHeight - kTabBarHeight))
-    
+    lazy var visitorView = VisitorView(frame: self.view.bounds)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        visitorView.target = self
     }
 
+}
+
+extension WBBaseTabViewController: VisitorViewProtocol {
+    
+    func getVisitorView() -> VisitorView {
+        return self.visitorView
+    }
 }

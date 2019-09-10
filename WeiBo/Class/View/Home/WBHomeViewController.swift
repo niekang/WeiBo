@@ -21,12 +21,10 @@ class WBHomeViewController: WBBaseTabViewController<WBStatusViewModel> {
     
     override func viewDidLoad() {
         setupUI() //在判断登录状态之前 注册table 接收到登录通知之后 显示数据
+        self.configTable()
         super.viewDidLoad()
-        
-        visitorView.loginClousure = {[weak self] in
-            self?.setupUI() /// 注册table
-            self?.configTable()
-            //loadData() // 加载数据
+        visitorView.show(in: self) {
+//            self.loadData()
         }
     }
     

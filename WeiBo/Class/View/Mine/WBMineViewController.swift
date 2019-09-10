@@ -8,21 +8,30 @@
 
 import UIKit
 
-class WBMineViewController: BaseSectionTableViewController<SectionModel<Any, Any>>, VisitorViewProtocol {
+class WBMineViewController: BaseSectionTableViewController<SectionModel<Any, Any>> {
     
-    var visitorView = VisitorView(frame: CGRect(x: 0, y: kNavHeight, width: kWidth, height: kHeight - kNavHeight - kTabBarHeight))
+    lazy var visitorView = VisitorView(frame: self.view.bounds)
     
     let headerView = WBMineHeaderView.loadNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        visitorView.target = self
-        setUI()
-        configTable()
+        visitorView.show(in: self) {
+            self.setUI()
+            self.configTable()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension WBMineViewController: VisitorViewProtocol {
+    
+    
+    func getVisitorView() -> VisitorView {
+        return self.visitorView
     }
 }
 
