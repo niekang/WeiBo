@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import RxSwift
 
 private let normalCellId = "WBStatusNormalCell"
 

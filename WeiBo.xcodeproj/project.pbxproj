@@ -89,6 +89,10 @@
 		82E70A771F00F69E00629E0F /* WBComposeBtnView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E70A731F00F69E00629E0F /* WBComposeBtnView.xib */; };
 		82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E70A741F00F69E00629E0F /* WBComposeView.swift */; };
 		82E70A791F00F69E00629E0F /* WBComposeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E70A751F00F69E00629E0F /* WBComposeView.xib */; };
+		82EE5D4324D072230057F830 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE5D4224D072230057F830 /* LoginViewController.swift */; };
+		82EE5D4524D0727E0057F830 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82EE5D4424D0727E0057F830 /* LoginViewController.xib */; };
+		82EE5D4724D084DB0057F830 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE5D4624D084DB0057F830 /* LoginViewModel.swift */; };
+		82EE5D4924D08B940057F830 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EE5D4824D08B940057F830 /* Presenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +181,10 @@
 		82E70A731F00F69E00629E0F /* WBComposeBtnView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeBtnView.xib; sourceTree = "<group>"; };
 		82E70A741F00F69E00629E0F /* WBComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeView.swift; sourceTree = "<group>"; };
 		82E70A751F00F69E00629E0F /* WBComposeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeView.xib; sourceTree = "<group>"; };
+		82EE5D4224D072230057F830 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		82EE5D4424D0727E0057F830 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		82EE5D4624D084DB0057F830 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		82EE5D4824D08B940057F830 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		EDA5D93F9E700ABEB0259962 /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -477,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				82629E901EF7B6AB00DA2D89 /* AppDelegate.swift */,
+				82EE5D4124D071EE0057F830 /* Login */,
 				82629EBE1EF7B8D800DA2D89 /* Class */,
 				82629E971EF7B6AB00DA2D89 /* Assets.xcassets */,
 				82629E9C1EF7B6AB00DA2D89 /* Info.plist */,
@@ -572,6 +581,17 @@
 			path = ComposeView;
 			sourceTree = "<group>";
 		};
+		82EE5D4124D071EE0057F830 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				82EE5D4224D072230057F830 /* LoginViewController.swift */,
+				82EE5D4624D084DB0057F830 /* LoginViewModel.swift */,
+				82EE5D4424D0727E0057F830 /* LoginViewController.xib */,
+				82EE5D4824D08B940057F830 /* Presenter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F33EAE9EADAD3687E0F3E48A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -643,6 +663,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82EE5D4524D0727E0057F830 /* LoginViewController.xib in Resources */,
 				827319AD1F024C7E005E6FE0 /* WBComposeViewController.xib in Resources */,
 				82E70A791F00F69E00629E0F /* WBComposeView.xib in Resources */,
 				8222C24F1EFB6877008D0114 /* WBStatusNormalCell.xib in Resources */,
@@ -766,6 +787,7 @@
 				82629E911EF7B6AB00DA2D89 /* AppDelegate.swift in Sources */,
 				820436751EFA02C100A482FF /* Bundle+Extension.swift in Sources */,
 				825CFF891F03AE3C0089AE3C /* EmotionInputView.swift in Sources */,
+				82EE5D4924D08B940057F830 /* Presenter.swift in Sources */,
 				82D6FD481EFFD78300E35C26 /* NKMTRefreshView.swift in Sources */,
 				8215BDD61EFA05FD00E0A642 /* WBNetworkManager.swift in Sources */,
 				82E70A781F00F69E00629E0F /* WBComposeView.swift in Sources */,
@@ -777,12 +799,14 @@
 				8216B7B01F048FDF00650F29 /* EmotionToolView.swift in Sources */,
 				820BBA46232813340012ADFB /* BaseTableViewController.swift in Sources */,
 				8222C2491EFB5EDE008D0114 /* WBUser.swift in Sources */,
+				82EE5D4724D084DB0057F830 /* LoginViewModel.swift in Sources */,
 				8222C2551EFBAA7D008D0114 /* WBStatusTooBar.swift in Sources */,
 				8216B7BE1F04C80B00650F29 /* EmotionTipView.swift in Sources */,
 				823AE14E1EF8FA1E00CB1D86 /* WBHomeViewController.swift in Sources */,
 				823AE1531EF8FA1E00CB1D86 /* WbTabBarController.swift in Sources */,
 				4C48E5112314E0AA00ABF93A /* HttpClient.swift in Sources */,
 				8222C2451EFB5A99008D0114 /* WBStatusCell.swift in Sources */,
+				82EE5D4324D072230057F830 /* LoginViewController.swift in Sources */,
 				8216B7B41F0496B400650F29 /* EmotionCollectionViewFlowLayout.swift in Sources */,
 				822CC27F1EFE84C400FFEA16 /* WBNewFeatureView.swift in Sources */,
 				8215BDDB1EFA105300E0A642 /* WBUserAccont.swift in Sources */,

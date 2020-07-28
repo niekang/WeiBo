@@ -39,7 +39,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         var dataTask:URLSessionDataTask?
         
-        let success = { (dataTask:URLSessionDataTask, json:Any?) ->() in
+        let success = { (dataTask:URLSessionDataTask, json:Any?) -> () in
             completion(true, json)
         }
             
@@ -51,9 +51,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         if method == .POST {
             dataTask = post(URLString, parameters: parameters, progress: nil, success: success, failure: failure)
-        }
-        
-        if method == .GET {
+        }else if method == .GET {
             dataTask = get(URLString, parameters: parameters, progress: nil, success: success, failure: failure)
         }
         return dataTask

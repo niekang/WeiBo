@@ -9,8 +9,8 @@
 import UIKit
 
 let WBAPPkey = "1205476206"
-let WBAppSecret = "491d493c293d8946fbb6459d4c3f8deb"
-let WBRedirectURL = "http://baidu.com"
+let WBAppSecret = "bcd661cbc2136f828726e33ba9036003"
+let WBRedirectURL = "https://api.weibo.com/oauth2/default.html"
 
 //const
 let kWidth = UIScreen.main.bounds.width
@@ -27,6 +27,7 @@ let WBLogOutNotification = "WBNotLoginNotification"
 let WBHomeVCShouldRefresh = "WBHomeVCShouldRefresh" // 有新的微博消息
 
 let GrayBGColor = UIColor.rgbColor(red: 237, green: 237, blue: 238)
+
 
 
 //常用函数
